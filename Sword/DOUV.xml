@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://api.archives-ouvertes.fr/documents/aofr-sword.xsd"
+    xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+    <text>
+        <body>
+            <listBibl>
+                <biblFull>
+                    <titleStmt>
+                        <title xml:lang="en">this is my direction of work title</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
+                        <title xml:lang="fr">ceci est mon titre de direction d'ouvrage</title>
+                        <title xml:lang="en" type="sub">my subtitle in english</title>
+                        <title xml:lang="fr" type="sub">mon sous-titre en français</title>
+                        <author role="aut"><!-- %%champ obligatoire: minimum un auteur-->
+                            <persName>
+                                <forename type="first">Nouvel</forename><!-- %%nouvel auteur non présent dans le référentiel AuréHAL-->
+                                <surname>Auteur</surname>
+                            </persName>
+                            <email>prenom.nom@structure.fr</email>
+                            <affiliation ref="#localStruct-1"/>
+                        </author>
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Laurent</forename><!-- %%auteur déjà présent dans le référentiel AuréHAL-->
+                                <surname>Romary</surname>
+                            </persName>
+                            <email>laurent.romary@inria.fr</email>
+                            <idno type="idhal">laurentromary</idno>
+                            <idno type="halauthor">49567</idno>
+                            <idno type="arXiv">http://arxiv.org/a/Romary_L</idno>
+                            <idno type="IdRef">http://www.idref.fr/060702494</idno>
+                            <idno type="ORCID">http://orcid.org/0000-0002-0756-0508</idno>
+                            <affiliation ref="#struct-95237"/>
+                            <affiliation ref="#struct-118511"/>
+                        </author>
+                        <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projanr-33390"/>
+                        <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projeurop-89284"/>
+                        <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
+                        <funder>Financement 1</funder>
+                        <funder>Financement 2</funder>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>
+                            <date type="whenWritten">2016</date>
+                            <ref type="file" subtype="author" n="1" target="https://files.inria.fr/IFIP/TEST/test.pdf">
+                                <date notBefore="2017-01-01"/>
+                            </ref>
+                        </edition>
+                    </editionStmt>
+                    <seriesStmt/>
+                    <notesStmt>
+                        <note type="commentary">Commentaire</note>
+                        <note type="description">description</note>
+                        <note type="audience" n="2"/><!-- %%champ obligatoire -->
+                        <note type="popular" n="0"/><!-- %%champ obligatoire -->
+                    </notesStmt>
+                    <sourceDesc>
+                        <biblStruct>
+                            <analytic>
+                                <title xml:lang="en">this is my direction of work title</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
+                                <title xml:lang="fr">ceci est mon titre de direction d'ouvrage</title>
+                                <title xml:lang="en" type="sub">my subtitle in english</title>
+                                <title xml:lang="fr" type="sub">mon sous-titre en français</title>
+                                <author role="aut"><!-- %%champ obligatoire: minimum un auteur-->
+                                    <persName>
+                                        <forename type="first">Nouvel</forename>
+                                        <surname>Auteur</surname>
+                                    </persName>
+                                    <email>prenom.nom@structure.fr</email>
+                                    <affiliation ref="#localStruct-1"/>
+                                </author>
+                                <author role="aut">
+                                    <persName>
+                                        <forename type="first">Laurent</forename>
+                                        <surname>Romary</surname>
+                                    </persName>
+                                    <email>laurent.romary@inria.fr</email>
+                                    <idno type="idHal">laurentromary</idno>
+                                    <idno type="halAuthorId">49567</idno>
+                                    <idno type="arXiv">http://arxiv.org/a/Romary_L</idno>
+                                    <idno type="IdRef">http://www.idref.fr/060702494</idno>
+                                    <idno type="ORCID">http://orcid.org/0000-0002-0756-0508</idno>
+                                    <affiliation ref="#struct-95237"/>
+                                    <affiliation ref="#struct-118511"/>
+                                </author>
+                            </analytic>
+                            <monogr>
+                                <idno type="isbn">978-1-4577-0538-0</idno>
+                                <idno type="localRef">Référence interne</idno>
+                                <idno type="localRef">Référence interne 2</idno>
+                                <title level="m" type="main">titre ouvrage</title>
+                                <editor>Éditeur scientifique</editor>
+                                <imprint>
+                                    <publisher>Éditeur commercial</publisher>
+                                    <pubPlace>Lieu de publication</pubPlace>
+                                    <biblScope unit="serie">Titre du volume</biblScope>
+                                    <biblScope unit="volume">Volume</biblScope>
+                                    <biblScope unit="issue">1</biblScope>
+                                    <biblScope unit="pp">2</biblScope>
+                                    <date type="datePub">2016-02-03</date><!-- %%champ obligatoire -->
+                                </imprint>
+                            </monogr>
+                            <series>
+                                <editor>Directeur de collection</editor>
+                                <title>Titre de collection</title>
+                            </series>
+                            <idno type="doi">10.1007/978-3-652-54344-9_1</idno>
+                            <ref type="seeAlso">http://www.inria1.fr</ref>
+                            <ref type="seeAlso">http://www.inria2.fr</ref>
+                            <ref type="publisher">http://www.inria.fr</ref>
+                            <relatedItem type="illustrate" target="related description"></relatedItem>
+                        </biblStruct>
+                    </sourceDesc>
+                    <profileDesc>
+                        <langUsage>
+                            <language ident="en"/><!-- %%champ obligatoire -->
+                        </langUsage>
+                        <textClass>
+                            <keywords scheme="author">
+                                <term xml:lang="en">keywords_2_en</term>
+                                <term xml:lang="en">keywords_en</term>
+                                <term xml:lang="fr">keywords_fr</term>
+                                <term xml:lang="fr">keywords_2_fr</term>
+                            </keywords>
+                            <classCode scheme="classification">PACS</classCode>
+                            <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
+                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%champ obligatoire -->
+                            <classCode scheme="halTypology" n="DOUV">Book sections</classCode><!-- %%champ obligatoire -->
+                        </textClass>
+                        <abstract xml:lang="en">resume_en</abstract>
+                        <abstract xml:lang="fr">resume_fr</abstract>
+                        <particDesc>
+                            <org type="consortium">Collaboration/Projet</org>
+                            <org type="consortium">Collaboration/Projet 2</org>
+                        </particDesc>
+                    </profileDesc>
+                </biblFull>
+            </listBibl>
+        </body>
+        <back>
+            <listOrg type="laboratories">
+                <org type="laboratory" xml:id="localStruct-1">
+                    <orgName>Mon nouveau laboratoire</orgName>
+                    <orgName type="acronym">MNL</orgName>
+                    <desc>
+                        <address>
+            <addrLine>adresse du laboratoire</addrLine>
+            <country key="FR"/>
+            </address>
+                        <ref type="url">http://ccsd.cnrs.fr</ref>
+                    </desc>
+                    <listRelation>
+                        <relation active="#localStruct-2"/>
+                        <relation active="#struct-300009"/>
+                    </listRelation>
+                </org>
+                <org type="institution" xml:id="localStruct-2">
+                    <orgName>Institut Test</orgName>
+                    <desc>
+                        <address>
+            <country key="FR"/>
+            </address>
+                    </desc>
+                </org>
+                <org type="institution" xml:id="struct-300009">
+                    <orgName>INRIA</orgName>
+                    <desc>
+                        <address>
+            <country key="FR"/>
+            </address>
+                        <ref type="url">http://www.inria.fr</ref>
+                    </desc>
+                </org>
+            </listOrg>
+            <listOrg type="projects">
+                <org type="europeanProject" xml:id="localProjeurop-1">
+                    <idno type="program">REGPOT</idno>
+                    <idno type="number">204727</idno>
+                    <idno type="call">FP7-REGPOT-2007-1</idno>
+                    <orgName>ESTSPACE</orgName>
+                    <desc>Expose capacity of the Estonian Space Research and Technology through High Quality Partnership in Europe</desc>
+                    <date type="start">2008-03-01</date>
+                    <date type="end">2011-02-28</date>
+                </org>
+            </listOrg>
+        </back>
+    </text>
+</TEI>
+
+
+
