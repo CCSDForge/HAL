@@ -7,13 +7,13 @@
             <listBibl>
                 <biblFull>
                     <titleStmt>
-                        <title xml:lang="en">this is my preprint title</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
-                        <title xml:lang="fr">ceci est mon titre de preprint</title>
+                        <title xml:lang="en">this is my preprint title</title><!-- %%mandatory field : at least one title, any language-->
+                        <title xml:lang="fr">ceci est mon titre de preprint</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
                         <title xml:lang="en" type="sub">my subtitle in english</title>
                         <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                        <author role="aut"><!-- %%champ obligatoire: minimum un auteur-->
+                        <author role="aut"><!-- %%mandatory field : minimum one author-->
                             <persName>
-                                <forename type="first">Nouvel</forename><!-- %%nouvel auteur non présent dans le référentiel AuréHAL-->
+                                <forename type="first">Nouvel</forename><!-- %%new author non existing in the AuréHAL repository-->
                                 <surname>Auteur</surname>
                             </persName>
                             <email>prenom.nom@structure.fr</email>
@@ -21,7 +21,7 @@
                         </author>
                         <author role="aut">
                             <persName>
-                                <forename type="first">Laurent</forename><!-- %%auteur déjà présent dans le référentiel AuréHAL-->
+                                <forename type="first">Laurent</forename><!-- %%author already existing in the AuréHAL repository-->
                                 <surname>Romary</surname>
                             </persName>
                             <email>laurent.romary@inria.fr</email>
@@ -33,11 +33,11 @@
                             <affiliation ref="#struct-95237"/>
                             <affiliation ref="#struct-118511"/>
                         </author>
-                        <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projanr-25468"/><!-- %%anr project number already existing in the AuréHAL repository-->
                         <funder ref="#projanr-33390"/>
-                        <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projeurop-88718"/><!-- %%european project number already existing in the AuréHAL repository-->
                         <funder ref="#projeurop-89284"/>
-                        <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
+                        <funder ref="#localProjeurop-1"/><!-- %%new european project non existing in the AuréHAL repository-->
                         <funder>Financement 1</funder>
                         <funder>Financement 2</funder>
                     </titleStmt>
@@ -57,13 +57,13 @@
                     <sourceDesc>
                         <biblStruct>
                             <analytic>
-                                <title xml:lang="en">this is my preprint title</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
-                                <title xml:lang="fr">ceci est mon titre de preprint</title>
+                                <title xml:lang="en">this is my preprint title</title><!-- %%mandatory field : at least one title, any language-->
+                                <title xml:lang="fr">ceci est mon titre de preprint</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
                                 <title xml:lang="en" type="sub">my subtitle in english</title>
                                 <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                                <author role="aut"><!-- %%champ obligatoire: minimum un auteur-->
+                                <author role="aut"><!-- %%mandatory field : minimum one author-->
                                     <persName>
-                                        <forename type="first">Nouvel</forename>
+                                        <forename type="first">Nouvel</forename><!-- %%new author non existing in the AuréHAL repository-->
                                         <surname>Auteur</surname>
                                     </persName>
                                     <email>prenom.nom@structure.fr</email>
@@ -71,7 +71,7 @@
                                 </author>
                                 <author role="aut">
                                     <persName>
-                                        <forename type="first">Laurent</forename>
+                                        <forename type="first">Laurent</forename><!-- %%author already existing in the AuréHAL repository-->
                                         <surname>Romary</surname>
                                     </persName>
                                     <email>laurent.romary@inria.fr</email>
@@ -89,7 +89,7 @@
                     </sourceDesc>
                     <profileDesc>
                         <langUsage>
-                            <language ident="en"/><!-- %%champ obligatoire -->
+                            <language ident="en"/><!-- %%mandatory field-->
                         </langUsage>
                         <textClass>
                             <keywords scheme="author">
@@ -100,8 +100,8 @@
                             </keywords>
                             <classCode scheme="classification">PACS</classCode>
                             <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
-                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%champ obligatoire -->
-                            <classCode scheme="halTypology" n="UNDEFINED">Conference paper</classCode><!-- %%champ obligatoire -->
+                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%mandatory field-->
+                            <classCode scheme="halTypology" n="UNDEFINED">Conference paper</classCode><!-- %%mandatory field-->
                         </textClass>
                         <abstract xml:lang="en">resume_en</abstract>
                         <abstract xml:lang="fr">resume_fr</abstract>

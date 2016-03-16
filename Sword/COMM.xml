@@ -7,13 +7,13 @@
             <listBibl>
                 <biblFull>
                     <titleStmt>
-                        <title xml:lang="en">this is my conference paper title</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
-                        <title xml:lang="fr">ceci est mon titre de communication dans un congrès</title>
+                        <title xml:lang="en">this is my conference paper title</title><!-- %%mandatory field : at least one title, any language-->
+                        <title xml:lang="fr">ceci est mon titre de communication dans un congrès</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
                         <title xml:lang="en" type="sub">my subtitle in english</title>
                         <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                        <author role="aut"><!-- %%champ obligatoire: minimum un auteur-->
+                        <author role="aut"><!-- %%mandatory field : minimum one author-->
                             <persName>
-                                <forename type="first">Nouvel</forename><!-- %%nouvel auteur non présent dans le référentiel AuréHAL-->
+                                <forename type="first">Nouvel</forename><!-- %%new author non existing in the AuréHAL repository-->
                                 <surname>Auteur</surname>
                             </persName>
                             <email>prenom.nom@structure.fr</email>
@@ -21,7 +21,7 @@
                         </author>
                         <author role="aut">
                             <persName>
-                                <forename type="first">Laurent</forename><!-- %%auteur déjà présent dans le référentiel AuréHAL-->
+                                <forename type="first">Laurent</forename><!-- %%author already existing in the AuréHAL repository-->
                                 <surname>Romary</surname>
                             </persName>
                             <email>laurent.romary@inria.fr</email>
@@ -33,11 +33,11 @@
                             <affiliation ref="#struct-95237"/>
                             <affiliation ref="#struct-118511"/>
                         </author>
-                        <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projanr-25468"/><!-- %%anr project number already existing in the AuréHAL repository-->
                         <funder ref="#projanr-33390"/>
-                        <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projeurop-88718"/><!-- %%european project number already existing in the AuréHAL repository-->
                         <funder ref="#projeurop-89284"/>
-                        <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
+                        <funder ref="#localProjeurop-1"/><!-- %%new european project non existing in the AuréHAL repository-->
                         <funder>Financement 1</funder>
                         <funder>Financement 2</funder>
                     </titleStmt>
@@ -53,20 +53,20 @@
                     <notesStmt>
                         <note type="commentary">Commentaire</note>
                         <note type="description">description</note>
-                        <note type="audience" n="2"/><!-- %%champ obligatoire -->
-                        <note type="invited" n="0"/><!-- %%champ obligatoire -->
-                        <note type="popular" n="0"/><!-- %%champ obligatoire -->
-                        <note type="peer" n="1"/><!-- %%champ obligatoire -->
-                        <note type="proceedings" n="1"/><!-- %%champ obligatoire -->
+                        <note type="audience" n="2"/><!-- %%mandatory field-->
+                        <note type="invited" n="0"/><!-- %%mandatory field-->
+                        <note type="popular" n="0"/><!-- %%mandatory field-->
+                        <note type="peer" n="1"/><!-- %%mandatory field-->
+                        <note type="proceedings" n="1"/><!-- %%mandatory field-->
                     </notesStmt>
                     <sourceDesc>
                         <biblStruct>
                             <analytic>
-                                <title xml:lang="en">this is my conference paper title</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
+                                <title xml:lang="en">this is my conference paper title</title><!-- %%mandatory field : at least one title, any language-->
                                 <title xml:lang="fr">ceci est mon titre de communication dans un congrès</title>
                                 <title xml:lang="en" type="sub">my subtitle in english</title>
                                 <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                                <author role="aut"><!-- %%champ obligatoire: minimum un auteur-->
+                                <author role="aut"><!-- %%mandatory field : minimum one author-->
                                     <persName>
                                         <forename type="first">Nouvel</forename>
                                         <surname>Auteur</surname>
@@ -95,11 +95,11 @@
                                 <idno type="localRef">Référence interne 2</idno>
                                 <title level="m" type="main">titre ouvrage</title>
                                 <meeting>
-                                    <title>IEEE International Conference on Acoustics, Speech and Signal Processing - ICASSP 2011</title><!-- %%champ obligatoire -->
-                                    <date type="start">2011-05-22</date><!-- %%champ obligatoire -->
-                                    <date type="end">2011-05-27</date>
-                                    <settlement>Prague</settlement><!-- %%champ obligatoire -->
-                                    <country key="CZ"/><!-- %%champ obligatoire -->
+                                    <title>My title conference in 19**</title><!-- %%mandatory field-->
+                                    <date type="start">2016-01-22</date><!-- %%mandatory field-->
+                                    <date type="end">2016-01-27</date>
+                                    <settlement>Prague</settlement><!-- %%mandatory field-->
+                                    <country key="CZ"/><!-- %%mandatory field-->
                                 </meeting>
                                 <imprint>
                                     <publisher>Éditeur commercial</publisher>
@@ -108,14 +108,14 @@
                                     <biblScope unit="volume">Volume</biblScope>
                                     <biblScope unit="issue">1</biblScope>
                                     <biblScope unit="pp">2</biblScope>
-                                    <date type="datePub">2016-02-03</date><!-- %%champ obligatoire -->
+                                    <date type="datePub">2016-02-03</date><!-- %%mandatory field-->
                                 </imprint>
                             </monogr>
                             <series>
                                 <editor>Directeur de collection</editor>
                                 <title>Titre de collection</title>
                             </series>
-                            <idno type="doi">10.1007/978-3-652-54344-9_1</idno>
+                            <idno type="doi">My DOI number</idno><!-- %%example : 10.xxxx/978-3-xxx-xxxxx-x_x-->
                             <ref type="seeAlso">http://www.inria1.fr</ref>
                             <ref type="seeAlso">http://www.inria2.fr</ref>
                             <ref type="publisher">http://www.inria.fr</ref>
@@ -124,7 +124,7 @@
                     </sourceDesc>
                     <profileDesc>
                         <langUsage>
-                            <language ident="en"/><!-- %%champ obligatoire -->
+                            <language ident="en"/><!-- %%mandatory field-->
                         </langUsage>
                         <textClass>
                             <keywords scheme="author">
@@ -135,8 +135,8 @@
                             </keywords>
                             <classCode scheme="classification">PACS</classCode>
                             <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
-                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%champ obligatoire -->
-                            <classCode scheme="halTypology" n="COMM">Conference paper</classCode><!-- %%champ obligatoire -->
+                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%mandatory field-->
+                            <classCode scheme="halTypology" n="COMM">Conference paper</classCode><!-- %%mandatory field-->
                         </textClass>
                         <abstract xml:lang="en">resume_en</abstract>
                         <abstract xml:lang="fr">resume_fr</abstract>

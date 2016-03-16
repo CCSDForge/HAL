@@ -7,13 +7,13 @@
             <listBibl>
                 <biblFull>
                     <titleStmt>
-                        <title xml:lang="en">this is my conference paper title</title><!-- %%champ obligatoire en français et en anglais-->
+                        <title xml:lang="en">this is my conference paper title</title><!-- %%mandatory field in french and english-->
                         <title xml:lang="fr">ceci est mon titre de communication dans un congrès</title><!-- %%champ obligatoire en français et en anglais-->
                         <title xml:lang="en" type="sub">my subtitle in english</title>
                         <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                        <author role="aut"><!-- %%champ obligatoire-->
+                        <author role="aut"><!-- %%mandatory field-->
                             <persName>
-                                <forename type="first">Nouvel</forename><!-- %%nouvel auteur non présent dans le référentiel AuréHAL-->
+                                <forename type="first">Nouvel</forename><!-- %%new author non existing in the AuréHAL repository-->
                                 <surname>Auteur</surname>
                             </persName>
                             <email>prenom.nom@structure.fr</email>
@@ -21,7 +21,7 @@
                         </author>
                         <author role="aut">
                             <persName>
-                                <forename type="first">Laurent</forename><!-- %%auteur déjà présent dans le référentiel AuréHAL-->
+                                <forename type="first">Laurent</forename><!-- %%author already existing in the AuréHAL repository-->
                                 <surname>Romary</surname>
                             </persName>
                             <email>laurent.romary@inria.fr</email>
@@ -33,11 +33,11 @@
                             <affiliation ref="#struct-95237"/>
                             <affiliation ref="#struct-118511"/>
                         </author>
-                        <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projanr-25468"/><!-- %%anr project number already existing in the AuréHAL repository-->
                         <funder ref="#projanr-33390"/>
-                        <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projeurop-88718"/><!-- %%european project number already existing in the AuréHAL repository-->
                         <funder ref="#projeurop-89284"/>
-                        <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
+                        <funder ref="#localProjeurop-1"/><!-- %%new european project non existing in the AuréHAL repository-->
                         <funder>Financement 1</funder>
                         <funder>Financement 2</funder>
                     </titleStmt>
@@ -53,17 +53,17 @@
                     <notesStmt>
                         <note type="commentary">Commentaire</note>
                         <note type="description">description</note>
-                        <note type="audience" n="2"/><!-- %%champ obligatoire -->
-                        <note type="popular" n="0"/><!-- %%champ obligatoire -->
+                        <note type="audience" n="2"/><!-- %%mandatory field-->
+                        <note type="popular" n="0"/><!-- %%mandatory field-->
                     </notesStmt>
                     <sourceDesc>
                         <biblStruct>
                             <analytic>
-                                <title xml:lang="en">this is my conference paper title</title><!-- %%champ obligatoire en français et en anglais-->
+                                <title xml:lang="en">this is my conference paper title</title><!-- %%mandatory field in french and english-->
                                 <title xml:lang="fr">ceci est mon titre de communication dans un congrès</title><!-- %%champ obligatoire en français et en anglais-->
                                 <title xml:lang="en" type="sub">my subtitle in english</title>
                                 <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                                <author role="aut"><!-- %%champ obligatoire -->
+                                <author role="aut"><!-- %%mandatory field-->
                                     <persName>
                                         <forename type="first">Nouvel</forename>
                                         <surname>Auteur</surname>
@@ -98,10 +98,10 @@
                                     <biblScope unit="volume">Volume</biblScope>
                                     <biblScope unit="issue">1</biblScope>
                                     <biblScope unit="pp">2</biblScope>
-                                    <date type="dateDefended">2014-03-26</date><!-- %%champ obligatoire -->
+                                    <date type="dateDefended">2014-03-26</date><!-- %%mandatory field-->
                                 </imprint>
-                                <authority type="institution">Université d'appartenance</authority><!-- %%champ obligatoire -->
-                                <authority type="supervisor">Superviseur</authority><!-- %%champ obligatoire -->
+                                <authority type="institution">Université d'appartenance</authority><!-- %%mandatory field-->
+                                <authority type="supervisor">Superviseur</authority><!-- %%mandatory field-->
                                 <authority type="jury">membre du jury 1 [Présidente]</authority>
                                 <authority type="jury">membre du jury 2 [Co-Directeur de thèse]</authority>
                                 <authority type="jury">membre du jury 3  [Rapporteur]</authority>
@@ -112,7 +112,7 @@
                                 <editor>Directeur de collection</editor>
                                 <title>Titre de collection</title>
                             </series>
-                            <idno type="doi">10.1007/978-3-652-54344-9_1</idno>
+                            <idno type="doi">My DOI number</idno><!-- %%example : 10.xxxx/978-3-xxx-xxxxx-x_x-->
                             <ref type="seeAlso">http://www.inria1.fr</ref>
                             <ref type="seeAlso">http://www.inria2.fr</ref>
                             <ref type="publisher">http://www.inria.fr</ref>
@@ -121,7 +121,7 @@
                     </sourceDesc>
                     <profileDesc>
                         <langUsage>
-                            <language ident="en"/><!-- %%champ obligatoire -->
+                            <language ident="en"/><!-- %%mandatory field-->
                         </langUsage>
                         <textClass>
                             <keywords scheme="author">
@@ -132,8 +132,8 @@
                             </keywords>
                             <classCode scheme="classification">PACS</classCode>
                             <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
-                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%champ obligatoire -->
-                            <classCode scheme="halTypology" n="THESE">Conference paper</classCode><!-- %%champ obligatoire -->
+                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%mandatory field-->
+                            <classCode scheme="halTypology" n="THESE">Conference paper</classCode><!-- %%mandatory field-->
                         </textClass>
                         <abstract xml:lang="en">resume_en</abstract>
                         <abstract xml:lang="fr">resume_fr</abstract>
