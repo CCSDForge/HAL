@@ -92,7 +92,7 @@
                 </imprint>
                 <authority type="institution">Université</authority><!-- %%mandatory field-->
                 <authority type="supervisor">director</authority><!-- %%mandatory field-->
-                <authority type="supervisorEmail">prénom.nom@inria.fr</authority><!-- %%mandatory field-->
+                <authority type="supervisorEmail">prenom.nom@inria.fr</authority><!-- %%mandatory field-->
               </monogr>
             </biblStruct>
           </sourceDesc>
