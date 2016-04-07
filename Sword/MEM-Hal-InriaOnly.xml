@@ -44,7 +44,7 @@
           <editionStmt>
             <edition>
               <date type="whenWritten">2016</date>
-              <ref type="file" subtype="author" n="1" target="https://files.inria.fr/IFIP/TEST/test.pdf"><!-- %%fulltext obligatoire-->
+              <ref type="file" subtype="author" n="1" target="ftp://ftp.ccsd.cnrs.fr/test.pdf"><!-- %%fulltext obligatoire-->
                 <date notBefore="2017-01-01"/>
               </ref>
             </edition>
@@ -92,7 +92,7 @@
                 </imprint>
                 <authority type="institution">Université</authority><!-- %%mandatory field-->
                 <authority type="supervisor">director</authority><!-- %%mandatory field-->
-                <authority type="supervisorEmail">prenom.nom@inria.fr</authority><!-- %%mandatory field-->
+                <authority type="supervisorEmail">prénom.nom@inria.fr</authority><!-- %%mandatory field-->
               </monogr>
             </biblStruct>
           </sourceDesc>

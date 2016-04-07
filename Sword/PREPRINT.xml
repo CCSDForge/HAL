@@ -44,7 +44,7 @@
                     <editionStmt>
                         <edition>
                             <date type="whenWritten">2016</date>
-                            <ref type="file" target="https://files.inria.fr/IFIP/TEST/test.pdf" subtype="author" n="1"></ref>
+                            <ref type="file" target="ftp://ftp.ccsd.cnrs.fr/test.pdf" subtype="author" n="1"></ref>
                         </edition>
                     </editionStmt>
                     <seriesStmt/>
