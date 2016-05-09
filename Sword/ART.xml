@@ -6,6 +6,15 @@
         <body>
             <listBibl>
                 <biblFull>
+                    <titleStmt>
+                    <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+                    <funder ref="#projanr-33390"/>
+                    <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+                    <funder ref="#projeurop-89284"/>
+                    <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
+                    <funder>Financement 1</funder>
+                    <funder>Financement 2</funder>
+                    </titleStmt>
                     <editionStmt>
                         <edition>
                             <date type="whenWritten">2016</date>
