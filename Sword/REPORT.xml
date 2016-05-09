@@ -6,41 +6,6 @@
         <body>
             <listBibl>
                 <biblFull>
-                    <titleStmt>
-                        <title xml:lang="en">this is my report title</title><!-- %%mandatory field : at least one title, any language-->
-                        <title xml:lang="fr">ceci est mon titre de rapport</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
-                        <title xml:lang="en" type="sub">my subtitle in english</title>
-                        <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                        <author role="aut"><!-- %%mandatory field : minimum one author-->
-                            <persName>
-                                <forename type="first">Nouvel</forename><!-- %%new author non existing in the AuréHAL repository-->
-                                <surname>Auteur</surname>
-                            </persName>
-                            <email>prenom.nom@structure.fr</email>
-                            <affiliation ref="#localStruct-1"/>
-                        </author>
-                        <author role="aut">
-                            <persName>
-                                <forename type="first">Laurent</forename><!-- %%author already existing in the AuréHAL repository-->
-                                <surname>Romary</surname>
-                            </persName>
-                            <email>laurent.romary@inria.fr</email>
-                            <idno type="idhal">laurentromary</idno>
-                            <idno type="halauthor">49567</idno>
-                            <idno type="arXiv">http://arxiv.org/a/Romary_L</idno>
-                            <idno type="IdRef">http://www.idref.fr/060702494</idno>
-                            <idno type="ORCID">http://orcid.org/0000-0002-0756-0508</idno>
-                            <affiliation ref="#struct-95237"/>
-                            <affiliation ref="#struct-118511"/>
-                        </author>
-                        <funder ref="#projanr-25468"/><!-- %%anr project number already existing in the AuréHAL repository-->
-                        <funder ref="#projanr-33390"/>
-                        <funder ref="#projeurop-88718"/><!-- %%european project number already existing in the AuréHAL repository-->
-                        <funder ref="#projeurop-89284"/>
-                        <funder ref="#localProjeurop-1"/><!-- %%new european project non existing in the AuréHAL repository-->
-                        <funder>Financement 1</funder>
-                        <funder>Financement 2</funder>
-                    </titleStmt>
                     <editionStmt>
                         <edition>
                             <date type="whenWritten">2016</date>
@@ -49,7 +14,6 @@
                             </ref>
                         </edition>
                     </editionStmt>
-                    <seriesStmt/>
                     <notesStmt>
                         <note type="report" n="6"/>
                         <note type="commentary">Commentaire</note>
