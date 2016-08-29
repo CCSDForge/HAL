@@ -1,4 +1,4 @@
-Attention, ces fichiers ne sont pas à jour.
+Localisation des fichiers xsd :
 
 Le schéma pour l'import Sword est sur https://api.archives-ouvertes.fr/documents/aofr-sword.xsd
 
