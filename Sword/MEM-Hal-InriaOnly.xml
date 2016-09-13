@@ -7,37 +7,35 @@
       <listBibl>
         <biblFull>
           <titleStmt>
-            <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+            <funder ref="#projanr-25468"/><!-- %%metadata anrProject : identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
             <funder ref="#projanr-33390"/>
-            <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+            <funder ref="#projeurop-88718"/><!-- %%metadata europeanProject : identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
             <funder ref="#projeurop-89284"/>
-            <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
-            <funder>Financement 1</funder>
+            <funder ref="#localProjeurop-1"/><!-- %%metadata europeanProject : nouveau projet européen non présent dans le référentiel AuréHAL-->
+            <funder>Financement 1</funder><!-- %%metadata funding-->
             <funder>Financement 2</funder>
           </titleStmt>
           <editionStmt>
             <edition>
               <date type="whenWritten">2016</date>
-              <ref type="file" subtype="author" n="1" target="ftp://ftp.ccsd.cnrs.fr/test.pdf"><!-- %%fulltext obligatoire-->
+              <ref type="file" subtype="author" n="1" target="ftp://ftp.ccsd.cnrs.fr/test.pdf"><!-- %%mandatory metadata file-->
                 <date notBefore="2017-01-01"/>
               </ref>
             </edition>
           </editionStmt>
           <notesStmt>
-            <note type="commentary">commentaire</note>
-            <note type="description">description</note>
-            <note type="audience" n="2"/><!-- %%mandatory field-->
-            <note type="degree" n="11"/>
-            <note type="popular" n="0"/>
+            <note type="commentary">commentaire</note><!-- %%metadata comment-->
+            <note type="audience" n="2"/><!-- %%mandatory metadata audience-->
+            <note type="degree" n="11"/><!-- %%mandatory metadata inria_degreeType-->
           </notesStmt>
           <sourceDesc>
             <biblStruct>
               <analytic>
-                <title xml:lang="en">this is my master thesis title</title><!-- %%mandatory field : at least one title, any language-->
-                <title xml:lang="fr">ceci est mon titre de mémoire d'étudiant</title><!-- %%champ obligatoire: minimum un titre, langue au choix-->
+                <title xml:lang="en">this is my master thesis title</title><!-- %%mandatory metadata title : at least one title, any language-->
+                <title xml:lang="fr">ceci est mon titre de mémoire d'étudiant</title>
                 <title xml:lang="en" type="sub">my subtitle in english</title>
                 <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                <author role="aut"><!-- %%mandatory field-->
+                <author role="aut"><!-- %%mandatory metadata : minimum one author-->
                   <persName>
                     <forename type="first">Nouvel</forename>
                     <surname>Auteur</surname>
@@ -51,8 +49,8 @@
                     <surname>Romary</surname>
                   </persName>
                   <email>laurent.romary@inria.fr</email>
-                  <idno type="idHal">laurentromary</idno>
-                  <idno type="halAuthorId">49567</idno>
+                  <idno type="idhal">laurentromary</idno>
+                  <idno type="halauthor">49567</idno>
                   <idno type="arXiv">http://arxiv.org/a/Romary_L</idno>
                   <idno type="IdRef">http://www.idref.fr/060702494</idno>
                   <idno type="ORCID">http://orcid.org/0000-0002-0756-0508</idno>
@@ -62,32 +60,32 @@
               </analytic>
               <monogr>
                 <imprint>
-                  <date type="dateDefended">2016-02-26</date><!-- %%mandatory field-->
+                  <date type="dateDefended">2016-02-26</date><!-- %%madatory metadata date-->
                 </imprint>
-                <authority type="institution">Université</authority><!-- %%mandatory field-->
-                <authority type="supervisor">director</authority><!-- %%mandatory field-->
-                <authority type="supervisorEmail">prénom.nom@inria.fr</authority><!-- %%mandatory field-->
+                <authority type="institution">Université</authority><!-- %%mandatory metadata authorityInstitution-->
+                <authority type="supervisor">director</authority><!-- %%mandatory director-->
+                <authority type="supervisorEmail">prénom.nom@inria.fr</authority><!-- %%mandatory metadata inria_directorEmail-->
               </monogr>
             </biblStruct>
           </sourceDesc>
           <profileDesc>
             <langUsage>
-              <language ident="en"/>
+              <language ident="en"/><!-- %%mandatory metadata language-->
             </langUsage>
             <textClass>
               <keywords scheme="author">
-                <term xml:lang="en">keywords_2_en</term>
+                <term xml:lang="en">keywords_2_en</term><!-- %%metadata keyword-->
                 <term xml:lang="en">keywords_en</term>
                 <term xml:lang="fr">keywords_fr</term>
                 <term xml:lang="fr">keywords_2_fr</term>
               </keywords>
-              <classCode scheme="halDomain" n="info"/><!-- %%mandatory field-->
-              <classCode scheme="halTypology" n="MEM"/><!-- %%mandatory field-->
+              <classCode scheme="halDomain" n="info"/><!-- %%mandatory metadata domain-->
+              <classCode scheme="halTypology" n="MEM"/><!-- %%mandatory metadata-->
             </textClass>
-            <abstract xml:lang="en">resume_en</abstract>
+            <abstract xml:lang="en">resume_en</abstract><!-- %%metadata abstract-->
             <abstract xml:lang="fr">resume_fr</abstract>
             <particDesc>
-              <org type="consortium">Collaboration/Projet</org>
+              <org type="consortium">Collaboration/Projet</org><!-- %%metadata collaboration-->
               <org type="consortium">Collaboration/Projet 2</org>
             </particDesc>
           </profileDesc>

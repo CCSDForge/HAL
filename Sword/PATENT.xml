@@ -7,34 +7,33 @@
             <listBibl>
                 <biblFull>
                     <titleStmt>
-                        <funder ref="#projanr-25468"/><!-- %%identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projanr-25468"/><!-- %%metadata anrProject : identifiant du projet anr déjà présent dans le référentiel AuréHAL-->
                         <funder ref="#projanr-33390"/>
-                        <funder ref="#projeurop-88718"/><!-- %%identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
+                        <funder ref="#projeurop-88718"/><!-- %%metadata europeanProject : identifiant du projet européen déjà présent dans le référentiel AuréHAL-->
                         <funder ref="#projeurop-89284"/>
-                        <funder ref="#localProjeurop-1"/><!-- %%nouveau projet européen non présent dans le référentiel AuréHAL-->
-                        <funder>Financement 1</funder>
+                        <funder ref="#localProjeurop-1"/><!-- %%metadata europeanProject : nouveau projet européen non présent dans le référentiel AuréHAL-->
+                        <funder>Financement 1</funder><!-- %%metadata funding-->
                         <funder>Financement 2</funder>
                     </titleStmt>
                     <editionStmt>
                         <edition>
-                            <date type="whenWritten">2016</date>
-                            <ref type="file" subtype="author" n="1" target="ftp://ftp.ccsd.cnrs.fr/test.pdf">
+                            <date type="whenWritten">2016</date><!-- %%metadata writingDate-->
+                            <ref type="file" subtype="author" n="1" target="ftp://ftp.ccsd.cnrs.fr/test.pdf"><!-- %%metadata file-->
                                 <date notBefore="2017-01-01"/>
                             </ref>
                         </edition>
                     </editionStmt>
                     <notesStmt>
-                        <note type="commentary">Commentaire</note>
-                        <note type="description">description</note>
+                        <note type="commentary">Commentaire</note><!-- %%metadata comment-->
                     </notesStmt>
                     <sourceDesc>
                         <biblStruct>
                             <analytic>
-                                <title xml:lang="en">this is my patent title</title><!-- %%mandatory field : at least one title, any language-->
+                                <title xml:lang="en">this is my patent title</title><!-- %%mandatory metadata title : at least one title, any language-->
                                 <title xml:lang="fr">ceci est mon titre de brevet</title>
                                 <title xml:lang="en" type="sub">my subtitle in english</title>
                                 <title xml:lang="fr" type="sub">mon sous-titre en français</title>
-                                <author role="aut"><!-- %%mandatory field : minimum one author-->
+                                <author role="aut"><!-- %%mandatory metadata : minimum one author-->
                                     <persName>
                                         <forename type="first">Prénom</forename>
                                         <surname>Nom</surname>
@@ -48,8 +47,8 @@
                                         <surname>Romary</surname>
                                     </persName>
                                     <email>laurent.romary@inria.fr</email>
-                                    <idno type="idHal">laurentromary</idno>
-                                    <idno type="halAuthorId">49567</idno>
+                                    <idno type="idhal">laurentromary</idno>
+                                    <idno type="halauthor">49567</idno>
                                     <idno type="arXiv">http://arxiv.org/a/Romary_L</idno>
                                     <idno type="IdRef">http://www.idref.fr/060702494</idno>
                                     <idno type="ORCID">http://orcid.org/0000-0002-0756-0508</idno>
@@ -58,39 +57,39 @@
                                 </author>
                             </analytic>
                             <monogr>
-                                <idno type="patentNumber">numéro de brevet</idno><!-- %%mandatory field-->
+                                <idno type="patentNumber">numéro de brevet</idno><!-- %%mandatory metadata number-->
                                 <country key="FR"/>
                                 <imprint>
-                                    <biblScope unit="pp">20</biblScope>
-                                    <date type="datePub">2016-02-03</date><!-- %%mandatory field-->
+                                    <biblScope unit="pp">20</biblScope><!-- %%metadata page-->
+                                    <date type="datePub">2016-02-03</date><!-- %%mandatory metadata date-->
                                 </imprint>
                             </monogr>
-                            <ref type="seeAlso">http://www.inria1.fr</ref>
+                            <ref type="seeAlso">http://www.inria1.fr</ref><!-- %%metadata seeAlso-->
                             <ref type="seeAlso">http://www.inria2.fr</ref>
-                            <ref type="publisher">http://www.inria.fr</ref>
+                            <ref type="publisher">http://www.inria.fr</ref><!-- %%metadata publisherLink-->
                             <relatedItem type="illustrate" target="related description"></relatedItem>
                         </biblStruct>
                     </sourceDesc>
                     <profileDesc>
                         <langUsage>
-                            <language ident="en"/><!-- %%mandatory field-->
+                            <language ident="en"/><!-- %%mandatory metadata language-->
                         </langUsage>
                         <textClass>
                             <keywords scheme="author">
-                                <term xml:lang="en">keywords_2_en</term>
+                                <term xml:lang="en">keywords_2_en</term><!-- %%metadata keyword-->
                                 <term xml:lang="en">keywords_en</term>
                                 <term xml:lang="fr">keywords_fr</term>
                                 <term xml:lang="fr">keywords_2_fr</term>
                             </keywords>
-                            <classCode scheme="classification">PACS</classCode>
-                            <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
-                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode><!-- %%mandatory field-->
-                            <classCode scheme="halTypology" n="PATENT">Conference paper</classCode><!-- %%mandatory field-->
+                            <classCode scheme="classification">PACS</classCode><!-- %%metadata classification-->
+                            <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode><!-- %%mandatory metadata domain-->
+                            <classCode scheme="halDomain" n="info.eiah">Computer Science [cs]/Technology for Human Learning</classCode>
+                            <classCode scheme="halTypology" n="PATENT">Conference paper</classCode><!-- %%mandatory metadata-->
                         </textClass>
-                        <abstract xml:lang="en">resume_en</abstract>
+                        <abstract xml:lang="en">resume_en</abstract><!-- %%metadata abstract-->
                         <abstract xml:lang="fr">resume_fr</abstract>
                         <particDesc>
-                            <org type="consortium">Collaboration/Projet</org>
+                            <org type="consortium">Collaboration/Projet</org><!-- %%metadata collaboration-->
                             <org type="consortium">Collaboration/Projet 2</org>
                         </particDesc>
                     </profileDesc>
