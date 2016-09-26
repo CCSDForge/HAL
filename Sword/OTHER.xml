@@ -25,6 +25,7 @@
                     </editionStmt>
                     <notesStmt>
                         <note type="description">description</note><!-- %%mandatory metadata description-->
+                        <note type="popular" n="0"/><!-- %%mandatory metadata popularLevel-->
                     </notesStmt>
                     <sourceDesc>
                         <biblStruct>

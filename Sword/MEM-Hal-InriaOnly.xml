@@ -64,7 +64,7 @@
                 </imprint>
                 <authority type="institution">Université</authority><!-- %%mandatory metadata authorityInstitution-->
                 <authority type="supervisor">director</authority><!-- %%mandatory director-->
-                <authority type="supervisorEmail">prénom.nom@inria.fr</authority><!-- %%mandatory metadata inria_directorEmail-->
+                <authority type="supervisorEmail">prenom.nom@inria.fr</authority><!-- %%mandatory metadata inria_directorEmail-->
               </monogr>
             </biblStruct>
           </sourceDesc>
