@@ -18,7 +18,7 @@ En cas d'erreur Sword, le message d'erreur est affiché ainsi que le nom du fich
 
 ATTENTION, pour déposer le pdf, il faut soit mettre un lien vers ce pdf accessible depuis l'extérieur, soit le déposer dans son espace ftp CCSD. 
 Exemple :
-<pre>
+```xml
 <editionStmt>
     <edition>
         <ref type="file"
@@ -27,4 +27,4 @@ Exemple :
             target="ftp://ftp.ccsd.cnrs.fr/xxx.pdf"/>
     </edition>
 </editionStmt>
-</pre>
+```
