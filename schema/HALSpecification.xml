@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title xml:lang="fr">Spécification du schéma d'import-export TEI de l'archive ouverte HAL</title>
+            <author>
+               <persName>
+                  <forename>Laurent</forename>
+                  <surname>Romary</surname>
+               </persName>
+            </author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <schemaSpec ident="HAL" docLang="en" prefix="tei_" xml:lang="en">
+            <moduleRef key="core" include="listBibl editor respStmt name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
+            <moduleRef key="tei"/>
+            <moduleRef key="header"
+               include="teiHeader fileDesc profileDesc biblFull titleStmt funder editionStmt edition publicationStmt distributor availability licence seriesStmt notesStmt sourceDesc authority profileDesc langUsage language textClass keywords classCode abstract creation idno"/>
+            <moduleRef key="textstructure" include="TEI text body back"/>
+            <moduleRef key="iso-fs" except="fsdDecl"/>
+            <moduleRef key="namesdates" include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
+            <moduleRef key="spoken" include="recordingStmt recording"/>
+            <moduleRef key="corpus" include="particDesc"/>
+            
+            <elementSpec ident="TEI" mode="change">
+               <content>
+                  <sequence>
+                     <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
+                     <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
+                  </sequence>
+               </content>
+            </elementSpec>
+
+            <elementSpec ident="biblFull" mode="change">
+               <content>
+                  <alternate>
+                     <sequence>
+                        <sequence>
+                           <elementRef key="titleStmt" minOccurs="0"/>
+                           <elementRef key="editionStmt" minOccurs="0"/>
+                           <elementRef key="extent" minOccurs="0"/>
+                           <elementRef key="publicationStmt" minOccurs="0"/>
+                           <elementRef key="seriesStmt" minOccurs="0"/>
+                           <elementRef key="notesStmt" minOccurs="0"/>
+                        </sequence>
+                        <elementRef key="sourceDesc" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="profileDesc" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                     <sequence>
+                        <elementRef key="fileDesc"/>
+                        <elementRef key="profileDesc"/>
+                     </sequence>
+                  </alternate>
+               </content>
+            </elementSpec>
+
+         </schemaSpec>
+      </body>
+   </text>
+</TEI>
