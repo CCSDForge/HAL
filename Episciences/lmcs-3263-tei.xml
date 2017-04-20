@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/out/HALSpecification.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Episciences.org TEI export of 1611.09067 - lmcs:3263 - Logical Methods in Computer Science, 2017-04-10, Volume 13, Issue 2</title>
+            </titleStmt>
+            <publicationStmt>
+                <distributor>CCSD</distributor>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0 International License</licence>
+                </availability>
+                <date when="2017-04-10"/>
+            </publicationStmt>
+            <encodingDesc>
+                <appInfo>Episciences.org API platform</appInfo>
+            </encodingDesc>
+        </fileDesc>
+        <notesStmt>
+            <note type="commentary">Comment: arXiv admin note: text overlap with arXiv:1407.0970</note>
+        </notesStmt>
+    </teiHeader>
+    <text>
+        <body>
+            <listBibl>
+                <biblFull>
+                    <titleStmt>
+                        <title>Dynamic Choreographies: Theory And Implementation</title>
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Mila Dalla</forename>
+                                <surname>Preda</surname>
+                            </persName>
+                            <email/>
+                        </author>
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Maurizio</forename>
+                                <surname>Gabbrielli</surname>
+                            </persName>
+                            <email/>
+                        </author>
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Saverio</forename>
+                                <surname>Giallorenzo</surname>
+                            </persName>
+                            <email/>
+                        </author>
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Ivan</forename>
+                                <surname>Lanese</surname>
+                            </persName>
+                            <email/>
+                        </author>
+                        <author role="aut">
+                            <persName>
+                                <forename type="first">Jacopo</forename>
+                                <surname>Mauro</surname>
+                            </persName>
+                            <email/>
+                        </author>
+                    </titleStmt>
+                    <editionStmt>
+                        <edition>
+                            <date type="whenSubmitted">2017-04-10 17:13:55</date>
+                            <date type="whenProduced">2017-04-10 17:16:26</date>
+                            <ref type="file" target="http://lmcs.episciences.org/3263/pdf"/>
+                        </edition>
+                        <respStmt>
+                            <resp>contributor</resp>
+                            <name key="446799">
+                                <persName>
+                                    <forename>Jürgen</forename>
+                                    <surname>Koslowski</surname>
+                                </persName>
+                                <email>koslowj@iti.cs.tu-bs.de</email>
+                            </name>
+                        </respStmt>
+                    </editionStmt>
+                    <publicationStmt>
+                        <distributor>CCSD</distributor>
+                        <idno type="id">lmcs:3263</idno>
+                        <idno type="url">http://lmcs.episciences.org/3263</idno>
+                        <idno type="ref">lmcs:3263 - Logical Methods in Computer Science, 2017-04-10, Volume 13, Issue 2</idno>
+                    </publicationStmt>
+                    <sourceDesc>
+                        <biblStruct>
+                            <analytic>
+                                <author role="aut">
+                                    <persName>
+                                        <forename type="first">Mila Dalla</forename>
+                                        <surname>Preda</surname>
+                                    </persName>
+                                    <email/>
+                                </author>
+                                <author role="aut">
+                                    <persName>
+                                        <forename type="first">Maurizio</forename>
+                                        <surname>Gabbrielli</surname>
+                                    </persName>
+                                    <email/>
+                                </author>
+                                <author role="aut">
+                                    <persName>
+                                        <forename type="first">Saverio</forename>
+                                        <surname>Giallorenzo</surname>
+                                    </persName>
+                                    <email/>
+                                </author>
+                                <author role="aut">
+                                    <persName>
+                                        <forename type="first">Ivan</forename>
+                                        <surname>Lanese</surname>
+                                    </persName>
+                                    <email/>
+                                </author>
+                                <author role="aut">
+                                    <persName>
+                                        <forename type="first">Jacopo</forename>
+                                        <surname>Mauro</surname>
+                                    </persName>
+                                    <email/>
+                                </author>
+                            </analytic>
+                            <monogr>
+                                <idno type="arXiv">1611.09067</idno>
+                                <idno type="issn">18605974</idno>
+                                <title level="j">Logical Methods in Computer Science</title>
+                                <imprint>
+                                    <publisher>Episciences.org</publisher>
+                                    <biblScope unit="volume">Volume 13, Issue 2</biblScope>
+                                    <date type="datePub">2017-04-10 17:16:26</date>
+                                </imprint>
+                            </monogr>
+                            <idno type="doi">10.23638/LMCS-13(2:1)2017</idno>
+                        </biblStruct>
+                    </sourceDesc>
+                    <profileDesc>
+                        <textClass>
+                            <keywords scheme="author">
+                                <term>Computer Science - Programming Languages</term>
+                                <term>Computer Science - Logic in Computer Science</term>
+                            </keywords>
+                        </textClass>
+                        <abstract>Programming distributed applications free from communication deadlocks and race conditions is complex. Preserving these properties when applications are updated at runtime is even harder. We present a choreographic approach for programming updatable, distributed applications. We define a choreography language, called Dynamic Interaction-Oriented Choreography (AIOC), that allows the programmer to specify, from a global viewpoint, which parts of the application can be updated. At runtime, these parts may be replaced by new AIOC fragments from outside the application. AIOC programs are compiled, generating code for each participant in a process-level language called Dynamic Process-Oriented Choreographies (APOC). We prove that APOC distributed applications generated from AIOC specifications are deadlock free and race free and that these properties hold also after any runtime update. We instantiate the theoretical model above into a programming framework called Adaptable Interaction-Oriented Choreographies in Jolie (AIOCJ) that comprises an integrated development environment, a compiler from an extension of AIOCs to distributed Jolie programs, and a runtime environment to support their execution.</abstract>
+                    </profileDesc>
+                </biblFull>
+            </listBibl>
+        </body>
+    </text>
+</TEI>
