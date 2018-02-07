@@ -1,0 +1,68 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Document exemple d'auteurs HAL</title>
+                <author>
+                    <persName>
+                        <forename>Philippe</forename>
+                        <surname>Pons</surname>
+                    </persName>
+                </author>
+            </titleStmt>
+            <publicationStmt>
+                <authority>CRCAO - UMR 8155 (CNRS / PSL Research University / EPHE / U. Paris Diderot /
+                    Collège de France)</authority>
+                <publisher>CRCAO - UMR 8155 (CNRS / PSL Research University / EPHE / U. Paris Diderot /
+                    Collège de France)</publisher>
+                <address>
+                    <addrLine>52 rue du Cardinal Lemoine</addrLine>
+                    <addrLine>75005 Paris</addrLine>
+                </address>
+                <availability>
+                    <p><ref target="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/"/></p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Ce document est fourni à titre d'exemple de base XML d'auteurs dans HAL, utilisée par le script MODS2TEI.xqm.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listPerson>
+                <!--<person>
+                    <persName>
+                        <forename>Prénom auteur</forename>
+                        <surname>Nom auteur</surname>
+                        <email>Mail auteur</email>
+                        <idno type="halauthorid">identifiant HAL de l'auteur</idno>
+                        <idno type="idhal">IdHAL de l'auteur</idno> FACULTATIF
+                        <idno type="ORCID">Identifiant ORCID de l'auteur</idno> FACULTATIF
+                        <affiliation ref="identifiant Affiliation"/> identifiant de l'Affiliation à renseigner
+                        <term xml:lang="fr">Mot-clef</term> FACULTATIF ET REPETABLE
+                        <term type="classCode" key="halDomain" n="identifiant de domaine HAL">Domaine HAL</term> OBLIGATOIRE ET REPETABLE
+                    </persName>
+                </person>-->
+                
+                <!-- Exemple -->
+                <person>
+                    <persName>
+                        <forename>Jean</forename>
+                        <surname>Dupont</surname>
+                        <email>jdupont@mail.fr</email>
+                        <idno type="halauthorid">1111111</idno>
+                        <idno type="idhal">j-dupont</idno>
+                        <affiliation ref="#struct-182988"/>
+                        <term xml:lang="fr">exemple</term>
+                        <term xml:lang="en">example</term>
+                        <term type="classCode" key="halDomain" n="shs.hist">Humanities and Social Sciences/History</term>
+                    </persName>
+                </person>
+            </listPerson>
+        </body>
+    </text>
+</TEI>
