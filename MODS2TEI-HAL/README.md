@@ -103,4 +103,9 @@ Il faut donc s'assurer que les dates dans Zotero sont renseignées sous le forma
 
 Si ce n'est pas le cas, le script fonctionnera, mais un import par lot risque de ne pas fonctionner pour les références dont le format date n'est pas adéquat.
 
+### Références déjà sur HAL
+
+Le script MODS2TEI.xqm dispose d’un système de contrôle : si le champs Zotero
+URL ou Extra contient la chaîne de caractère *hal*, la référence n’est pas
+prise en compte pour éviter lors d'imports éventuels de créer des doublons dans HAL.
 
