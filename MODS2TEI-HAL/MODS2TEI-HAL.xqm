@@ -622,7 +622,7 @@ let $doc :=
       <body>
         <listBibl>{
           for $bibl at $n in db:open($bdd)/m:modsCollection/m:mods
-          let $genre := $bibl/m:genre[@authority='zotero']
+          let $genre := $bibl/m:genre[@authority='zotero' or @authority='local']
           where not($bibl//m:location/m:url[contains(., "hal")] or $bibl/m:note[contains(., "hal")])
           let $fileName := concat($surname, $n, ".xml")
           return
