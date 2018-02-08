@@ -16,15 +16,15 @@ declare namespace m = 'http://www.loc.gov/mods/v3';
 (: 
 : Renseigner les informations sur l'auteur des références et sur la base de données utilisées. OBLIGATOIRE
 :)
-declare variable $forename := ""; (: donner le prénom de l'auteur du document :)
-declare variable $surname := ""; (: donner le nom de famille de l'auteur du document :)
-declare variable $bdd := ""; (: donner le nom de la base de donnée :)
+declare variable $forename := "David"; (: donner le prénom de l'auteur du document :)
+declare variable $surname := "Simplot-Ryl"; (: donner le nom de famille de l'auteur du document :)
+declare variable $bdd := "simplot"; (: donner le nom de la base de donnée :)
 
 (:  
 : Renseigner les informations sur le déposant des références. OBLIGATOIRE
 :)
-declare variable $forename_depositor := ""; (: donner le prénom du déposant du document sur HAL :)
-declare variable $surname_depositor := ""; (: donner le nom du déposant du document sur HAL :)
+declare variable $forename_depositor := "Alain"; (: donner le prénom du déposant du document sur HAL :)
+declare variable $surname_depositor := "Monteil"; (: donner le nom du déposant du document sur HAL :)
 
 (:
 : @param élément(s) titleInfo
@@ -208,7 +208,10 @@ declare function local:getwhenWritten($node as element()*, $option as xs:string?
   case ($option[. = 'conferencePaper']) return <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:originInfo/m:dateCreated) }</date>
   case ($option[. = 'dictionaryEntry']) return <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:originInfo/m:dateCreated) }</date>
   case ($option[. = 'encyclopediaArticle']) return <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:originInfo/m:dateCreated) }</date>
-  case ($option[. = 'journalArticle']) return <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:part/m:date) }</date>
+  case ($option[. = 'journalArticle']) return 
+    if ($node/m:relatedItem/m:part/m:date)
+    then <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:part/m:date) }</date>
+    else <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:originInfo/m:dateIssued) }</date>
   case ($option[. = "magazineArticle"]) return <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:part/m:date) }</date>
   case ($option[. = 'newspaperArticle']) return <date type="whenWritten">{ normalize-space($node/m:relatedItem/m:part/m:date) }</date>
   default return ()
