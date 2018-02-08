@@ -77,7 +77,7 @@ Ainsi:
 
 Les mots-clefs enregistrés dans Zotero puis exportés en MODS sont conservés par le script MODS2TEI-HAL.xqm.
 
-Il est cependant possible dans ajouter d'autres, génériques, dans le document auteurs.xml.
+Il est cependant possible d'en ajouter d'autres, génériques, dans le document auteurs.xml.
 
 ### Les résumés
 
