@@ -1,0 +1,253 @@
+/******** Body du CV ********/
+
+html,body {
+
+}
+
+#container {
+
+}
+
+h1, h2, h3, h4 {
+
+}
+
+a {
+
+}
+
+a:hover {
+
+}
+
+hr {
+
+}
+
+/***************************/
+
+/******** Widgets ********/
+.column-widget {
+
+}
+
+.widget {
+
+}
+.widget-header {
+
+}
+.widget-content {
+
+}
+.widget-footer {
+
+}
+.widget-footer a{
+
+}
+.widget-content ul{
+
+}
+.widget-content ul li{
+
+}
+.widget-content a .badge {
+
+}
+.widget-content a:hover .badge{
+
+}
+.widget-content .overflow {
+
+}
+
+/* Nuage de mots */
+.widget-keywords {
+
+}
+.keywords {
+
+}
+.keyword-1 {
+
+}
+.keyword-2 {
+
+}
+.keyword-3 {
+
+}
+.keyword-4 {
+
+}
+.keyword-5 {
+
+}
+.keyword-6 {
+
+}
+.widget-mesh {
+
+}
+
+/* Domaines */
+.widget-domain {
+
+}
+.domains {
+
+}
+
+/* Co-Auteurs */
+.widget-coauthors {
+
+}
+.coauthors {
+
+}
+.coauthors-list {
+
+}
+
+/* Export */
+.widget-export {
+
+}
+
+/* Widget Extérieur */
+.widget-ext {
+
+}
+
+/* Identifiants Chercheur */
+.widget-idext {
+
+}
+
+/* Mesh */
+.widget-mesh {
+
+}
+
+/* Consultation du CV */
+.widget-metrics {
+
+}
+
+/* Photo */
+.widget-photo {
+
+}
+
+/* Revues */
+.widget-revues {
+
+}
+.revues {
+
+}
+.revues-list {
+
+}
+
+/* Projet ANR */
+.widget-anr {
+
+}
+.anr {
+
+}
+.anr-list {
+
+}
+
+/* Projet Européen */
+.widget-europ {
+
+}
+.europ {
+
+}
+.europ-list {
+
+}
+
+/* Structures */
+.widget-structures {
+
+}
+.structures {
+
+}
+.structures-list {
+
+}
+
+/* Année de production */
+.widget-years {
+
+}
+.years {
+
+}
+.years-list {
+
+}
+
+/* Réseaux sociaux */
+.widget-socialurl {
+
+}
+/***************************/
+
+
+/******** Documents ********/
+.column-content {
+
+}
+.author-name {
+
+}
+.author-cv {
+
+}
+.counter-doc {
+
+}
+h2.nbdoc {
+
+}
+h2.nbdoc span.label-primary {
+
+}
+.doc-group {
+
+}
+.doc-header {
+
+}
+.doc-group .doc-header {
+
+}
+.doc-group .doc-list {
+
+}
+.doc-nb {
+
+}
+.doc-overflow {
+
+}
+.doc-hr {
+
+}
+.media {
+
+}
+.media-list {
+
+}
+.thumbnail {
+
+}
