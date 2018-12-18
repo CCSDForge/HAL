@@ -63,6 +63,15 @@
                      servi à la construire. Le niveau est cependant en général plus riche que celui de la source.</note>
                </div>
             </div>
+            <div>
+               <head>Evolutions à prévoir</head>
+               <p>Cette section contient les proposition de changement qui doive être implémentées dans la spécification ainsi que les modifications à effectuer au sein des projets utilisants le
+                  présent schéma.</p>
+               <list>
+                  <item>HAL: Supprimer la génération de l'espace de nom superflu: <mentioned>xmlns:tei="http://www.tei-c.org/ns/1.0"</mentioned></item>
+                  <item>HAL: ne pas générer de contenu vide: <code>subtype=""</code></item>
+               </list>
+            </div>
          </div>
          <div>
             <head>Spécification</head>
@@ -108,6 +117,20 @@
                         </sequence>
                      </alternate>
                   </content>
+               </elementSpec>
+
+               <elementSpec ident="idno" mode="change">
+                  <classes mode="change">
+                     <!-- De façon à disposer de @notation -->
+                     <memberOf key="att.notated" mode="add"/>
+                  </classes>
+               </elementSpec>
+               
+               <elementSpec ident="email" mode="change">
+                  <classes mode="change">
+                     <!-- De façon à disposer de @type -->
+                     <memberOf key="att.typed" mode="add"/>
+                  </classes>
                </elementSpec>
 
             </schemaSpec>

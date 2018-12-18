@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2018-12-18T12:28:31Z. .
+Schema generated from ODD source 2018-12-18T12:46:51Z. .
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -873,6 +873,19 @@ Suggested values include: 1] m (metre) ; 2] kg (kilogram) ; 3] s (second) ; 4] H
                   <data type="anyURI"/>
                </oneOrMore>
             </list>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.notated.attributes">
+      <ref name="tei_att.notated.attribute.notation"/>
+   </define>
+   <define name="tei_att.notated.attribute.notation">
+      <optional>
+         <attribute name="notation">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the notation used for the content of the element.</a:documentation>
+            <data type="token">
+               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+            </data>
          </attribute>
       </optional>
    </define>
@@ -2207,6 +2220,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <element name="email">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(electronic mail address) contains an email address identifying a location to which email messages can be delivered. [3.5.2. Addresses]</a:documentation>
          <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>
@@ -2950,6 +2964,7 @@ relatedItem element must be empty</sch:report>
                <ref name="tei_idno"/>
             </choice>
          </zeroOrMore>
+         <ref name="tei_att.notated.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.sortable.attributes"/>
          <ref name="tei_att.datable.attributes"/>
