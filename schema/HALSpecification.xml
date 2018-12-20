@@ -78,7 +78,7 @@
             <head>Spécification</head>
             <schemaSpec ident="HAL" docLang="en" prefix="tei_" xml:lang="en">
                <moduleRef key="core"
-                  include="listBibl editor respStmt name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
+                  include="listBibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
                <moduleRef key="tei"/>
                <moduleRef key="header"
                   include="teiHeader fileDesc profileDesc biblFull titleStmt funder editionStmt edition publicationStmt distributor availability licence seriesStmt notesStmt sourceDesc authority profileDesc langUsage language textClass keywords classCode abstract creation idno"/>

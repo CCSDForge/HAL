@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2018-12-18T12:46:51Z. .
+Schema generated from ODD source 2018-12-20T08:19:53Z. .
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -2548,7 +2548,9 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             <choice>
                <group>
           
-          
+                  <oneOrMore>
+                     <ref name="tei_resp"/>
+                  </oneOrMore>
           
           
                   <oneOrMore>
@@ -2563,7 +2565,9 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                   </oneOrMore>
           
           
-          
+                  <oneOrMore>
+                     <ref name="tei_resp"/>
+                  </oneOrMore>
           
                </group>
             </choice>
@@ -2573,6 +2577,16 @@ attributes @target and @cRef may be supplied on <name/>.</report>
          </group>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.canonical.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_resp">
+      <element name="resp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.2. The Edition Statement 2.2.5. The Series Statement]</a:documentation>
+         <ref name="tei_macro.phraseSeq.limited"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.canonical.attributes"/>
+         <ref name="tei_att.datable.attributes"/>
          <empty/>
       </element>
    </define>
