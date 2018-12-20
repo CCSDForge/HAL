@@ -133,6 +133,12 @@
                      <memberOf key="att.typed" mode="add"/>
                   </classes>
                </elementSpec>
+               
+               <elementSpec ident="affiliation" mode="change">
+                  <content>
+                     <elementRef key="org" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+               </elementSpec>
 
             </schemaSpec>
          </div>
