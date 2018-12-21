@@ -65,8 +65,140 @@
                </div>
             </div>
             <div>
+               <head>Représentation des affiliations</head>
+               <div>
+                  <head>Deux modes de représentation: référencement et encapsulage</head>
+                  <p>L'indication de la ou des affiliation(s) d'un auteur s'effectue à l'aide de l'élément <gi>affiliation</gi> comme enfant direct de <gi>author</gi>. L'affiliation est elle même
+                     décrite de deux façon en fonction du cas d'usage: </p>
+                  <list>
+                     <item>par <emph>référencement</emph> (cas de l'export HAL) de structures factorisée dans l'élément <gi>back</gi> du document <gi>TEI</gi> englobant;</item>
+                     <item>par <emph>encapsulation</emph> des descriptions d'organisations, comme c'est le cas pour Conditor.</item>
+                  </list>
+               </div>
+               <div>
+                  <head>Représentation des affiliations par référencement</head>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <!-- Déclaration dans <titleStmt> -->
+                     <author>
+                        <!-- Nom, identifiants etc. de l'auteur -->
+                        <affiliation ref="#struct-418497"/>
+                     </author>
+                     <!-- Déclaration dans <back> -->
+                     <listOrg type="structures">
+                        <org type="researchteam" xml:id="struct-418497" status="VALID">
+                           <orgName>Laboratoire Nano-Magnétisme et Oxydes</orgName>
+                           <orgName type="acronym">LNO</orgName>
+                           <desc><address><country key="FR"/></address></desc>
+                           <listRelation>
+                              <relation active="#struct-1401" type="direct"/>
+                              <relation name="DRF/IRAMIS" active="#struct-300016" type="indirect"/>
+                              <relation active="#struct-419361" type="indirect"/>
+                              <relation name="UMR3680" active="#struct-441569" type="indirect"/>
+                              <relation active="#struct-53953" type="direct"/>
+                              <relation name="DSM/IRAMIS" active="#struct-300016" type="indirect"/>
+                           </listRelation>
+                        </org>
+                        <org type="laboratory" xml:id="struct-1401" status="VALID">
+                           <idno type="RNSR">201521685K</idno>
+                           <orgName>Service de physique de l'état condensé</orgName>
+                           <orgName type="acronym">SPEC - UMR3680</orgName>
+                           <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464), CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE CEDEX</addrLine><country key="FR"/></address></desc>
+                           <listRelation>
+                              <relation name="DRF/IRAMIS" active="#struct-300016" type="direct"/>
+                              <relation active="#struct-419361" type="direct"/>
+                              <relation name="UMR3680" active="#struct-441569" type="direct"/>
+                           </listRelation>
+                        </org>
+                        <org type="institution" xml:id="struct-300016" status="VALID">
+                           <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                           <orgName type="acronym">CEA</orgName>
+                           <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                        </org>
+                        <org type="institution" xml:id="struct-419361" status="VALID">
+                           <orgName>Université Paris-Saclay</orgName>
+                           <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                        </org>
+                        <org type="institution" xml:id="struct-441569" status="VALID">
+                           <idno type="IdRef">02636817X</idno>
+                           <idno type="ISNI">0000000122597504</idno>
+                           <orgName>Centre National de la Recherche Scientifique</orgName>
+                           <orgName type="acronym">CNRS</orgName>
+                           <date type="start">1939-10-19</date>
+                           <desc><address><country key="FR"/></address></desc>
+                        </org>
+                        <org type="department" xml:id="struct-53953" status="VALID">
+                           <orgName>Institut Rayonnement Matière de Saclay</orgName>
+                           <orgName type="acronym">IRAMIS</orgName>
+                           <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country key="FR"/></address></desc>
+                           <listRelation>
+                              <relation name="DSM/IRAMIS" active="#struct-300016" type="direct"/>
+                              <relation active="#struct-419361" type="direct"/>
+                           </listRelation>
+                        </org>
+                     </listOrg>
+                  </egXML>
+               </div>
+            </div>
+            <div>
+               <head>Représentation des affiliations par encapsulation</head>
+               <p>Lorsque les affiliatoins sont encapsulées, la représentation est directement intégrée à l'élément <gi>affiliation</gi> avec les caractéristiques suivantes:</p>
+               <list>
+                  <item>L'organisaton correspondant à l'affiliation référencée est directe positionnée comme fils de <gi>affiliation</gi>;</item>
+                  <item>L'identifiant de la structure est indiquée à l'aide de <att>key</att>;</item>
+                  <item>Les sous-structures <emph>directes</emph> (au sens de <code>relation/@type</code> sont recopiées récursivement.</item>
+               </list>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <author>
+                     <affiliation>
+                        <org type="researchteam" key="struct-418497" status="VALID">
+                           <orgName>Laboratoire Nano-Magnétisme et Oxydes</orgName>
+                           <orgName type="acronym">LNO</orgName>
+                           <desc><address><country key="FR"/></address></desc>
+                           <org type="laboratory" key="struct-1401" status="VALID">
+                              <idno type="RNSR">201521685K</idno>
+                              <orgName>Service de physique de l'état condensé</orgName>
+                              <orgName type="acronym">SPEC - UMR3680</orgName>
+                              <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464), CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE CEDEX</addrLine><country key="FR"/></address></desc>
+                              <org type="institution" key="struct-300016" status="VALID">
+                                 <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                                 <orgName type="acronym">CEA</orgName>
+                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                              </org>
+                              <org type="institution" key="struct-441569" status="VALID">
+                                 <idno type="IdRef">02636817X</idno>
+                                 <idno type="ISNI">0000000122597504</idno>
+                                 <orgName>Centre National de la Recherche Scientifique</orgName>
+                                 <orgName type="acronym">CNRS</orgName>
+                                 <date type="start">1939-10-19</date>
+                                 <desc><address><country key="FR"/></address></desc>
+                              </org>
+                              <org type="institution" xml:id="struct-419361" status="VALID">
+                                 <orgName>Université Paris-Saclay</orgName>
+                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                              </org>
+                           </org>
+                           <org type="department" key="struct-53953" status="VALID">
+                              <orgName>Institut Rayonnement Matière de Saclay</orgName>
+                              <orgName type="acronym">IRAMIS</orgName>
+                              <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country key="FR"/></address></desc>
+                              <org type="institution" key="struct-300016" status="VALID">
+                                 <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                                 <orgName type="acronym">CEA</orgName>
+                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                              </org>
+                              <org type="institution" key="struct-419361" status="VALID">
+                                 <orgName>Université Paris-Saclay</orgName>
+                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                              </org>
+                           </org>
+                        </org>
+                     </affiliation>
+                  </author>
+               </egXML>
+            </div>
+            <div>
                <head>Evolutions à prévoir</head>
-               <p>Cette section contient les proposition de changement qui doive être implémentées dans la spécification ainsi que les modifications à effectuer au sein des projets utilisants le
+               <p>Cette section contient les propositions de changement qui doivent être implémentées dans la spécification ainsi que les modifications à effectuer au sein des projets utilisants le
                   présent schéma.</p>
                <list>
                   <item>HAL: Supprimer la génération de l'espace de nom superflu: <mentioned>xmlns:tei="http://www.tei-c.org/ns/1.0"</mentioned></item>
@@ -126,18 +258,43 @@
                      <memberOf key="att.notated" mode="add"/>
                   </classes>
                </elementSpec>
-               
+
                <elementSpec ident="email" mode="change">
                   <classes mode="change">
                      <!-- De façon à disposer de @type -->
                      <memberOf key="att.typed" mode="add"/>
                   </classes>
                </elementSpec>
-               
+
                <elementSpec ident="affiliation" mode="change">
                   <content>
                      <elementRef key="org" minOccurs="0" maxOccurs="unbounded"/>
                   </content>
+               </elementSpec>
+
+               <!-- Indication of the validity of the organisation in AureHAL -->
+               <elementSpec ident="org" mode="change">
+                  <classes mode="change">
+                     <!-- De façon à disposer de @status -->
+                     <memberOf key="att.docStatus" mode="add"/>
+                     <!-- Pour disposer de @key -->
+                     <memberOf key="att.canonical" mode="add"/>
+                  </classes>
+               </elementSpec>
+
+               <!-- Ajout des relations dans <org> -->
+               <elementSpec ident="listRelation" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.orgPart" mode="add"/>
+                  </classes>
+               </elementSpec>
+
+               <!-- Ajout de date dans <org> -->
+               <!-- Le changement est moins idéal que pour listRelation, il faudrait envisager modifier le modèle de contenu de <org> -->
+               <elementSpec ident="date" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.orgPart" mode="add"/>
+                  </classes>
                </elementSpec>
 
             </schemaSpec>

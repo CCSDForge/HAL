@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2018-12-20T11:36:10Z. .
+Schema generated from ODD source 2018-12-21T09:14:19Z. .
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -1760,8 +1760,10 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
    <define name="tei_model.orgPart">
       <choice>
          <ref name="tei_model.eventLike"/>
+         <ref name="tei_date"/>
          <ref name="tei_listOrg"/>
          <ref name="tei_listPlace"/>
+         <ref name="tei_listRelation"/>
       </choice>
    </define>
    <define name="tei_model.publicationStmtPart.agency">
@@ -4443,47 +4445,35 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
       <element name="org">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.2.2. Organizational Names]</a:documentation>
          <group>
-      
             <zeroOrMore>
                <ref name="tei_model.headLike"/>
             </zeroOrMore>
-      
             <choice>
-        
-          
                <zeroOrMore>
                   <ref name="tei_model.pLike"/>
                </zeroOrMore>
-          
-        
-        
                <zeroOrMore>
                   <choice>
                      <ref name="tei_model.labelLike"/>
                      <ref name="tei_model.nameLike"/>
                      <ref name="tei_model.placeLike"/>
                      <ref name="tei_model.orgPart"/>
-	                    <ref name="tei_model.milestoneLike"/>
+                     <ref name="tei_model.milestoneLike"/>
                   </choice>
                </zeroOrMore>
-        
             </choice>
-      
             <zeroOrMore>
                <choice>
                   <ref name="tei_model.noteLike"/>
                   <ref name="tei_model.biblLike"/>
-          
-          
                </choice>
             </zeroOrMore>
-      
-      
             <zeroOrMore>
                <ref name="tei_model.personLike"/>
             </zeroOrMore>
-      
          </group>
+         <ref name="tei_att.docStatus.attributes"/>
+         <ref name="tei_att.canonical.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.typed.attributes"/>
          <ref name="tei_att.editLike.attributes"/>
@@ -4507,21 +4497,17 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
       <element name="listRelation">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides information about relationships identified amongst people, places, and organizations, either informally as prose or as formally expressed relation links. [13.3.2.3. Personal Relationships]</a:documentation>
          <group>
-      
             <zeroOrMore>
                <ref name="tei_model.headLike"/>
             </zeroOrMore>
-      
             <choice>
                <ref name="tei_model.pLike"/>
-        
                <oneOrMore>
                   <choice>
                      <ref name="tei_relation"/>
                      <ref name="tei_listRelation"/>
                   </choice>
                </oneOrMore>
-        
             </choice>
          </group>
          <ref name="tei_att.global.attributes"/>
