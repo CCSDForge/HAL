@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2018-12-21T09:14:19Z. .
+Schema generated from ODD source 2018-12-22T16:22:06Z. .
 TEI Edition: Version 3.4.0. Last updated on
 	23rd July 2018, revision 1fa0b54
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.4.0/
@@ -2920,6 +2920,8 @@ relatedItem element must be empty</sch:report>
       <element name="edition">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the particularities of one edition of a text. [2.2.2. The Edition Statement]</a:documentation>
          <ref name="tei_macro.phraseSeq"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.docStatus.attributes"/>
          <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>

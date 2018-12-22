@@ -65,6 +65,26 @@
                </div>
             </div>
             <div>
+               <head>Caractérisation de l'édition d'une entrée bibliographique avec <gi>editionStmt</gi></head>
+               <p>Deux blocs sont utilisés pour caractériser l'édition d'une entrée au sein de <gi>editionStmt</gi> :</p>
+               <list>
+                  <item><gi>edition</gi> permet d'indiquer les différentes dates significatives associées à l'entrée (création, modification) ainsi que les documents extérieurs liés à la fiche
+                     courante. C'est là que sont indiqués les chemins vers le le document plein texte;</item>
+                  <item><gi>respStmt</gi> permet d'indiquer qui est intervenu sur l'entrée, tant du point de vue de sa création que de modificaitons ultérieures.</item>
+               </list>
+               <div>
+                  <head>Usage de <gi>edition</gi></head>
+                  <p>...</p>
+                  <p>Deux attributs doivent être renseignés pour <gi>edition</gi>:</p>
+                  <list>
+                     <item><att>n</att>: indique le numéro de la version (V1, V2, etc.);</item>
+                     <item><att>status</att> indique le statut de la version courante dans l'ensemble des version. <code>status="current"</code> indique qu'il s'agit de la version courante du point de
+                        vue de HAL (par exemple)</item>
+                  </list>
+                  <note place="inline" rend="bold"><att>type</att> est encore utilisé par HAL en lieu de <att>status</att>, mais cet usage doit disparaitre à terme.</note>
+               </div>
+            </div>
+            <div>
                <head>Représentation des affiliations</head>
                <div>
                   <head>Deux modes de représentation: référencement et encapsulage</head>
@@ -294,6 +314,14 @@
                <elementSpec ident="date" mode="change">
                   <classes mode="change">
                      <memberOf key="model.orgPart" mode="add"/>
+                  </classes>
+               </elementSpec>
+
+               <!-- @type est ajouté par soucie de compatibilité courante avec HAL, mais la spécificatino indique que cet usage est déprécié au profit de @status (aussi ajouté à la spec) -->
+               <elementSpec ident="edition" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.typed" mode="add"/>
+                     <memberOf key="att.docStatus" mode="add"/>
                   </classes>
                </elementSpec>
 
