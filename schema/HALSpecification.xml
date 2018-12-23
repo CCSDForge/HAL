@@ -325,6 +325,20 @@
                   </classes>
                </elementSpec>
 
+               <!-- Ajout du contenu textuel simple pour <abstract> pour être conforma à HAL -->
+               <!-- Bien que le modèle de la TEI ne soit pas très ellaboré (pas de division etc.) -->
+               <!-- mettre au moins un <p> autour des contenus HAL serait judicieux. J'ajoute un ticket en conséquence. -->
+               
+               <elementSpec ident="abstract" mode="change">
+                  <content>
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <textNode/>
+                        <classRef key="model.pLike"/>
+                        <classRef key="model.listLike"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
+               
             </schemaSpec>
          </div>
       </body>
