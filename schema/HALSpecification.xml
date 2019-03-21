@@ -244,7 +244,7 @@
                            <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU General Public License v3.0 only</licence>
                         </availability>
                      </egXML>
-                     <note>possibilité d'en avoir plusieurs</note></item>
+                     <note>Possibilité d'en avoir plusieurs</note></item>
                   <item><term>programmingLanguage</term>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <notesStmt>
@@ -258,6 +258,21 @@
                            <ref type="codeRepository" target="https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git"/>
                         </egXML>
                      </note>
+                  </item>
+                  <item>
+                     <term>platform</term>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="example1">
+                        <notesStmt>
+                           <note type="platform">Windows</note>
+                           <note type="platform">Mac OS X</note>
+                           <note type="platform">Linux</note>
+                           <note type="version">1.3</note>
+                           <note type="programmingLanguage">Java</note>
+                        </notesStmt>
+                     </egXML>
+                  </item>
+                  <item><term>version</term> 
+                     <note><ref target="#example1">cf. example précédent</ref></note>
                   </item>
                </list>
             </div>
