@@ -236,6 +236,32 @@
                </egXML>
             </div>
             <div>
+               <head>Documentation des logiciels</head>
+               <list>
+                  <item><term>softwareLicence</term>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <availability status="restricted">
+                           <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU General Public License v3.0 only</licence>
+                        </availability>
+                     </egXML>
+                     <note>possibilité d'en avoir plusieurs</note></item>
+                  <item><term>programmingLanguage</term>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <notesStmt>
+                           <note type="programmingLanguage">Matlab</note>
+                        </notesStmt>
+                     </egXML></item>
+                  <item><term>codeRepository</term> Pour l'instant: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <ref type="seeAlso"> https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git </ref>
+                     </egXML>
+                     <note>Le lien doit passer dans <att>target</att> et on change le type pour obtenir: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <ref type="codeRepository" target="https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git"/>
+                        </egXML>
+                     </note>
+                  </item>
+               </list>
+            </div>
+            <div>
                <head>Evolutions à prévoir</head>
                <p>Cette section contient les propositions de changement qui doivent être implémentées dans la spécification ainsi que les modifications à effectuer au sein des projets utilisants le
                   présent schéma.</p>
@@ -269,9 +295,11 @@
                   <attList>
                      <attDef ident="version" mode="change" usage="rec">
                         <desc>Indicates the version of the HAL specification used for the current document</desc>
-                        <datatype><dataRef key="teidata.text"/></datatype>
+                        <datatype>
+                           <dataRef key="teidata.text"/>
+                        </datatype>
                         <remarks>
-                           <p></p>
+                           <p/>
                         </remarks>
                      </attDef>
                   </attList>
