@@ -281,6 +281,14 @@
                            </notesStmt>
                         </egXML>
                      </note></item>
+                  <item><term>runtimePlatform</term>
+                     <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <notesStmt>
+                           <note type="runtimePlatform">...</note>
+                        </notesStmt>
+                     </egXML>
+                     </note>
+                  </item>
                </list>
             </div>
             <div>
