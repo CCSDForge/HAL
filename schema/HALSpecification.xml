@@ -271,9 +271,16 @@
                         </notesStmt>
                      </egXML>
                   </item>
-                  <item><term>version</term> 
+                  <item><term>version</term>
                      <note><ref target="#example1">cf. example précédent</ref></note>
                   </item>
+                  <item><term>developmentStatus</term>
+                     <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <notesStmt>
+                              <note type="developmentStatus">...</note>
+                           </notesStmt>
+                        </egXML>
+                     </note></item>
                </list>
             </div>
             <div>
