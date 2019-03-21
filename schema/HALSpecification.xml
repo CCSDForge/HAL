@@ -93,6 +93,14 @@
                         vue de HAL (par exemple)</item>
                   </list>
                   <note place="inline" rend="bold"><att>type</att> est encore utilisé par HAL en lieu de <att>status</att>, mais cet usage doit disparaitre à terme.</note>
+                  <div>
+                     <head>Documentation des archives externes (CINES)</head>
+                     <p>L'indication de l'archivage d'un ou plusieurs fichiers associés à une entrée se fait à l'aide de l'élement <gi>idno</gi> comme suit:</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <idno type="ARK" from="2017-08-02">xyz</idno>
+                     </egXML>
+                     <note>Il reste à déterminer si cette informaiton est générale à la version (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi> correspondant)</note>
+                  </div>
                </div>
             </div>
             <div>
@@ -339,7 +347,7 @@
                <!-- Ajout du contenu textuel simple pour <abstract> pour être conforma à HAL -->
                <!-- Bien que le modèle de la TEI ne soit pas très ellaboré (pas de division etc.) -->
                <!-- mettre au moins un <p> autour des contenus HAL serait judicieux. J'ajoute un ticket en conséquence. -->
-               
+
                <elementSpec ident="abstract" mode="change">
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
@@ -349,7 +357,7 @@
                      </alternate>
                   </content>
                </elementSpec>
-               
+
             </schemaSpec>
          </div>
       </body>
