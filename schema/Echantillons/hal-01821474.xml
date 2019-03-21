@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>HAL TEI export of hal-01821474</title>
+      </titleStmt>
+      <publicationStmt>
+        <distributor>CCSD</distributor>
+        <availability status="restricted">
+          <licence target="http://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0 International License</licence>
+        </availability>
+        <date when="2019-03-17T05:22:00+01:00"/>
+      </publicationStmt>
+      <sourceDesc>
+        <p part="N">HAL API platform</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listBibl>
+        <biblFull>
+          <titleStmt>
+            <title xml:lang="en">Porridge, an OCaml library implementing POR techniques for checking trace equivalence of security protocols</title>
+            <author role="aut">
+              <persName>
+                <forename type="first">David</forename>
+                <surname>Baelde</surname>
+              </persName>
+              <email type="md5">44a8aaa10d032a143113443775338e1e</email>
+              <email type="domain">lsv.ens-cachan.fr</email>
+              <ptr type="url" target="http://www.lsv.ens-cachan.fr/~baelde/"/>
+              <idno type="halauthorid">1115514</idno>
+              <affiliation ref="#struct-2571"/>
+            </author>
+            <author role="aut">
+              <persName>
+                <forename type="first">Stéphanie</forename>
+                <surname>Delaune</surname>
+              </persName>
+              <idno type="halauthorid">654533</idno>
+              <orgName ref="#struct-441569"/>
+            </author>
+            <author role="aut">
+              <persName>
+                <forename type="first">Lucca</forename>
+                <surname>Hirschi</surname>
+              </persName>
+              <idno type="halauthorid">11226316</idno>
+              <orgName ref="#struct-180925"/>
+            </author>
+            <editor role="depositor">
+              <persName>
+                <forename>David</forename>
+                <surname>Baelde</surname>
+              </persName>
+              <email type="md5">165973f695f7c926602b485e455de32c</email>
+              <email type="domain">lsv.fr</email>
+            </editor>
+          </titleStmt>
+          <editionStmt>
+            <edition n="v1">
+              <date type="whenSubmitted">2018-06-22 14:52:31</date>
+            </edition>
+            <edition n="v2" type="current">
+              <date type="whenSubmitted">2018-06-28 10:12:01</date>
+              <date type="whenModified">2018-07-04 01:12:12</date>
+              <date type="whenReleased">2018-07-02 10:37:51</date>
+              <date type="whenProduced">2018-06-28</date>
+              <date type="whenEndEmbargoed">2018-06-28</date>
+              <ref type="file" target="https://hal.inria.fr/hal-01821474v2/document">
+                <date notBefore="2018-06-28"/>
+              </ref>
+              <ref type="file" subtype="author" n="1" target="https://hal.inria.fr/hal-01821474/file/porridge_esorics18.zip">
+                <date notBefore="2018-06-28"/>
+              </ref>
+            </edition>
+            <respStmt>
+              <resp>contributor</resp>
+              <name key="129061">
+                <persName>
+                  <forename>David</forename>
+                  <surname>Baelde</surname>
+                </persName>
+                <email type="md5">165973f695f7c926602b485e455de32c</email>
+                <email type="domain">lsv.fr</email>
+              </name>
+            </respStmt>
+          </editionStmt>
+          <publicationStmt>
+            <distributor>CCSD</distributor>
+            <idno type="halId">hal-01821474</idno>
+            <idno type="halUri">https://hal.inria.fr/hal-01821474</idno>
+            <idno type="halBibtex">baelde:hal-01821474</idno>
+            <idno type="halRefHtml">2018, &lt;a target="_blank" href="https://archive.softwareheritage.org/browse/swh:1:rev:f202e6b3543e7c3c14250b038e236868671d8d10"&gt;&amp;#x3008;swh:1:rev:f202e6b3543e7c3c14250b038e236868671d8d10&amp;#x3009;&lt;/a&gt;</idno>
+            <idno type="halRef">2018, &amp;#x3008;swh:1:rev:f202e6b3543e7c3c14250b038e236868671d8d10&amp;#x3009;</idno>
+            <availability status="restricted">
+              <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU General Public License v3.0 only</licence>
+            </availability>
+          </publicationStmt>
+          <seriesStmt>
+            <idno type="stamp" n="CNRS">CNRS</idno>
+            <idno type="stamp" n="ENS-CACHAN">ENS-CACHAN</idno>
+            <idno type="stamp" n="ENS-CACHAN-SACLAY" p="UNIV-PARIS-SACLAY">ENS-CACHAN-SACLAY</idno>
+            <idno type="stamp" n="UNIV-PARIS-SACLAY">UNIV-PARIS-SACLAY</idno>
+          </seriesStmt>
+          <notesStmt/>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <title xml:lang="en">Porridge, an OCaml library implementing POR techniques for checking trace equivalence of security protocols</title>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">David</forename>
+                    <surname>Baelde</surname>
+                  </persName>
+                  <email type="md5">44a8aaa10d032a143113443775338e1e</email>
+                  <email type="domain">lsv.ens-cachan.fr</email>
+                  <ptr type="url" target="http://www.lsv.ens-cachan.fr/~baelde/"/>
+                  <idno type="halauthorid">1115514</idno>
+                  <affiliation ref="#struct-2571"/>
+                </author>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Stéphanie</forename>
+                    <surname>Delaune</surname>
+                  </persName>
+                  <idno type="halauthorid">654533</idno>
+                  <orgName ref="#struct-441569"/>
+                </author>
+                <author role="aut">
+                  <persName>
+                    <forename type="first">Lucca</forename>
+                    <surname>Hirschi</surname>
+                  </persName>
+                  <idno type="halauthorid">11226316</idno>
+                  <orgName ref="#struct-180925"/>
+                </author>
+              </analytic>
+              <monogr>
+                <imprint/>
+              </monogr>
+              <idno type="swh">swh:1:rev:f202e6b3543e7c3c14250b038e236868671d8d10</idno>
+            </biblStruct>
+          </sourceDesc>
+          <profileDesc>
+            <langUsage>
+              <language ident=""/>
+            </langUsage>
+            <textClass>
+              <classCode scheme="halDomain" n="info.info-lo">Computer Science [cs]/Logic in Computer Science [cs.LO]</classCode>
+              <classCode scheme="halDomain" n="info.info-cr">Computer Science [cs]/Cryptography and Security [cs.CR]</classCode>
+              <classCode scheme="halTypology" n="SOFTWARE">Software</classCode>
+            </textClass>
+          </profileDesc>
+        </biblFull>
+      </listBibl>
+    </body>
+    <back>
+      <listOrg type="structures">
+        <org type="laboratory" xml:id="struct-2571" status="VALID">
+          <orgName>Laboratoire Spécification et Vérification [Cachan]</orgName>
+          <orgName type="acronym">LSV</orgName>
+          <desc>
+            <address>
+              <addrLine>Bâtiment d'Alembert 61 Avenue du Président Wilson 94235 CACHAN CEDEX</addrLine>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.lsv.ens-cachan.fr/</ref>
+          </desc>
+          <listRelation>
+            <relation active="#struct-6862" type="direct"/>
+            <relation name="UMR8643" active="#struct-441569" type="direct"/>
+          </listRelation>
+        </org>
+        <org type="institution" xml:id="struct-6862" status="VALID">
+          <orgName>École normale supérieure - Cachan</orgName>
+          <orgName type="acronym">ENS Cachan</orgName>
+          <desc>
+            <address>
+              <addrLine>61, avenue du Président Wilson - 94230 Cachan</addrLine>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.ens-cachan.fr/</ref>
+          </desc>
+        </org>
+        <org type="institution" xml:id="struct-441569" status="VALID">
+          <idno type="IdRef">02636817X</idno>
+          <idno type="ISNI">0000000122597504</idno>
+          <orgName>Centre National de la Recherche Scientifique</orgName>
+          <orgName type="acronym">CNRS</orgName>
+          <date type="start">1939-10-19</date>
+          <desc>
+            <address>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.cnrs.fr/</ref>
+          </desc>
+        </org>
+      </listOrg>
+    </back>
+  </text>
+</TEI>
