@@ -266,6 +266,15 @@
                         <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
                      </sequence>
                   </content>
+                  <attList>
+                     <attDef ident="version" mode="change" usage="rec">
+                        <desc>Indicates the version of the HAL specification used for the current document</desc>
+                        <datatype><dataRef key="teidata.text"/></datatype>
+                        <remarks>
+                           <p></p>
+                        </remarks>
+                     </attDef>
+                  </attList>
                </elementSpec>
 
                <elementSpec ident="biblFull" mode="change">
