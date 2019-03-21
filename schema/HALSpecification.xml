@@ -62,6 +62,17 @@
                      pourra y trouver les méta-données éditeur (DOI, ISSN, lien vers la base de l'éditeur).</p>
                   <note>La duplication d'informations entre les niveaux de la notice et de la source est tout à fait normale puisque la notice est le reflet consolidé de la ou des sources qui ont
                      servi à la construire. Le niveau est cependant en général plus riche que celui de la source.</note>
+                  <div>
+                     <head>Intégration de sources externes d'information</head>
+                     <p>...</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <bibl type="bibliographicalLink" source="Scholix">
+                           <title>xxxxxx</title>
+                           <ref type="yyyyyy" target="http://doi"/>
+                        </bibl>
+                     </egXML>
+                     <note>Les valeurs de <att>type</att> ci-dessus restent à déterminer.</note>
+                  </div>
                </div>
             </div>
             <div>
@@ -230,7 +241,7 @@
             <head>Spécification</head>
             <schemaSpec ident="HAL" docLang="en" prefix="tei_" xml:lang="en">
                <moduleRef key="core"
-                  include="listBibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
+                  include="listBibl bibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
                <moduleRef key="tei"/>
                <moduleRef key="header"
                   include="teiHeader fileDesc profileDesc biblFull titleStmt funder editionStmt edition publicationStmt distributor availability licence seriesStmt notesStmt sourceDesc authority profileDesc langUsage language textClass keywords classCode abstract creation idno"/>
