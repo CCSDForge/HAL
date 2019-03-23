@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:hal="http://hal.archives-ouvertes.fr/">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>HAL TEI export of hal-01586389</title>
+      </titleStmt>
+      <publicationStmt>
+        <distributor>CCSD</distributor>
+        <availability status="restricted">
+          <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+        </availability>
+        <date when="2019-03-15T09:18:57+01:00"/>
+      </publicationStmt>
+      <sourceDesc>
+        <p part="N">HAL API platform</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <listOrg type="structures">
+        <org type="laboratory" xml:id="struct-84774" status="VALID">
+          <orgName>Centre Marc Bloch</orgName>
+          <orgName type="acronym">CMB</orgName>
+          <desc>
+            <address>
+              <addrLine>Friedrichstr. 191 D-10117 Berlin</addrLine>
+              <country key="DE"/>
+            </address>
+            <ref type="url">http://www.cmb.hu-berlin.de</ref>
+          </desc>
+          <listRelation>
+            <relation active="#struct-301498" type="direct" notBefore="2018-07-31"/>
+            <relation active="#struct-301499" type="direct"/>
+            <relation active="#struct-301855" type="direct"/>
+            <relation name="USR3130" active="#struct-441569" type="direct"/>
+          </listRelation>
+        </org>
+        <org type="researchteam" xml:id="struct-482775" status="VALID">
+          <idno type="RNSR">201722248N</idno>
+          <orgName>Automatic Language Modelling and ANAlysis &amp; Computational Humanities</orgName>
+          <orgName type="acronym">ALMAnaCH</orgName>
+          <date type="start">2017-01-01</date>
+          <desc>
+            <address>
+              <country key="FR"/>
+            </address>
+            <ref type="url">https://www.inria.fr/equipes/almanach</ref>
+          </desc>
+          <listRelation>
+            <relation active="#struct-454310" type="direct"/>
+            <relation active="#struct-300009" type="indirect"/>
+          </listRelation>
+        </org>
+        <org type="institution" xml:id="struct-301498" status="VALID">
+          <orgName>Ministère de l'Europe et des Affaires étrangères</orgName>
+          <orgName type="acronym">MEAE</orgName>
+          <desc>
+            <address>
+              <addrLine>37 quai d’Orsay 75351 Paris</addrLine>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.diplomatie.gouv.fr/fr/</ref>
+          </desc>
+        </org>
+        <org type="institution" xml:id="struct-301499" status="VALID">
+          <orgName>Bundesministerium für Bildung und Forschung</orgName>
+          <desc>
+            <address>
+              <country key="DE"/>
+            </address>
+          </desc>
+        </org>
+        <org type="institution" xml:id="struct-301855" status="VALID">
+          <orgName>Ministère de l'Éducation nationale, de l’Enseignement supérieur et de la Recherche</orgName>
+          <orgName type="acronym">M.E.N.E.S.R.</orgName>
+          <desc>
+            <address>
+              <addrLine>1 rue Descartes - 75231 Paris cedex 05</addrLine>
+              <country key="FR"/>
+            </address>
+          </desc>
+        </org>
+        <org type="institution" xml:id="struct-441569" status="VALID">
+          <idno type="IdRef">02636817X</idno>
+          <idno type="ISNI">0000000122597504</idno>
+          <orgName>Centre National de la Recherche Scientifique</orgName>
+          <orgName type="acronym">CNRS</orgName>
+          <date type="start">1939-10-19</date>
+          <desc>
+            <address>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.cnrs.fr/</ref>
+          </desc>
+        </org>
+        <org type="laboratory" xml:id="struct-454310" status="VALID">
+          <orgName>Inria de Paris</orgName>
+          <desc>
+            <address>
+              <addrLine>2 rue Simone Iff -CS 42112 -75589 Paris Cedex 12</addrLine>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.inria.fr/centre/paris</ref>
+          </desc>
+          <listRelation>
+            <relation active="#struct-300009" type="direct"/>
+          </listRelation>
+        </org>
+        <org type="institution" xml:id="struct-300009" status="VALID">
+          <orgName>Institut National de Recherche en Informatique et en Automatique</orgName>
+          <orgName type="acronym">Inria</orgName>
+          <desc>
+            <address>
+              <addrLine>Domaine de VoluceauRocquencourt - BP 10578153 Le Chesnay Cedex</addrLine>
+              <country key="FR"/>
+            </address>
+            <ref type="url">http://www.inria.fr/en/</ref>
+          </desc>
+        </org>
+      </listOrg>
+      <listOrg type="projects">
+        <org type="europeanProject" xml:id="projeurop-98981" status="VALID">
+          <idno type="number">654164</idno>
+          <idno type="program">H2020 Pilier Excellent Science</idno>
+          <idno type="call">H2020-INFRAIA-2014-2015</idno>
+          <orgName>EHRI</orgName>
+          <desc>European Holocaust Research Infrastructure</desc>
+          <date type="start">2015-05-01</date>
+          <date type="end">2019-04-30</date>
+        </org>
+      </listOrg>
+    </body>
+  </text>
+</TEI>

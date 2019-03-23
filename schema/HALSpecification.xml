@@ -16,7 +16,10 @@
             </author>
          </titleStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <authority>CCSD</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/3.0/deed.fr">Creative Commons Attribution 3.0 non transposé (CC BY 3.0)</licence>
+            </availability>
          </publicationStmt>
          <sourceDesc>
             <p>Information about the source</p>
@@ -99,7 +102,7 @@
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <idno type="ARK" from="2017-08-02">xyz</idno>
                      </egXML>
-                     <note>Il reste à déterminer si cette informaiton est générale à la version (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi> correspondant)</note>
+                     <note>Il reste à déterminer si cette information est générale à la version (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi> correspondant)</note>
                   </div>
                </div>
             </div>
@@ -108,7 +111,7 @@
                <div>
                   <head>Deux modes de représentation: référencement et encapsulage</head>
                   <p>L'indication de la ou des affiliation(s) d'un auteur s'effectue à l'aide de l'élément <gi>affiliation</gi> comme enfant direct de <gi>author</gi>. L'affiliation est elle même
-                     décrite de deux façon en fonction du cas d'usage: </p>
+                     décrite de deux façons en fonction du cas d'usage: </p>
                   <list>
                      <item>par <emph>référencement</emph> (cas de l'export HAL) de structures factorisée dans l'élément <gi>back</gi> du document <gi>TEI</gi> englobant;</item>
                      <item>par <emph>encapsulation</emph> des descriptions d'organisations, comme c'est le cas pour Conditor.</item>
@@ -283,10 +286,10 @@
                      </note></item>
                   <item><term>runtimePlatform</term>
                      <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <notesStmt>
-                           <note type="runtimePlatform">...</note>
-                        </notesStmt>
-                     </egXML>
+                           <notesStmt>
+                              <note type="runtimePlatform">...</note>
+                           </notesStmt>
+                        </egXML>
                      </note>
                   </item>
                </list>
@@ -316,6 +319,7 @@
                <moduleRef key="corpus" include="particDesc"/>
 
                <elementSpec ident="TEI" mode="change">
+                  <!-- Comment utiliser @validUntil? -->
                   <content>
                      <sequence>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
@@ -333,6 +337,20 @@
                         </remarks>
                      </attDef>
                   </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <TEI>
+                           <teiHeader>... méta-données de la transaction</teiHeader>
+                           <text>
+                              <body>
+                                 <listBibl>
+                                    <biblFull>Métadonnées d'une entrée dans HAL</biblFull>
+                                 </listBibl>
+                              </body>
+                           </text>
+                        </TEI>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
 
                <elementSpec ident="biblFull" mode="change">
