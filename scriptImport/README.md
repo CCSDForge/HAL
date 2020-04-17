@@ -28,3 +28,8 @@ Exemple :
     </edition>
 </editionStmt>
 ```
+Tei2hal.py <br />
+* Prérequis : avoir un fichier TEI-Hal conforme (ex: mon_fichier_tei.xml)
+* Usage : renseigner le chemin du fichier & vos identifiant, puis exécutez. 
+* Description du traitement : le script charge votre fichier xml au format TEI-Hal et lance l'import SWORD
+* Sortie : le résultat de SWORD est imprimé dans la console.
