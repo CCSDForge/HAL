@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:tei="http://www.tei-c.org/ns/1.0"
+         xmlns:teix="http://www.tei-c.org/ns/Examples"
+         xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+         ns="http://www.tei-c.org/ns/1.0"><!--
+Schema generated from ODD source 2020-12-03T16:31:47Z. .
+TEI Edition: Version 4.1.0. Last updated on
+	19th August 2020, revision b414ba550
+TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
+  
+--><!---->
+   <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+           prefix="tei"
+           uri="http://www.tei-c.org/ns/1.0"/>
+   <define name="atom_entry">
+      <element name="entry" ns="http://www.w3.org/2005/Atom">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Container for all contents and data belonging to an Atom feed</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <ref name="atom_title"/>
+               <ref name="cm_id"/>
+            </choice>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="atom_title">
+      <element name="title" ns="http://www.w3.org/2005/Atom">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_id">
+      <element name="id" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <start>
+      <choice>
+         <ref name="atom_entry"/>
+      </choice>
+   </start>
+</grammar>

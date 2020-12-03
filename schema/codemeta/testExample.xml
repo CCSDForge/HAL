@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/Users/romary/Documents/Workbench/HAL/schema/codemeta/out/codemetaSpec.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom" xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+    <title>Awesome Compiler</title>
+    <codemeta:id>1785io25c695</codemeta:id>
+</entry>
