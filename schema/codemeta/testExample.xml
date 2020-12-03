@@ -3,4 +3,9 @@
 <entry xmlns="http://www.w3.org/2005/Atom" xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
     <title>Awesome Compiler</title>
     <codemeta:id>1785io25c695</codemeta:id>
+    <codemeta:author>
+        <codemeta:name> author2 </codemeta:name>
+        <codemeta:affiliation> Inria </codemeta:affiliation>
+        <codemeta:affiliation> UPMC </codemeta:affiliation>
+    </codemeta:author>
 </entry>

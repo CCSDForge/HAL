@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-12-03T16:31:47Z. .
+Schema generated from ODD source 2020-12-03T17:40:37Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -21,6 +21,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
             <choice>
                <ref name="atom_title"/>
                <ref name="cm_id"/>
+               <ref name="cm_author"/>
             </choice>
          </zeroOrMore>
       </element>
@@ -33,6 +34,29 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
    </define>
    <define name="cm_id">
       <element name="id" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_author">
+      <element name="author" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <oneOrMore>
+            <choice>
+               <ref name="cm_name"/>
+               <ref name="cm_affiliation"/>
+            </choice>
+         </oneOrMore>
+      </element>
+   </define>
+   <define name="cm_name">
+      <element name="name" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_affiliation">
+      <element name="affiliation" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <text/>
       </element>

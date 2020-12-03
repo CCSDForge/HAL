@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
   <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -30,6 +30,7 @@
                     <alternate minOccurs="0" maxOccurs="unbounded">
                        <elementRef key="atom_title"/>
                        <elementRef key="cm_id"/>
+                       <elementRef key="cm_author"/>
                     </alternate>
                  </content>
               </elementSpec>
@@ -41,6 +42,36 @@
               </elementSpec>
               
               <elementSpec ident="id" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                 <content>
+                    <textNode/>
+                 </content>
+              </elementSpec>
+              
+              <elementSpec ident="author" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                 <content>
+                    <alternate minOccurs="1" maxOccurs="unbounded">
+                       <elementRef key="cm_name"/>
+                       <elementRef key="cm_affiliation"/>
+                    </alternate>
+                 </content>
+                 <exemplum>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                       <codemeta:author>
+                          <codemeta:name> author2 </codemeta:name>
+                          <codemeta:affiliation> Inria </codemeta:affiliation>
+                          <codemeta:affiliation> UPMC </codemeta:affiliation>
+                       </codemeta:author>
+                    </egXML>
+                 </exemplum>
+              </elementSpec>
+              
+              <elementSpec ident="name" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                 <content>
+                    <textNode/>
+                 </content>
+              </elementSpec>
+              
+              <elementSpec ident="affiliation" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
                  <content>
                     <textNode/>
                  </content>
