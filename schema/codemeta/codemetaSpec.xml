@@ -29,8 +29,7 @@
                  <content>
                     <alternate minOccurs="0" maxOccurs="unbounded">
                        <elementRef key="atom_title"/>
-                       <elementRef key="cm_id"/>
-                       <elementRef key="cm_author"/>
+                       <classRef key="model.CodeMetaElements"/>
                     </alternate>
                  </content>
               </elementSpec>
@@ -42,12 +41,18 @@
               </elementSpec>
               
               <elementSpec ident="id" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                 <classes>
+                    <memberOf key="model.CodeMetaElements"/>
+                 </classes>
                  <content>
                     <textNode/>
                  </content>
               </elementSpec>
               
               <elementSpec ident="author" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                 <classes>
+                    <memberOf key="model.CodeMetaElements"/>
+                 </classes>
                  <content>
                     <alternate minOccurs="1" maxOccurs="unbounded">
                        <elementRef key="cm_name"/>
@@ -76,6 +81,10 @@
                     <textNode/>
                  </content>
               </elementSpec>
+              
+              <classSpec type="model" ident="model.CodeMetaElements">
+                 <desc>Groups together Codemeta elements that may be used in the same context</desc>
+              </classSpec>
               
            </schemaSpec>
         </div>
