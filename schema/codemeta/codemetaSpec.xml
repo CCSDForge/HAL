@@ -3,7 +3,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Specification of the CodeMeta elements in ODD</title>
@@ -15,149 +15,152 @@
             <p>Information about the source</p>
          </sourceDesc>
       </fileDesc>
-  </teiHeader>
-  <text>
+   </teiHeader>
+   <text>
       <body>
-         <p>Some text here.</p>
+         <p>Ce document décrit les éléments codemeta utilisés par <ref target="https://www.softwareheritage.org">Software Heritage</ref> (SH) afin d'une part de fournir un schéma
+            qui permette à SH de valider leurs exports/import et d'autre part de prévoir l'intégraitonde de ces éléments
+            dans le format d'échange HAL-TEI pour couvrir le dépot de logiciel dans HAL.</p>
+         <p>La documentation actuelle de SH sur Codemeta se trouve sous <ptr target="https://docs.softwareheritage.org/devel/swh-deposit/metadata.html?highlight=atom"/></p>
       </body>
-     <back>
-        <div>
-           <head>Technical Specification</head>
-           <schemaSpec ident="codemeta" start="atom_entry">
-              <elementSpec ident="entry" prefix="atom_" ns="http://www.w3.org/2005/Atom">
-                 <desc>Container for all contents and data belonging to an Atom feed</desc>
-                 <content>
-                    <alternate minOccurs="0" maxOccurs="unbounded">
-                       <elementRef key="atom_title"/>
-                       <classRef key="model.CodeMetaElements"/>
-                    </alternate>
-                 </content>
-              </elementSpec>
-              
-              <elementSpec ident="title" prefix="atom_" ns="http://www.w3.org/2005/Atom">
-                 <content>
-                    <textNode/>
-                 </content>
-              </elementSpec>
-              
-              <elementSpec ident="id" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <textNode/>
-                 </content>
-              </elementSpec>
-              
-              <elementSpec ident="author" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <alternate minOccurs="1" maxOccurs="unbounded">
-                       <elementRef key="cm_name"/>
-                       <elementRef key="cm_affiliation"/>
-                    </alternate>
-                 </content>
-                 <exemplum>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <codemeta:author>
-                          <codemeta:name> author2 </codemeta:name>
-                          <codemeta:affiliation> Inria </codemeta:affiliation>
-                          <codemeta:affiliation> UPMC </codemeta:affiliation>
-                       </codemeta:author>
-                    </egXML>
-                 </exemplum>
-              </elementSpec>
-              
-              <elementSpec ident="name" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <content>
-                    <textNode/>
-                 </content>
-              </elementSpec>
-              
-              <elementSpec ident="affiliation" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <content>
-                    <textNode/>
-                 </content>
-              </elementSpec>
-              
-              <elementSpec ident="softwareVersion" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <textNode/>
-                 </content>
-                 <exemplum>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <codemeta:softwareVersion>2.2</codemeta:softwareVersion>
-                    </egXML>
-                 </exemplum>
-              </elementSpec>
-              
-              <elementSpec ident="developmentStatus" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <textNode/>
-                 </content>
-                 <exemplum>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <codemeta:developmentStatus>active </codemeta:developmentStatus>
-                    </egXML>
-                 </exemplum>
-              </elementSpec>
-              
-              <elementSpec ident="operatingSystem" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <textNode/>
-                 </content>
-                 <exemplum>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <codemeta:operatingSystem>Platform/OS </codemeta:operatingSystem>
-                    </egXML>
-                 </exemplum>
-              </elementSpec>
-              
-              <elementSpec ident="programmingLanguage" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <textNode/>
-                 </content>
-                 <exemplum>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <codemeta:programmingLanguage>Java</codemeta:programmingLanguage>
-                    </egXML>
-                 </exemplum>
-              </elementSpec>
-              
-              <elementSpec ident="runtimePlatform" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
-                 <classes>
-                    <memberOf key="model.CodeMetaElements"/>
-                 </classes>
-                 <content>
-                    <textNode/>
-                 </content>
-                 <exemplum>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                       <codemeta:runtimePlatform>Python2.3</codemeta:runtimePlatform>
-                    </egXML>
-                 </exemplum>
-              </elementSpec>
-           
-              <classSpec type="model" ident="model.CodeMetaElements">
-                 <desc>Groups together Codemeta elements that may be used in the same context</desc>
-              </classSpec>
-              
-           </schemaSpec>
-        </div>
-     </back>
-  </text>
+      <back>
+         <div>
+            <head>Technical Specification</head>
+            <schemaSpec ident="codemeta" start="atom_entry">
+               <elementSpec ident="entry" prefix="atom_" ns="http://www.w3.org/2005/Atom">
+                  <desc>Container for all contents and data belonging to an Atom feed</desc>
+                  <content>
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <elementRef key="atom_title"/>
+                        <classRef key="model.CodeMetaElements"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
+
+               <elementSpec ident="title" prefix="atom_" ns="http://www.w3.org/2005/Atom">
+                  <content>
+                     <textNode/>
+                  </content>
+               </elementSpec>
+
+               <elementSpec ident="id" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+               </elementSpec>
+
+               <elementSpec ident="author" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <alternate minOccurs="1" maxOccurs="unbounded">
+                        <elementRef key="cm_name"/>
+                        <elementRef key="cm_affiliation"/>
+                     </alternate>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <codemeta:author>
+                           <codemeta:name> author2 </codemeta:name>
+                           <codemeta:affiliation> Inria </codemeta:affiliation>
+                           <codemeta:affiliation> UPMC </codemeta:affiliation>
+                        </codemeta:author>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="name" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <content>
+                     <textNode/>
+                  </content>
+               </elementSpec>
+
+               <elementSpec ident="affiliation" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <content>
+                     <textNode/>
+                  </content>
+               </elementSpec>
+
+               <elementSpec ident="softwareVersion" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <codemeta:softwareVersion>2.2</codemeta:softwareVersion>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="developmentStatus" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <codemeta:developmentStatus>active </codemeta:developmentStatus>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="operatingSystem" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <codemeta:operatingSystem>Platform/OS </codemeta:operatingSystem>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="programmingLanguage" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <codemeta:programmingLanguage>Java</codemeta:programmingLanguage>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="runtimePlatform" prefix="cm_" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+                  <classes>
+                     <memberOf key="model.CodeMetaElements"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <codemeta:runtimePlatform>Python2.3</codemeta:runtimePlatform>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <classSpec type="model" ident="model.CodeMetaElements">
+                  <desc>Groups together Codemeta elements that may be used in the same context</desc>
+               </classSpec>
+
+            </schemaSpec>
+         </div>
+      </back>
+   </text>
 </TEI>
