@@ -323,7 +323,7 @@
                   <content>
                      <sequence>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
-                        <classRef key="model.resourceLike" minOccurs="0" maxOccurs="unbounded"/>
+                        <classRef key="model.resource" minOccurs="0" maxOccurs="unbounded"/>
                      </sequence>
                   </content>
                   <attList>
@@ -439,6 +439,22 @@
                         <textNode/>
                         <classRef key="model.pLike"/>
                         <classRef key="model.listLike"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
+               
+               <!-- On relache les contraintes sur le modèle de seriesStmt (cf. ligne suivante) -->
+               <!-- ( title+, ( editor | respStmt )*, ( idno | biblScope )* ) ) -->
+               <!-- L'idée est principalement d'avoir des idno dans l'élément -->
+               
+               <elementSpec ident="seriesStmt" mode="change">
+                  <content>
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <elementRef key="title"/>
+                        <elementRef key="editor"/>
+                        <elementRef key="respStmt"/>
+                        <elementRef key="idno"/>
+                        <elementRef key="biblScope"/>
                      </alternate>
                   </content>
                </elementSpec>
