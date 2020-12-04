@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-12-04T08:30:15Z. .
+Schema generated from ODD source 2020-12-04T09:38:03Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -20,7 +20,6 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
          <zeroOrMore>
             <choice>
                <ref name="atom_title"/>
-               <ref name="cm_author"/>
                <ref name="model.CodeMetaElements"/>
             </choice>
          </zeroOrMore>
@@ -61,9 +60,47 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
          <text/>
       </element>
    </define>
+   <define name="cm_softwareVersion">
+      <element name="softwareVersion" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_developmentStatus">
+      <element name="developmentStatus"
+               ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_operatingSystem">
+      <element name="operatingSystem" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_programmingLanguage">
+      <element name="programmingLanguage"
+               ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
+   <define name="cm_runtimePlatform">
+      <element name="runtimePlatform" ns="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <text/>
+      </element>
+   </define>
    <define name="model.CodeMetaElements">
       <choice>
          <ref name="cm_id"/>
+         <ref name="cm_author"/>
+         <ref name="cm_softwareVersion"/>
+         <ref name="cm_developmentStatus"/>
+         <ref name="cm_operatingSystem"/>
+         <ref name="cm_programmingLanguage"/>
+         <ref name="cm_runtimePlatform"/>
       </choice>
    </define>
    <start>
