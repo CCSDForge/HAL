@@ -19,7 +19,7 @@
    <text>
       <body>
          <p>Ce document décrit les éléments codemeta utilisés par <ref target="https://www.softwareheritage.org">Software Heritage</ref> (SH) afin d'une part de fournir un schéma
-            qui permette à SH de valider leurs exports/import et d'autre part de prévoir l'intégraitonde de ces éléments
+            qui permette à SH de valider leurs exports/import et d'autre part de prévoir l'intégration de ces éléments
             dans le format d'échange HAL-TEI pour couvrir le dépot de logiciel dans HAL.</p>
          <p>La documentation actuelle de SH sur Codemeta se trouve sous <ptr target="https://docs.softwareheritage.org/devel/swh-deposit/metadata.html?highlight=atom"/></p>
       </body>
