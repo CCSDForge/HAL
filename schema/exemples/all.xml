@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="https://hal.archives-ouvertes.fr/" version="1.1" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://api.archives-ouvertes.fr/documents/aofr.xsd">
+   <text>
+      <body>
+         <listBibl>
+            <biblFull>
+               <titleStmt>
+                  <title xml:lang="LANG"><!-- title @xml:lang=ISO 639-1 --></title>
+                  <title type="sub" xml:lang="LANG"><!-- subTitle @xml:lang=ISO 639-1 --></title>
+                  <author role="ROLE"><!-- @role : https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:relator (metaValue_s field) -->
+                     <persName>
+                        <forename type="first"><!-- firstname --></forename>
+                        <forename type="middle"><!-- othername --></forename>
+                        <surname><!-- lastname --></surname>
+                     </persName>
+                     <email type="md5"><!-- encrypted email --></email>
+                     <email type="domain"><!-- domain email--></email>
+                     <idno type="idhal" notation="numeric"><!-- numeric idhal https://api.archives-ouvertes.fr/ref/author/?q=!idHal_i:0&fl=* (idHal_i field) --></idno>
+                     <idno type="idhal" notation="string"><!-- string idhal https://api.archives-ouvertes.fr/ref/author/?q=!idHal_i:0&fl=* (idHal_s field) --></idno>
+                     <idno type="halauthorid"><!-- numeric identifier halauthorid https://api.archives-ouvertes.fr/ref/author/?q=!idHal_i:0&fl=* (docid field) --></idno>
+                     <idno type="TYPE"><!-- identifier @type=(arXiv, ResearcherId, IdRef, ORCID, VIAF, ISNI, IDP INRA, Twitter, Facebook, Google, Linkedin, Blog, ResearchGate, Academia, Google Scholar) --></idno>
+                     <orgName ref="#struct-STRUCTID"/><!-- Employer institution : https://api.archives-ouvertes.fr/ref/structure/?q=type_s:institution&fl=* (docid field) -->
+                     <affiliation ref="#struct-STRUCTID"/><!-- structure ID : https://api.archives-ouvertes.fr/ref/structure/?q=*&fl=* (docid field) -->
+                     <affiliation ref="#localStruct-LOCALID"/><!-- new affiliation (defined in text/back section) -->
+                  </author>
+                  <editor role="depositor">
+                     <persName>
+                        <forename><!-- firstname --></forename>
+                        <surname><!-- lastname --></surname>
+                     </persName>
+                     <email type="md5"><!-- encrypted email --></email>
+                     <email type="domain"><!-- domain email--></email>
+                  </editor>
+                  <funder ref="#projanr-ANRID"/><!-- @ref= https://api.archives-ouvertes.fr/ref/anrProject/?q=* (docid field) -->
+                  <funder ref="#localProjanr-LOCALID"/><!-- new ANR project (defined in text/back section) -->
+                  <funder ref="#projeurop-EURID"/><!-- @ref= https://api.archives-ouvertes.fr/ref/europeanProject/?q=* (docid field) -->
+                  <funder ref="#localProjeurop-1"/><!-- new European project (defined in text/back section) -->
+                  <funder><!-- funding --></funder>
+               </titleStmt>
+               <editionStmt>
+                  <edition n="VERSION" type="current"><!-- version -->
+                     <date type="whenSubmitted"><!-- submission date  --></date>
+                     <date type="whenWritten"><!-- writing date --></date>
+                     <date type="whenModified"><!-- last modified date --></date>
+                     <date type="whenReleased"><!-- released date --></date>
+                     <date type="whenProduced"><!-- produce date --></date>
+                     <date type="whenEndEmbargoed"><!-- end of embargo  --></date>
+                     
+                     <ref type="file" subtype="SUBTYPE" target="FILENAME" n="1"><!-- @type= @subtype= http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:fileSource&fl=* (metaValue_s field) ; @n: default file -->
+                        <date notBefore="2000-01-01"/><!-- embargo date -->
+                     </ref>
+                     <ref type="annex" subtype="presentation" target="FILENAME"  n="1"><!-- @subtype: http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:typeAnnex&fl=* ; @n: default annex-->
+                        <desc><!-- annexDescription --></desc>
+                     </ref>
+                     <ref type="externalLink" target="TARGET"/><!-- externalLink (unpaywall) -->
+                     <fs>
+                        <!-- inra_etatDocument_local
+                           inra_publicVise_local
+                           inra_infra_local
+                           inra_lieu_local
+                           inra_noSpecial_local
+                           inra_titreSpecial_local
+                           inra_noArticle_local
+                           inra_nbPages_local
+                           inra_deposit_local
+                           inra_validity_local
+                           inra_hostLaboratory_local
+                           inra_support_local
+                           inra_trainingSupervisor_local
+                           inra_diffuseur_local
+                           inra_emission_local
+                           inra_developmentType_local
+                           inra_inraComment_local
+                           inra_speciality_local
+                           inra_grant_local
+                           inra_issn_local
+                           inra_otherType_Art_local
+                           inra_otherType_Comm_local
+                           inra_otherType_Ouv_local
+                           inra_otherType_Douv_local
+                           inra_otherType_Undef_local
+                           inra_otherType_Other_local
+                           elements.inria_presConfType
+                           univLorraine_urlFulltext -->
+                        <f name="LOCHAL_META" notation="string">
+                           <string><!-- localMeta --></string>
+                        </f>
+                        <f name="LOCHAL_META" notation="numeric">
+                           <!-- localMeta -->
+                           <numeric>0</numeric>
+                        </f>
+                     </fs>
+                  </edition>
+                  <respStmt>
+                     <resp>contributor</resp>
+                     <name key="0"><!-- @key : uid-->
+                        <persName>
+                           <forename><!-- firstname --></forename>
+                           <surname><!-- lastname --></surname>
+                        </persName>
+                        <email type="md5"><!-- encrypted email --></email>
+                        <email type="domain"><!-- domain email--></email>
+                     </name>
+                  </respStmt>
+               </editionStmt>
+               <publicationStmt>
+                  <distributor>CCSD</distributor>
+                  <idno type="halId"><!-- document identifier --></idno>
+                  <idno type="halUri"><!-- document URI --></idno>
+                  <idno type="halBibtex"><!-- document Bibext key--></idno>
+                  <idno type="halRefHtml"><!-- ref biblio (html format)--></idno>
+                  <idno type="halRef"><!-- ref biblio (text format)--></idno>
+                  <availability status="restricted">
+                     <licence target="http://creativecommons.org/licenses/by-nc/"/><!-- licence : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:licence&fl=* or Spdx for SOFTWARE -->
+                  </availability>
+               </publicationStmt>
+               <seriesStmt>
+                  <idno type="stamp" n="STAMP"/><!-- @n= https://api.archives-ouvertes.fr/search/hal?q=*&rows=0&facet=true&facet.field=collCode_s  -->
+               </seriesStmt>
+               <notesStmt>
+                  <note type="commentary"><!-- comment --></note>
+                  <note type="description"><!-- description --></note>
+                  <note type="audience" n="0"/><!-- audience  @n= https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:audience&fl=* (metaValue_s field) -->
+                  <note type="invited" n="0"/><!-- invitedCommunication : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:invitedCommunication&fl=* (metaValue_s field) -->
+                  <note type="popular" n="0"/><!-- popularLevel : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:popularLevel&fl=* (metaValue_s field) -->
+                  <note type="peer" n="0"/><!-- peerReviewing : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:peerReviewing&fl=* (metaValue_s field) -->
+                  <note type="proceedings" n="0"/><!-- proceedings : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:proceedings&fl=* (metaValue_s field) -->
+                  <note type="degree" n="0"/><!-- inria_degreeType : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:inria_degreeType&fl=* (metaValue_s field) -->
+                  <note type="degree" n="0"/><!-- dumas_degreeType : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:dumas_degreeType&fl=* (metaValue_s field) -->
+                  <note type="degree" n="0"/><!-- democrite_degreeType : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:democrite_degreeType&fl=* (metaValue_s field) -->
+                  <note type="report" n="0"/><!-- reportType @n= http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:reportType&fl=* (metaValue_s field) -->
+                  <note type="other" n="0"/><!-- otherType : http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:otherType&fl=* (metaValue_s field) -->
+                  <note type="image" n="0"/><!-- imageType : @n= http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:imageType&fl=* (metaValue_s field) -->
+                  <note type="lecture" n="0"/><!-- lectureType @n= http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:lectureType&fl=* (metaValue_s field) -->
+                  <note type="operatingSystem"><!-- platform (SOFTWARE) --></note>
+                  <note type="version"><!-- version (SOFTWARE) --></note>
+                  <note type="developmentStatus"><!-- developmentStatus (SOFTWARE) --></note>
+                  <note type="runtimePlatform"><!-- runtimePlatform (SOFTWARE) --></note>
+                  <note type="programmingLanguage"><!-- programmingLanguage (SOFTWARE) --></note> 
+               </notesStmt>
+               <sourceDesc>
+                  <biblStruct>
+                     <analytic>
+                        <title xml:lang="LANG"><!-- title @xml:lang=ISO 639-1 --></title>
+                        <title type="sub" xml:lang="LANG"><!-- subTitle @xml:lang=ISO 639-1 --></title>
+                        <author role="ROLE"><!-- @role : https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:relator (metaValue_s field) -->
+                           <persName>
+                              <forename type="first"><!-- firstname --></forename>
+                              <forename type="middle"><!-- othername --></forename>
+                              <surname><!-- lastname --></surname>
+                           </persName>
+                           <email type="md5"><!-- encrypted email --></email>
+                           <email type="domain"><!-- domain email--></email>
+                           <idno type="idhal" notation="numeric"><!-- numeric idhal https://api.archives-ouvertes.fr/ref/author/?q=!idHal_i:0&fl=* (idHal_i field) --></idno>
+                           <idno type="idhal" notation="string"><!-- string idhal https://api.archives-ouvertes.fr/ref/author/?q=!idHal_i:0&fl=* (idHal_s field) --></idno>
+                           <idno type="halauthorid"><!-- numeric identifier halauthorid https://api.archives-ouvertes.fr/ref/author/?q=!idHal_i:0&fl=* (docid field) --></idno>
+                           <idno type="TYPE"><!-- identifier @type=(arXiv, ResearcherId, IdRef, ORCID, VIAF, ISNI, IDP INRA, Twitter, Facebook, Google, Linkedin, Blog, ResearchGate, Academia, Google Scholar) --></idno>
+                           <orgName ref="#struct-STRUCTID"/><!-- Employer institution : https://api.archives-ouvertes.fr/ref/structure/?q=type_s:institution&fl=* (docid field) -->
+                           <affiliation ref="#struct-STRUCTID"/><!-- structure ID : https://api.archives-ouvertes.fr/ref/structure/?q=*&fl=* (docid field) -->
+                           <affiliation ref="#localStruct-LOCALID"/><!-- new affiliation (defined in text/back section) -->
+                        </author>
+                     </analytic>
+                     <monogr>
+                        <idno type="nnt"><!-- nnt (THESE) --></idno>
+                        <idno type="patentNumber"><!-- number (PATENT) --></idno>
+                        <idno type="reportNumber"><!-- number (REPORT) --></idno>
+                        <idno type="isbn"><!-- isbn --></idno>
+                        <idno type="localRef"><!-- localReference --></idno>
+                        <idno type="halJournalId"><!-- journalIdentifier : http://api.archives-ouvertes.fr/ref/journal/?q=*&fl=* (docid field) --></idno>
+                        <idno type="issn"><!--  issn --></idno>
+                        <idno type="eissn"><!-- eissn --></idno>
+                        <title level="j"><!-- journal title --></title>
+                        <title level="m"><!-- bookTitle --></title>
+                        <title level="m"><!-- source (COMM)--></title>
+                        <meeting>
+                           <title><!-- conferenceTitle --></title>
+                           <date type="start"><!-- conferenceStartDate --></date>
+                           <date type="end"><!-- conferenceEndDate --></date>
+                           <settlement><!-- city --></settlement>
+                           <country key="COUNTRY"/><!-- country  @key=ISO 3166-1  -->
+                        </meeting>   
+                        <respStmt>
+                           <resp>conferenceOrganizer</resp>
+                           <name><!-- conferenceOrganizer --></name>
+                        </respStmt>
+                        <settlement><!-- city [type in PATENT,IMG,MAP,LECTURE] --></settlement>
+                        <country key="COUNTRY"/><!-- country  @key=ISO 3166-1  -->
+                        <editor><!-- scientificEditor --></editor>
+                        <imprint>
+                           <publisher><!-- publisher --></publisher>
+                           <publisher><!-- journalPublisher --></publisher>
+                           <pubPlace><!-- publicationLocation --></pubPlace>
+                           <biblScope unit="serie"><!-- serie --></biblScope>
+                           <biblScope unit="volume"><!-- volume --></biblScope>
+                           <biblScope unit="issue"><!-- issue --></biblScope>
+                           <biblScope unit="pp"><!-- page --></biblScope>
+                           <date type="datePub"><!-- date  @precision="unknown" if circa = 1 ; @subtype="inPress" if inPress=1 --></date>
+                           <date type="dateDefended"><!-- date [type = THESE, HDR, MEM] --></date>
+                           <date type="dateEpub"><!-- edate --></date>
+                        </imprint>
+                        <authority type="institution"><!-- authorityInstitution --></authority>
+                        <authority type="school"><!-- thesisSchool --></authority>
+                        <authority type="supervisor"><!-- director --></authority>
+                        <authority type="supervisorEmail"><!-- inria_directorEmail --></authority>
+                        <authority type="supervisorEmail"><!-- memsic_directorEmail --></authority>
+                        <authority type="jury"><!-- committee --></authority>
+                     </monogr>
+                     <series>
+                        <editor><!-- seriesEditor --></editor>
+                        <title><!-- lectureName --></title>
+                     </series>
+                     <idno type="TYPE"><!-- identifier @type = (arxiv, doi, pubmed, wos, ird, bibcode, inspire, oatao, prodinra, irstea, pubmedcentral, ensam, sciencespo, cern, isbn, okina, chemrxiv, hdl, ineris, meditagri, swhid, pdf, biorxiv) --></idno>
+                     <ref type="codeRepository" target="TARGET" /><!-- @target= codeRepository -->
+                     <ref type="seeAlso" target="TARGET" /><!-- @target= seeAlso -->
+                     <ref type="researchdata" target="TARGET" /><!-- @target= researchdata -->
+                     <ref type="publisher"><!-- publisherLink --></ref>
+                     <relatedItem type="TYPE" target="TARGET"><!-- relatedItemDescription @target: relatedItemUrl ; @type: http://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:relatedType&fl=* (metaValue field) --></relatedItem>
+                  </biblStruct>
+                  <listPlace>
+                     <place>
+                        <location>
+                           <geo> <!-- latitude longitude --></geo>
+                        </location>
+                     </place>
+                  </listPlace>
+                  <recordingStmt>
+                     <recording type="video" dur="DUR" /><!-- @type: video [type=VIDEO], audio [type=SON] ; @dur: duration -->
+                  </recordingStmt>
+               </sourceDesc>
+               <profileDesc>
+                  <langUsage>
+                     <language ident="LANG"/><!-- @ident: language -->
+                  </langUsage>
+                  <textClass>
+                     <keywords scheme="author">
+                        <term xml:lang="LANG"><!-- keyword @xml:lang: ISO 639-1  --></term>
+                     </keywords>
+                     <classCode scheme="classification"><!-- classification --></classCode>
+                     <classCode scheme="mesh"><!-- mesh --></classCode>
+                     <classCode scheme="jel" n="N"><!-- jel @n: jel --></classCode>
+                     <classCode scheme="acm" n="N"><!-- acm @n: acm--></classCode>
+                     <classCode scheme="halDomain" n="N"/><!-- @n: http://api.archives-ouvertes.fr/ref/domain/?fl=* -->
+                     <classCode scheme="vocinrae" n="N"/><!-- @n: inra_indexation_local -->
+                     <classCode scheme="halTypology" n="N"/><!-- @type : https://api.archives-ouvertes.fr/ref/doctype -->
+                  </textClass>
+                  <abstract xml:lang="LANG"><!-- abstract @xml:lang: ISO 639-1 --></abstract>
+                  <particDesc>
+                     <org type="consortium"><!-- collaboration --></org>
+                  </particDesc>
+               </profileDesc>
+            </biblFull>
+         </listBibl>
+      </body>
+      <back>
+         <listOrg type="structures"> 
+            <org type="TYPE" xml:id="struct-STRUCTID" status="STATUS"/><!-- @type: https://api.archives-ouvertes.fr/ref/structure?q=*&rows=0&facet=true&facet.field=type_s ; @status: https://api.archives-ouvertes.fr/ref/structure?q=*&rows=0&facet=true&facet.field=valid_s -->
+            <org type="TYPE" xml:id="localStruct-LOCALID" status="STATUS">
+               <idno type="TYPE"><!-- structIdentifier @type: (RNSR, ISNI, IdRef, IdUnivLorraine)--></idno>
+               <orgName><!-- structName--></orgName>
+               <orgName type="acronym"><!-- structAcronym--></orgName>
+               <desc>
+                  <address>
+                     <addrLine><!-- structAddr--></addrLine>
+                     <country key="COUNTRY"/><!-- country  @key=ISO 3166-1  -->
+                  </address>
+                  <ref type="url"><!-- structUrl --></ref>
+               </desc>
+               <listRelation>
+                  <relation name="NAME" active="#struct-STRUCTID"/><!-- @name: structCode-->
+                  <relation active="#localStruct-LOCALID"/>
+               </listRelation>
+            </org>
+         </listOrg>
+         <listOrg type="projects">
+            <org type="anrProject" xml:id="projanr-PROJID" status="STATUS"/>
+            <org type="anrProject" xml:id="localProjanr-LOCALID" status="STATUS">
+               <idno type="anr"><!-- ANRReference --></idno>
+               <idno type="program"><!-- ANRProgram --></idno>
+               <orgName><!-- AnrAcronym --></orgName> 
+               <desc><!-- AnrTitle --></desc>
+               <date type="start"><!-- AnrYear --></date>
+            </org>
+            <org type="europeanProject" xml:id="projeurop-PROJID" status="STATUS"/>
+            <org type="europeanProject" xml:id="localProjeurop-LOCALID" status="STATUS">
+               <idno type="number"><!-- europeanProjectNumber --></idno>
+               <idno type="program"><!-- europeanProjectProgram --></idno>
+               <idno type="call"><!-- europeanProjectCall --></idno>
+               <orgName><!-- europeanProjectAcronyme --></orgName>
+               <desc><!-- europeanProjectTitle --></desc>
+               <date type="start"><!-- europeanProjectStartDate --></date>
+               <date type="end"><!-- europeanProjectEndDate --></date>
+            </org>
+         </listOrg>
+      </back>
+   </text>
+</TEI>

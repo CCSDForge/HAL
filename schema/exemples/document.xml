@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="https://hal.archives-ouvertes.fr/" version="1.1" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://api.archives-ouvertes.fr/documents/aofr.xsd">
+   <text>
+      <body>
+         <listBibl>
+            <biblFull>
+               <titleStmt>
+                  <title xml:lang="fr">Titre du document</title>
+                  <title type="sub" xml:lang="en">Document subtitle</title>
+                  <author role="aut">
+                     <persName>
+                        <forename type="first">Laurent</forename>
+                        <forename type="middle">Middle</forename>
+                        <surname>Romary</surname>
+                     </persName>
+                     <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                     <email type="domain">inria.fr</email>
+                     <idno type="idhal" notation="string">laurentromary</idno>
+                     <idno type="idhal" notation="numeric">307</idno>
+                     <idno type="halauthorid">49567</idno>
+                     <idno type="arXiv">https://arxiv.org/a/romary_l_1</idno>
+                     <idno type="ResearcherId">http://www.researcherid.com/rid/A-5114-2012</idno>
+                     <idno type="IdRef">https://www.idref.fr/060702494</idno>
+                     <idno type="ORCID">https://orcid.org/0000-0002-0756-0508</idno>
+                     <idno type="VIAF">https://viaf.org/viaf/VIAF282014122</idno>
+                     <idno type="ISNI">http://isni.org/isni/0000000388795444</idno>
+                     <orgName ref="#struct-300009"/>
+                     <affiliation ref="#struct-482775"/>
+                  </author>
+                  <editor role="depositor">
+                     <persName>
+                        <forename>Laurent</forename>
+                        <surname>Romary</surname>
+                     </persName>
+                     <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                     <email type="domain">inria.fr</email>
+                  </editor>
+                  <funder ref="#projanr-33933"/>
+                  <funder ref="#projeurop-712435"/>
+                  <funder>other funding</funder>
+               </titleStmt>
+               <editionStmt>
+                  <edition n="v1">
+                     <date type="whenSubmitted">2018-06-11 11:23:55</date>
+                  </edition>
+                  <edition n="v2" type="current">
+                     <date type="whenSubmitted">2020-11-21 06:29:43</date>
+                     <date type="whenModified">2020-11-24 10:38:05</date>
+                     <date type="whenReleased">2020-11-23 09:25:01</date>
+                     <date type="whenProduced">2020-11-19</date>
+                     <date type="whenEndEmbargoed">2020-11-21</date>
+                     <ref type="file" target="https://hal.inria.fr/hal-01812100v2/document">
+                        <date notBefore="2020-11-21"/>
+                     </ref>
+                     <ref type="file" subtype="author" n="1" target="https://hal.inria.fr/hal-01812100v2/file/5_3.pdf">
+                        <date notBefore="2020-11-21"/>
+                     </ref>
+                     <ref type="externalLink" target="https://www.jstage.jst.go.jp/article/jjadh/5/1/5_3/_pdf"/>
+                     <ref type="annex" subtype="presentation" target="https://hal.inria.fr/hal-01812100v2/file/5_3.jpg"  n="1">
+                        <desc>description de l'annexe</desc>
+                     </ref>
+                  </edition>
+                  <respStmt>
+                     <resp>contributor</resp>
+                     <name key="105529">
+                        <persName>
+                           <forename>Laurent</forename>
+                           <surname>Romary</surname>
+                        </persName>
+                        <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                        <email type="domain">inria.fr</email>
+                     </name>
+                  </respStmt>
+               </editionStmt>
+               <publicationStmt>
+                  <distributor>CCSD</distributor>
+                  <idno type="halId">hal-01812100</idno>
+                  <idno type="halUri">https://hal.inria.fr/hal-01812100</idno>
+                  <idno type="halBibtex">foppiano:hal-01812100</idno>
+                  <idno type="halRefHtml"><i>Journal of the Japanese Association for Digital Humanities</i>, Japanase Association for Digital Humanities, 2020, 5 (1), pp.22-60. &#x27E8;10.17928/jjadh.5.1_22&#x27E9;</idno>
+                  <idno type="halRef">Journal of the Japanese Association for Digital Humanities, Japanase Association for Digital Humanities, 2020, 5 (1), pp.22-60. &#x27E8;10.17928/jjadh.5.1_22&#x27E9;</idno>
+                  <availability status="restricted">
+                     <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+                  </availability>
+               </publicationStmt>
+               <seriesStmt>
+                  <idno type="stamp" n="OPENAIRE">OpenAIRE</idno>
+                  <idno type="stamp" n="INRIA-ROCQ">INRIA Paris - Rocquencourt</idno>
+                  <idno type="stamp" n="INRIA">INRIA - Institut National de Recherche en Informatique et en Automatique</idno>
+               </seriesStmt>
+               <notesStmt>
+                  <note type="commentary">Commentaire</note>
+                  <note type="description">Description</note>
+                  <note type="audience" n="2">International</note>
+                  <note type="popular" n="0">No</note>
+                  <note type="peer" n="1">Yes</note>
+                  <note type="invited" n="0">No</note>
+                  <note type="proceedings" n="1">Yes</note>
+                  <note type="degree" n="1">Master thesis 2</note>
+                  <note type="report" n="6">Research Report</note>
+                  <note type="other" n="2">Book Review</note>
+                  <note type="image" n="1">Photography</note>
+                  <note type="lecture" n="10">Engineering school</note>
+                  <note type="operatingSystem">centos</note>
+                  <note type="version">1.12.1</note>
+                  <note type="developmentStatus">dev</note>
+                  <note type="runtimePlatform">Spark</note>
+                  <note type="programmingLanguage">Java</note> 
+               </notesStmt>
+               <sourceDesc>
+                  <biblStruct>
+                     <analytic>
+                        <title xml:lang="fr">Titre du document</title>
+                        <title type="sub" xml:lang="en">Document subtitle</title>
+                        <author role="aut">
+                           <persName>
+                              <forename type="first">Laurent</forename>
+                              <forename type="middle">Middle</forename>
+                              <surname>Romary</surname>
+                           </persName>
+                           <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                           <email type="domain">inria.fr</email>
+                           <idno type="idhal" notation="string">laurentromary</idno>
+                           <idno type="idhal" notation="numeric">307</idno>
+                           <idno type="halauthorid">49567</idno>
+                           <idno type="arXiv">https://arxiv.org/a/romary_l_1</idno>
+                           <idno type="ResearcherId">http://www.researcherid.com/rid/A-5114-2012</idno>
+                           <idno type="IdRef">https://www.idref.fr/060702494</idno>
+                           <idno type="ORCID">https://orcid.org/0000-0002-0756-0508</idno>
+                           <idno type="VIAF">https://viaf.org/viaf/VIAF282014122</idno>
+                           <idno type="ISNI">http://isni.org/isni/0000000388795444</idno>
+                           <orgName ref="#struct-300009"/>
+                           <affiliation ref="#struct-482775"/>
+                        </author>
+                     </analytic>
+                     <monogr>
+                        <idno type="nnt">2005AIXI1002</idno>
+                        <idno type="patentNumber"></idno>
+                        <idno type="isbn">978-2-343-20916-6</idno>
+                        <idno type="localRef">AZ2B32</idno>
+                        <idno type="halJournalId" status="VALID">163788</idno>
+                        <idno type="issn">2188-7276</idno>
+                        <idno type="eissn">2188-7276</idno>
+                        <title level="j">Journal of the Japanese Association for Digital Humanities</title>
+                        <title level="m">Book title</title>
+                        <meeting>
+                           <title>Conference title</title>
+                           <date type="start">2021-02-01</date>
+                           <date type="end">2021-02-02</date>
+                           <settlement>Paris</settlement>
+                           <country key="fr"/>
+                        </meeting>   
+                        <respStmt>
+                           <resp>conferenceOrganizer</resp>
+                           <name>Organisateur</name>
+                        </respStmt>
+                        <settlement>Paris</settlement>
+                        <country key="fr"/>
+                        <editor>Editeur scientifique</editor>
+                        <imprint>
+                           <publisher>Editeur</publisher>
+                           <pubPlace>Paris</pubPlace>
+                           <biblScope unit="serie">Serie</biblScope>
+                           <biblScope unit="volume">Volume 34</biblScope>
+                           <biblScope unit="issue">12</biblScope>
+                           <biblScope unit="pp">34-43</biblScope>
+                           <date type="datePub">2021-03-03</date>
+                           <date type="dateDefended">2021-03-03</date>
+                           <date type="dateEpub">2021-03-03</date>
+                        </imprint>
+                        <authority type="institution">Université Grenoble</authority>
+                        <authority type="school">Ecole Doctorale</authority>
+                        <authority type="supervisor">Directeur de thèse</authority>
+                        <authority type="supervisorEmail">mail@directeur</authority>
+                        <authority type="jury">rapporteur</authority>
+                        <authority type="jury">président</authority>
+                     </monogr>
+                     <series>
+                        <editor>Nom éditeur</editor>
+                        <title>Nom cours</title>
+                     </series>
+                     <idno type="doi">10.17928/jjadh.5.1_22</idno>
+                     <ref type="codeRepository" target="https://github.com/gramian/emgr" />
+                     <ref type="seeAlso" target=" http://cve.revues.org/2397" />
+                     <ref type="researchdata" target="10.1007/s11747-020-00723-5" />
+                     <ref type="publisher"> http://aof.revues.org/index6782.html</ref>
+                     <relatedItem type="illustrate" target="http://hal.archives-ouvertes.fr/hal-00000001">description</relatedItem>
+                  </biblStruct>
+                  <listPlace>
+                     <place>
+                        <location>
+                           <geo>9.970034 98.972015</geo>
+                        </location>
+                     </place>
+                  </listPlace>
+                  <recordingStmt>
+                     <recording type="video" dur="9:50" />
+                  </recordingStmt>
+               </sourceDesc>
+               <profileDesc>
+                  <langUsage>
+                     <language ident="fr"/>
+                  </langUsage>
+                  <textClass>
+                     <keywords scheme="author">
+                        <term xml:lang="fr">mot</term>
+                        <term xml:lang="fr">clé</term>
+                     </keywords>
+                     <classCode scheme="classification">ББК 81.002я431</classCode>
+                     <classCode scheme="mesh">Zymosan</classCode>
+                     <classCode scheme="jel" n="Z.Z3.Z33">Z.Z3.Z33</classCode>
+                     <classCode scheme="acm" n="K.8.1.0">K.8.1.0</classCode>
+                     <classCode scheme="halDomain" n="info.info-tt">Computer Science [cs]/Document and Text Processing</classCode>
+                     <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
+                     <classCode scheme="vocinrae" n="mot indexé"/>
+                     <classCode scheme="halTypology" n="ART">Journal articles</classCode>
+                  </textClass>
+                  <abstract xml:lang="fr">résumé résumé</abstract>
+                  <particDesc>
+                     <org type="consortium">Collaboration</org>
+                  </particDesc>
+               </profileDesc>
+            </biblFull>
+         </listBibl>
+      </body>
+      <back>
+         <listOrg type="structures">
+            <org type="researchteam" xml:id="struct-482775" status="VALID">
+               <idno type="RNSR">201722248N</idno>
+               <orgName>Automatic Language Modelling and ANAlysis Computational Humanities</orgName>
+               <orgName type="acronym">ALMAnaCH</orgName>
+               <date type="start">2017-01-01</date>
+               <desc>
+                  <address>
+                     <country key="FR"/>
+                  </address>
+                  <ref type="url">https://www.inria.fr/equipes/almanach</ref>
+               </desc>
+               <listRelation>
+                  <relation active="#struct-454310" type="direct"/>
+                  <relation active="#struct-300009" type="indirect"/>
+               </listRelation>
+            </org>
+            <org type="laboratory" xml:id="struct-454310" status="VALID">
+               <orgName>Inria de Paris</orgName>
+               <desc>
+                  <address>
+                     <addrLine>2 rue Simone Iff -CS 42112 -75589 Paris Cedex 12</addrLine>
+                     <country key="FR"/>
+                  </address>
+                  <ref type="url">http://www.inria.fr/centre/paris</ref>
+               </desc>
+               <listRelation>
+                  <relation active="#struct-300009" type="direct"/>
+               </listRelation>
+            </org>
+            <org type="institution" xml:id="struct-300009" status="VALID">
+               <orgName>Institut National de Recherche en Informatique et en Automatique</orgName>
+               <orgName type="acronym">Inria</orgName>
+               <desc>
+                  <address>
+                     <addrLine>Domaine de VoluceauRocquencourt - BP 10578153 Le Chesnay Cedex</addrLine>
+                     <country key="FR"/>
+                  </address>
+                  <ref type="url">http://www.inria.fr/en/</ref>
+               </desc>
+            </org>
+         </listOrg>
+         <listOrg type="projects">
+            <org type="anrProject" xml:id="projanr-33933" status="VALID">
+               <idno type="anr">ANR-11-BSH1-0008</idno>
+               <idno type="program">BLANC</idno>
+               <orgName>STRIPAP</orgName>
+               <desc>STress et RIsques Psychosociaux au travail : Acteurs et Pratiques. Le développement de dispositifs liés au " stress " dans les entreprises.</desc>
+               <date type="start">2011</date>
+            </org>
+            <org type="europeanProject" xml:id="projeurop-712435" status="VALID">
+               <idno type="number">731102</idno>
+               <idno type="program">H2020-EU.1.4.1.3. - Development, deployment and operation of ICT-based e-infrastructures</idno>
+               <orgName>HIRMEOS</orgName>
+               <desc> High Integration of Research Monographs in the European Open Science infrastructure</desc>
+               <date type="start">2017-01-01</date>
+               <date type="end">2019-06-30</date>
+            </org>
+         </listOrg>
+      </back>
+   </text>
+</TEI>
