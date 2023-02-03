@@ -74,6 +74,7 @@
                            <ref type="yyyyyy" target="http://doi"/>
                         </bibl>
                      </egXML>
+                     <!-- CF: A voir et à améliorer -->
                      <note>Les valeurs de <att>type</att> ci-dessus restent à déterminer.</note>
                   </div>
                </div>
@@ -317,6 +318,8 @@
                <moduleRef key="namesdates" include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
                <moduleRef key="spoken" include="recordingStmt recording"/>
                <moduleRef key="corpus" include="particDesc"/>
+               <!-- Ajout de la disponibilité de corresp pour valider le schéma XSD-->
+               <moduleRef key="linking"/>
 
                <elementSpec ident="TEI" mode="change">
                   <!-- Comment utiliser @validUntil? -->
@@ -360,6 +363,7 @@
                            <sequence>
                               <elementRef key="titleStmt" minOccurs="0"/>
                               <elementRef key="editionStmt" minOccurs="0"/>
+                              <!-- CF: Ajout de extent pourquoi ?-->
                               <elementRef key="extent" minOccurs="0"/>
                               <elementRef key="publicationStmt" minOccurs="0"/>
                               <elementRef key="seriesStmt" minOccurs="0"/>
@@ -368,6 +372,7 @@
                            <elementRef key="sourceDesc" minOccurs="0" maxOccurs="unbounded"/>
                            <elementRef key="profileDesc" minOccurs="0" maxOccurs="unbounded"/>
                         </sequence>
+                        <!-- CF: Pourquoi un ajout d'une autre possibiltié de séquence dans ce biblFull et sans condition ? -->
                         <sequence>
                            <elementRef key="fileDesc"/>
                            <elementRef key="profileDesc"/>
@@ -421,7 +426,8 @@
                   </classes>
                </elementSpec>
 
-               <!-- @type est ajouté par soucie de compatibilité courante avec HAL, mais la spécificatino indique que cet usage est déprécié au profit de @status (aussi ajouté à la spec) -->
+               <!-- @type est ajouté par soucie de compatibilité courante avec HAL, mais la spécification indique que cet usage est déprécié au profit de @status (aussi ajouté à la spec) -->
+               <!-- Question autour de release, type au lieu de status, question de version -->
                <elementSpec ident="edition" mode="change">
                   <classes mode="change">
                      <memberOf key="att.typed" mode="add"/>
