@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -58,6 +55,21 @@
                      auteurs (e.g. ajouts d'identifiants VIAF, IdRef ou Orcid), fourniture de données d'affiliation, intégration dans des collections particulières (par exemple en lien avec une
                      colleciton institutionnelle, de projets, etc.)) etc.. Elle peut aussi contenir un lien vers le fichier source (pdf, docx etc.) si l'information est pertinente pour la transaction
                      courante.</p>
+                  <!-- CF: modification -->
+                  <p>Actuellement, nous utilisons une structure personnalisée. <specList>
+                     <specDesc key="titleStmt"/>
+                     <specDesc key="editionStmt"/>
+                     <specDesc key="extent"/>
+                     <specDesc key="publicationStmt"/>
+                     <specDesc key="notesStmt"/>
+                     <specDesc key="sourceDesc"/>
+                     <specDesc key="profileDesc"/>
+                  </specList>
+                     Mais cette structure ne respecte pas les guidelines TEI donc nous souhaitons à l'avenir aller vers une structure ou les 6 premiers éléments de la liste ci-dessus seront compris dans un élément <gi>fileDesc</gi> : <specList>
+                        <specDesc key="fileDesc"/>
+                        <specDesc key="profileDesc"/>
+                     </specList>
+                  </p>
                </div>
                <div>
                   <head>Description de la source (<gi>sourceDesc</gi> et <gi>biblStruct</gi>)</head>
@@ -307,7 +319,7 @@
          </div>
          <div>
             <head>Spécification</head>
-            <schemaSpec ident="HAL" docLang="en" prefix="tei_" xml:lang="en">
+            <schemaSpec ident="HAL" start="TEI" docLang="en" xml:lang="en" ns="http://www.tei-c.org/ns/1.0">
                <moduleRef key="core"
                   include="listBibl bibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
                <moduleRef key="tei"/>
@@ -318,8 +330,8 @@
                <moduleRef key="namesdates" include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
                <moduleRef key="spoken" include="recordingStmt recording"/>
                <moduleRef key="corpus" include="particDesc"/>
-               <!-- Ajout de la disponibilité de corresp pour valider le schéma XSD-->
-               <moduleRef key="linking"/>
+               <!-- CF :Ajout de la disponibilité de corresp pour valider le schéma XSD-->
+               <moduleRef key="linking" include="corresp"/>
 
                <elementSpec ident="TEI" mode="change">
                   <!-- Comment utiliser @validUntil? -->
@@ -355,15 +367,15 @@
                      </egXML>
                   </exemplum>
                </elementSpec>
-
+               
                <elementSpec ident="biblFull" mode="change">
                   <content>
                      <alternate>
+                        <!-- sequence ancienne non conforme à la TEI -->
                         <sequence>
                            <sequence>
                               <elementRef key="titleStmt" minOccurs="0"/>
                               <elementRef key="editionStmt" minOccurs="0"/>
-                              <!-- CF: Ajout de extent pourquoi ?-->
                               <elementRef key="extent" minOccurs="0"/>
                               <elementRef key="publicationStmt" minOccurs="0"/>
                               <elementRef key="seriesStmt" minOccurs="0"/>
@@ -372,15 +384,20 @@
                            <elementRef key="sourceDesc" minOccurs="0" maxOccurs="unbounded"/>
                            <elementRef key="profileDesc" minOccurs="0" maxOccurs="unbounded"/>
                         </sequence>
-                        <!-- CF: Pourquoi un ajout d'une autre possibiltié de séquence dans ce biblFull et sans condition ? -->
+                        <!-- Sequence conforme qui à l'avenir doit être la seul à rester-->
                         <sequence>
                            <elementRef key="fileDesc"/>
                            <elementRef key="profileDesc"/>
                         </sequence>
                      </alternate>
                   </content>
+                  <remarks>
+                     <p>
+                        Actuellement, nous acceptons les deux séquences mais à l'avenir seul la deuxième séquence sera accepté par HAL.
+                     </p>
+                  </remarks>
                </elementSpec>
-
+               
                <elementSpec ident="idno" mode="change">
                   <classes mode="change">
                      <!-- De façon à disposer de @notation -->
@@ -391,6 +408,7 @@
                <elementSpec ident="email" mode="change">
                   <classes mode="change">
                      <!-- De façon à disposer de @type -->
+                     <!-- A reprendre car ne correspond pas à la TEI-->
                      <memberOf key="att.typed" mode="add"/>
                   </classes>
                </elementSpec>
