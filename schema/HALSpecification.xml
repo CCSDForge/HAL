@@ -3,7 +3,8 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title xml:lang="fr">Spécification du schéma d'import-export TEI de l'archive ouverte HAL</title>
+            <title xml:lang="fr">Spécification du schéma d'import-export TEI de l'archive ouverte
+               HAL</title>
             <author>
                <persName>
                   <forename>Laurent</forename>
@@ -15,7 +16,8 @@
          <publicationStmt>
             <authority>CCSD</authority>
             <availability>
-               <licence target="http://creativecommons.org/licenses/by/3.0/deed.fr">Creative Commons Attribution 3.0 non transposé (CC BY 3.0)</licence>
+               <licence target="http://creativecommons.org/licenses/by/3.0/deed.fr">Creative Commons
+                  Attribution 3.0 non transposé (CC BY 3.0)</licence>
             </availability>
          </publicationStmt>
          <sourceDesc>
@@ -29,43 +31,59 @@
             <head>Description</head>
             <div>
                <head>Introduction</head>
-               <p>La présente spécification décrit un format d'échange de données bibliographiques reposant sur les directives de la TEI (<ref target="http://www.tei-c.org">Text Encoding
-                     Initiative</ref>). Ce format est destiné à couvrir les différentes situations où des données biblioghraphiques de référence, accompagnant éventuellement des liens vers les
-                  documents correspondants sont compilées, enrichies et échangées d'un service d'information scientifique à un autre. Les principaux scénarios d'utilisaitons prévus pour ce format sont
-                  les suivants:</p>
+               <p>La présente spécification décrit un format d'échange de données bibliographiques
+                  reposant sur les directives de la TEI (<ref target="http://www.tei-c.org">Text
+                     Encoding Initiative</ref>). Ce format est destiné à couvrir les différentes
+                  situations où des données biblioghraphiques de référence, accompagnant
+                  éventuellement des liens vers les documents correspondants sont compilées,
+                  enrichies et échangées d'un service d'information scientifique à un autre. Les
+                  principaux scénarios d'utilisaitons prévus pour ce format sont les suivants:</p>
                <list>
-                  <item>export de listes d'entrées depuis une archive de publication (typiquement HAL), soit pour directement obtenir les informations liées à une entrée particulière ou suite à une
-                     requête adressées à cette archive</item>
-                  <item>import individuel ou en batch de nouvelles entrées dans une archive de publication (typiquement HAL), notamment par le biais d'une interface SWORD</item>
-                  <item>compilation de données bibliographiques issues de bases hétérogènes comme c'est le cas dans le projet Conditor</item>
+                  <item>export de listes d'entrées depuis une archive de publication (typiquement
+                     HAL), soit pour directement obtenir les informations liées à une entrée
+                     particulière ou suite à une requête adressées à cette archive</item>
+                  <item>import individuel ou en batch de nouvelles entrées dans une archive de
+                     publication (typiquement HAL), notamment par le biais d'une interface
+                     SWORD</item>
+                  <item>compilation de données bibliographiques issues de bases hétérogènes comme
+                     c'est le cas dans le projet Conditor</item>
                </list>
             </div>
             <div>
                <head>Organisation des listes bibliographiques</head>
                <div>
                   <head>Le niveau de la transaction (<gi>TEI</gi>)</head>
-                  <p>Ce niveau décrit toutes les informations relatives à la transaction ayant conduit à la production de la liste des notices bibliographiques. L'entête TEI (<gi>teiHeader</gi>)
-                     rattachée à l'élément racine <gi>TEI</gi> va en particulier décrire l'origine de la transaction (requête et/ou bases de données sources), la date de celle-ci, ainsi que les
-                     responsabilités associées (insitution responsable des données, licence, etc.).</p>
+                  <p>Ce niveau décrit toutes les informations relatives à la transaction ayant
+                     conduit à la production de la liste des notices bibliographiques. L'entête TEI
+                        (<gi>teiHeader</gi>) rattachée à l'élément racine <gi>TEI</gi> va en
+                     particulier décrire l'origine de la transaction (requête et/ou bases de données
+                     sources), la date de celle-ci, ainsi que les responsabilités associées
+                     (insitution responsable des données, licence, etc.).</p>
                </div>
                <div>
                   <head>Le niveau de la notice bibliographique (<gi>biblFull</gi>)</head>
-                  <p>L'élément <gi>biblFull</gi> fournit les méta-données recueillies au niveau de l'entité qui a généré la transaction. En dehors des caractéristiques bibliographiques de l'objet
-                     concerné, ce nieau peut contenir tout un ensemble de champs liés à la gestions (curation) des notices correspondantes: ajout d'identifiants bibliographiques, désambigüisation des
-                     auteurs (e.g. ajouts d'identifiants VIAF, IdRef ou Orcid), fourniture de données d'affiliation, intégration dans des collections particulières (par exemple en lien avec une
-                     colleciton institutionnelle, de projets, etc.)) etc.. Elle peut aussi contenir un lien vers le fichier source (pdf, docx etc.) si l'information est pertinente pour la transaction
-                     courante.</p>
+                  <p>L'élément <gi>biblFull</gi> fournit les méta-données recueillies au niveau de
+                     l'entité qui a généré la transaction. En dehors des caractéristiques
+                     bibliographiques de l'objet concerné, ce nieau peut contenir tout un ensemble
+                     de champs liés à la gestions (curation) des notices correspondantes: ajout
+                     d'identifiants bibliographiques, désambigüisation des auteurs (e.g. ajouts
+                     d'identifiants VIAF, IdRef ou Orcid), fourniture de données d'affiliation,
+                     intégration dans des collections particulières (par exemple en lien avec une
+                     colleciton institutionnelle, de projets, etc.)) etc.. Elle peut aussi contenir
+                     un lien vers le fichier source (pdf, docx etc.) si l'information est pertinente
+                     pour la transaction courante.</p>
                   <!-- CF: modification -->
                   <p>Actuellement, nous utilisons une structure personnalisée. <specList>
-                     <specDesc key="titleStmt"/>
-                     <specDesc key="editionStmt"/>
-                     <specDesc key="extent"/>
-                     <specDesc key="publicationStmt"/>
-                     <specDesc key="notesStmt"/>
-                     <specDesc key="sourceDesc"/>
-                     <specDesc key="profileDesc"/>
-                  </specList>
-                     Mais cette structure ne respecte pas les guidelines TEI donc nous souhaitons à l'avenir aller vers une structure ou les 6 premiers éléments de la liste ci-dessus seront compris dans un élément <gi>fileDesc</gi> : <specList>
+                        <specDesc key="titleStmt"/>
+                        <specDesc key="editionStmt"/>
+                        <specDesc key="extent"/>
+                        <specDesc key="publicationStmt"/>
+                        <specDesc key="notesStmt"/>
+                        <specDesc key="sourceDesc"/>
+                        <specDesc key="profileDesc"/>
+                     </specList> Mais cette structure ne respecte pas les guidelines TEI donc nous
+                     souhaitons à l'avenir aller vers une structure ou les 6 premiers éléments de la
+                     liste ci-dessus seront compris dans un élément <gi>fileDesc</gi> : <specList>
                         <specDesc key="fileDesc"/>
                         <specDesc key="profileDesc"/>
                      </specList>
@@ -73,10 +91,14 @@
                </div>
                <div>
                   <head>Description de la source (<gi>sourceDesc</gi> et <gi>biblStruct</gi>)</head>
-                  <p>Ce niveau décrit les différences sources d'information utilisées comme référence pour la notice courante. Dans le cas d'une notice HAL pour un article de journal par exemple, on
-                     pourra y trouver les méta-données éditeur (DOI, ISSN, lien vers la base de l'éditeur).</p>
-                  <note>La duplication d'informations entre les niveaux de la notice et de la source est tout à fait normale puisque la notice est le reflet consolidé de la ou des sources qui ont
-                     servi à la construire. Le niveau est cependant en général plus riche que celui de la source.</note>
+                  <p>Ce niveau décrit les différences sources d'information utilisées comme
+                     référence pour la notice courante. Dans le cas d'une notice HAL pour un article
+                     de journal par exemple, on pourra y trouver les méta-données éditeur (DOI,
+                     ISSN, lien vers la base de l'éditeur).</p>
+                  <note>La duplication d'informations entre les niveaux de la notice et de la source
+                     est tout à fait normale puisque la notice est le reflet consolidé de la ou des
+                     sources qui ont servi à la construire. Le niveau est cependant en général plus
+                     riche que celui de la source.</note>
                   <div>
                      <head>Intégration de sources externes d'information</head>
                      <p>...</p>
@@ -92,12 +114,17 @@
                </div>
             </div>
             <div>
-               <head>Caractérisation de l'édition d'une entrée bibliographique avec <gi>editionStmt</gi></head>
-               <p>Deux blocs sont utilisés pour caractériser l'édition d'une entrée au sein de <gi>editionStmt</gi> :</p>
+               <head>Caractérisation de l'édition d'une entrée bibliographique avec
+                     <gi>editionStmt</gi></head>
+               <p>Deux blocs sont utilisés pour caractériser l'édition d'une entrée au sein de
+                     <gi>editionStmt</gi> :</p>
                <list>
-                  <item><gi>edition</gi> permet d'indiquer les différentes dates significatives associées à l'entrée (création, modification) ainsi que les documents extérieurs liés à la fiche
-                     courante. C'est là que sont indiqués les chemins vers le le document plein texte;</item>
-                  <item><gi>respStmt</gi> permet d'indiquer qui est intervenu sur l'entrée, tant du point de vue de sa création que de modificaitons ultérieures.</item>
+                  <item><gi>edition</gi> permet d'indiquer les différentes dates significatives
+                     associées à l'entrée (création, modification) ainsi que les documents
+                     extérieurs liés à la fiche courante. C'est là que sont indiqués les chemins
+                     vers le le document plein texte;</item>
+                  <item><gi>respStmt</gi> permet d'indiquer qui est intervenu sur l'entrée, tant du
+                     point de vue de sa création que de modificaitons ultérieures.</item>
                </list>
                <div>
                   <head>Usage de <gi>edition</gi></head>
@@ -105,17 +132,22 @@
                   <p>Deux attributs doivent être renseignés pour <gi>edition</gi>:</p>
                   <list>
                      <item><att>n</att>: indique le numéro de la version (V1, V2, etc.);</item>
-                     <item><att>status</att> indique le statut de la version courante dans l'ensemble des version. <code>status="current"</code> indique qu'il s'agit de la version courante du point de
-                        vue de HAL (par exemple)</item>
+                     <item><att>status</att> indique le statut de la version courante dans
+                        l'ensemble des version. <code>status="current"</code> indique qu'il s'agit
+                        de la version courante du point de vue de HAL (par exemple)</item>
                   </list>
-                  <note place="inline" rend="bold"><att>type</att> est encore utilisé par HAL en lieu de <att>status</att>, mais cet usage doit disparaitre à terme.</note>
+                  <note place="inline" rend="bold"><att>type</att> est encore utilisé par HAL en
+                     lieu de <att>status</att>, mais cet usage doit disparaitre à terme.</note>
                   <div>
                      <head>Documentation des archives externes (CINES)</head>
-                     <p>L'indication de l'archivage d'un ou plusieurs fichiers associés à une entrée se fait à l'aide de l'élement <gi>idno</gi> comme suit:</p>
+                     <p>L'indication de l'archivage d'un ou plusieurs fichiers associés à une entrée
+                        se fait à l'aide de l'élement <gi>idno</gi> comme suit:</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <idno type="ARK" from="2017-08-02">xyz</idno>
                      </egXML>
-                     <note>Il reste à déterminer si cette information est générale à la version (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi> correspondant)</note>
+                     <note>Il reste à déterminer si cette information est générale à la version
+                        (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi>
+                        correspondant)</note>
                   </div>
                </div>
             </div>
@@ -123,11 +155,15 @@
                <head>Représentation des affiliations</head>
                <div>
                   <head>Deux modes de représentation: référencement et encapsulage</head>
-                  <p>L'indication de la ou des affiliation(s) d'un auteur s'effectue à l'aide de l'élément <gi>affiliation</gi> comme enfant direct de <gi>author</gi>. L'affiliation est elle même
-                     décrite de deux façons en fonction du cas d'usage: </p>
+                  <p>L'indication de la ou des affiliation(s) d'un auteur s'effectue à l'aide de
+                     l'élément <gi>affiliation</gi> comme enfant direct de <gi>author</gi>.
+                     L'affiliation est elle même décrite de deux façons en fonction du cas d'usage: </p>
                   <list>
-                     <item>par <emph>référencement</emph> (cas de l'export HAL) de structures factorisée dans l'élément <gi>back</gi> du document <gi>TEI</gi> englobant;</item>
-                     <item>par <emph>encapsulation</emph> des descriptions d'organisations, comme c'est le cas pour Conditor.</item>
+                     <item>par <emph>référencement</emph> (cas de l'export HAL) de structures
+                        factorisée dans l'élément <gi>back</gi> du document <gi>TEI</gi>
+                        englobant;</item>
+                     <item>par <emph>encapsulation</emph> des descriptions d'organisations, comme
+                        c'est le cas pour Conditor.</item>
                   </list>
                </div>
                <div>
@@ -157,7 +193,9 @@
                            <idno type="RNSR">201521685K</idno>
                            <orgName>Service de physique de l'état condensé</orgName>
                            <orgName type="acronym">SPEC - UMR3680</orgName>
-                           <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464), CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE CEDEX</addrLine><country key="FR"/></address></desc>
+                           <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464),
+                                    CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE
+                                    CEDEX</addrLine><country key="FR"/></address></desc>
                            <listRelation>
                               <relation name="DRF/IRAMIS" active="#struct-300016" type="direct"/>
                               <relation active="#struct-419361" type="direct"/>
@@ -165,13 +203,17 @@
                            </listRelation>
                         </org>
                         <org type="institution" xml:id="struct-300016" status="VALID">
-                           <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                           <orgName>Commissariat à l'énergie atomique et aux énergies
+                              alternatives</orgName>
                            <orgName type="acronym">CEA</orgName>
-                           <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                           <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de
+                                    Cadaracheetc</addrLine><country key="FR"/></address></desc>
                         </org>
                         <org type="institution" xml:id="struct-419361" status="VALID">
                            <orgName>Université Paris-Saclay</orgName>
-                           <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                           <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 -
+                                    2e ét., 91190 Saint-Aubin</addrLine><country key="FR"
+                                 /></address></desc>
                         </org>
                         <org type="institution" xml:id="struct-441569" status="VALID">
                            <idno type="IdRef">02636817X</idno>
@@ -184,7 +226,8 @@
                         <org type="department" xml:id="struct-53953" status="VALID">
                            <orgName>Institut Rayonnement Matière de Saclay</orgName>
                            <orgName type="acronym">IRAMIS</orgName>
-                           <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country key="FR"/></address></desc>
+                           <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country
+                                    key="FR"/></address></desc>
                            <listRelation>
                               <relation name="DSM/IRAMIS" active="#struct-300016" type="direct"/>
                               <relation active="#struct-419361" type="direct"/>
@@ -196,11 +239,15 @@
             </div>
             <div>
                <head>Représentation des affiliations par encapsulation</head>
-               <p>Lorsque les affiliatoins sont encapsulées, la représentation est directement intégrée à l'élément <gi>affiliation</gi> avec les caractéristiques suivantes:</p>
+               <p>Lorsque les affiliatoins sont encapsulées, la représentation est directement
+                  intégrée à l'élément <gi>affiliation</gi> avec les caractéristiques suivantes:</p>
                <list>
-                  <item>L'organisaton correspondant à l'affiliation référencée est directe positionnée comme fils de <gi>affiliation</gi>;</item>
-                  <item>L'identifiant de la structure est indiquée à l'aide de <att>key</att>;</item>
-                  <item>Les sous-structures <emph>directes</emph> (au sens de <code>relation/@type</code> sont recopiées récursivement.</item>
+                  <item>L'organisaton correspondant à l'affiliation référencée est directe
+                     positionnée comme fils de <gi>affiliation</gi>;</item>
+                  <item>L'identifiant de la structure est indiquée à l'aide de
+                     <att>key</att>;</item>
+                  <item>Les sous-structures <emph>directes</emph> (au sens de
+                        <code>relation/@type</code> sont recopiées récursivement.</item>
                </list>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <author>
@@ -213,11 +260,16 @@
                               <idno type="RNSR">201521685K</idno>
                               <orgName>Service de physique de l'état condensé</orgName>
                               <orgName type="acronym">SPEC - UMR3680</orgName>
-                              <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464), CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE CEDEX</addrLine><country key="FR"/></address></desc>
+                              <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464),
+                                       CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE
+                                       CEDEX</addrLine><country key="FR"/></address></desc>
                               <org type="institution" key="struct-300016" status="VALID">
-                                 <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                                 <orgName>Commissariat à l'énergie atomique et aux énergies
+                                    alternatives</orgName>
                                  <orgName type="acronym">CEA</orgName>
-                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre
+                                          de Cadaracheetc</addrLine><country key="FR"
+                                    /></address></desc>
                               </org>
                               <org type="institution" key="struct-441569" status="VALID">
                                  <idno type="IdRef">02636817X</idno>
@@ -229,21 +281,29 @@
                               </org>
                               <org type="institution" xml:id="struct-419361" status="VALID">
                                  <orgName>Université Paris-Saclay</orgName>
-                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD
+                                          128 - 2e ét., 91190 Saint-Aubin</addrLine><country
+                                          key="FR"/></address></desc>
                               </org>
                            </org>
                            <org type="department" key="struct-53953" status="VALID">
                               <orgName>Institut Rayonnement Matière de Saclay</orgName>
                               <orgName type="acronym">IRAMIS</orgName>
-                              <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country key="FR"/></address></desc>
+                              <desc><address><addrLine>91191 Gif-sur-Yvette,
+                                       France</addrLine><country key="FR"/></address></desc>
                               <org type="institution" key="struct-300016" status="VALID">
-                                 <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                                 <orgName>Commissariat à l'énergie atomique et aux énergies
+                                    alternatives</orgName>
                                  <orgName type="acronym">CEA</orgName>
-                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre
+                                          de Cadaracheetc</addrLine><country key="FR"
+                                    /></address></desc>
                               </org>
                               <org type="institution" key="struct-419361" status="VALID">
                                  <orgName>Université Paris-Saclay</orgName>
-                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD
+                                          128 - 2e ét., 91190 Saint-Aubin</addrLine><country
+                                          key="FR"/></address></desc>
                               </org>
                            </org>
                         </org>
@@ -257,7 +317,8 @@
                   <item><term>softwareLicence</term>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <availability status="restricted">
-                           <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU General Public License v3.0 only</licence>
+                           <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU
+                              General Public License v3.0 only</licence>
                         </availability>
                      </egXML>
                      <note>Possibilité d'en avoir plusieurs</note></item>
@@ -267,11 +328,15 @@
                            <note type="programmingLanguage">Matlab</note>
                         </notesStmt>
                      </egXML></item>
-                  <item><term>codeRepository</term> Pour l'instant: <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <ref type="seeAlso"> https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git </ref>
+                  <item><term>codeRepository</term> Pour l'instant: <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples">
+                        <ref type="seeAlso"> https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git
+                        </ref>
                      </egXML>
-                     <note>Le lien doit passer dans <att>target</att> et on change le type pour obtenir: <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <ref type="codeRepository" target="https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git"/>
+                     <note>Le lien doit passer dans <att>target</att> et on change le type pour
+                        obtenir: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <ref type="codeRepository"
+                              target="https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git"/>
                         </egXML>
                      </note>
                   </item>
@@ -291,14 +356,16 @@
                      <note><ref target="#example1">cf. example précédent</ref></note>
                   </item>
                   <item><term>developmentStatus</term>
-                     <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <note>Pas encore intégré à l'export, devrait être: <egXML
+                           xmlns="http://www.tei-c.org/ns/Examples">
                            <notesStmt>
                               <note type="developmentStatus">...</note>
                            </notesStmt>
                         </egXML>
                      </note></item>
                   <item><term>runtimePlatform</term>
-                     <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <note>Pas encore intégré à l'export, devrait être: <egXML
+                           xmlns="http://www.tei-c.org/ns/Examples">
                            <notesStmt>
                               <note type="runtimePlatform">...</note>
                            </notesStmt>
@@ -309,17 +376,20 @@
             </div>
             <div>
                <head>Evolutions à prévoir</head>
-               <p>Cette section contient les propositions de changement qui doivent être implémentées dans la spécification ainsi que les modifications à effectuer au sein des projets utilisants le
-                  présent schéma.</p>
+               <p>Cette section contient les propositions de changement qui doivent être
+                  implémentées dans la spécification ainsi que les modifications à effectuer au sein
+                  des projets utilisants le présent schéma.</p>
                <list>
-                  <item>HAL: Supprimer la génération de l'espace de nom superflu: <mentioned>xmlns:tei="http://www.tei-c.org/ns/1.0"</mentioned></item>
+                  <item>HAL: Supprimer la génération de l'espace de nom superflu:
+                        <mentioned>xmlns:tei="http://www.tei-c.org/ns/1.0"</mentioned></item>
                   <item>HAL: ne pas générer de contenu vide: <code>subtype=""</code></item>
                </list>
             </div>
          </div>
          <div>
             <head>Spécification</head>
-            <schemaSpec ident="HAL" start="TEI" docLang="en" xml:lang="en" ns="http://www.tei-c.org/ns/1.0">
+            <schemaSpec ident="HAL" start="TEI" docLang="en" xml:lang="en"
+               ns="http://www.tei-c.org/ns/1.0">
                <moduleRef key="core"
                   include="listBibl bibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
                <moduleRef key="tei"/>
@@ -327,14 +397,21 @@
                   include="teiHeader fileDesc profileDesc biblFull titleStmt funder editionStmt edition publicationStmt distributor availability licence seriesStmt notesStmt sourceDesc authority profileDesc langUsage language textClass keywords classCode abstract creation idno"/>
                <moduleRef key="textstructure" include="TEI text body back"/>
                <moduleRef key="iso-fs" except="fsdDecl"/>
-               <moduleRef key="namesdates" include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
+               <moduleRef key="namesdates"
+                  include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
                <moduleRef key="spoken" include="recordingStmt recording"/>
                <moduleRef key="corpus" include="particDesc"/>
-               <!-- CF :Ajout de la disponibilité de corresp pour valider le schéma XSD-->
                <moduleRef key="linking" include="corresp"/>
+               <!-- CF :Ajout de validUntil -->
+               <moduleRef key="tagdocs" include="validUntil"/>
 
                <elementSpec ident="TEI" mode="change">
-                  <!-- Comment utiliser @validUntil? -->
+                  <!-- LR :Comment utiliser @validUntil? -->
+                  <!-- Restriction de tous les autres attributs car ils ne nous servent pas -->
+                  <classes mode="change">
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
                   <content>
                      <sequence>
                         <elementRef key="teiHeader" minOccurs="0" maxOccurs="1"/>
@@ -343,7 +420,8 @@
                   </content>
                   <attList>
                      <attDef ident="version" mode="change" usage="rec">
-                        <desc>Indicates the version of the HAL specification used for the current document</desc>
+                        <desc>Indicates the version of the HAL specification used for the current
+                           document</desc>
                         <datatype>
                            <dataRef key="teidata.text"/>
                         </datatype>
@@ -351,6 +429,8 @@
                            <p/>
                         </remarks>
                      </attDef>
+                     <!-- CF : Ajout de validUntil possible pour quel raison ?  -->
+                     <!-- <attDef ident="validUntil" mode="add"/> -->
                   </attList>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -367,11 +447,59 @@
                      </egXML>
                   </exemplum>
                </elementSpec>
-               
+
+               <elementSpec ident="body" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.declaring" mode="delete"/>
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence>
+                        <elementRef key="listBibl"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <body>
+                           <listBibl>
+                              <biblFull>Métadonnées d'une entrée dans HAL</biblFull>
+                           </listBibl>
+                        </body>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="listBibl" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence>
+                        <elementRef key="biblFull"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listBibl>
+                           <biblFull>Métadonnées d'une entrée dans HAL</biblFull>
+                        </listBibl>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
                <elementSpec ident="biblFull" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.docStatus" mode="delete"/>
+                  </classes>
                   <content>
                      <alternate>
-                        <!-- sequence ancienne non conforme à la TEI -->
+                        <!-- CF : sequence ancienne non conforme à la TEI -->
                         <sequence>
                            <sequence>
                               <elementRef key="titleStmt" minOccurs="0"/>
@@ -384,20 +512,196 @@
                            <elementRef key="sourceDesc" minOccurs="0" maxOccurs="unbounded"/>
                            <elementRef key="profileDesc" minOccurs="0" maxOccurs="unbounded"/>
                         </sequence>
-                        <!-- Sequence conforme qui à l'avenir doit être la seul à rester-->
+                        <!-- CF : Sequence conforme qui à l'avenir doit être la seul à rester-->
                         <sequence>
                            <elementRef key="fileDesc"/>
                            <elementRef key="profileDesc"/>
                         </sequence>
                      </alternate>
                   </content>
+                  <!-- Reprise Exemple -->
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <biblFull>
+                              <fileDesc>
+                                 <titleStmt>
+                                    <title>The shortest possible TEI document</title>
+                                 </titleStmt>
+                                 <editionStmt></editionStmt>
+                                 <publicationStmt></publicationStmt>
+                                 <seriesStmt></seriesStmt>
+                                 <notesStmt></notesStmt>
+                                 <sourceDesc></sourceDesc>
+                              </fileDesc>
+                              <profileDesc></profileDesc>
+                           </biblFull>
+                     </egXML>
+                  </exemplum>
                   <remarks>
-                     <p>
-                        Actuellement, nous acceptons les deux séquences mais à l'avenir seul la deuxième séquence sera accepté par HAL.
-                     </p>
+                     <p> Actuellement, nous acceptons les deux séquences mais à l'avenir seul la
+                        deuxième séquence sera accepté par HAL. </p>
                   </remarks>
+                  
+               </elementSpec>
+
+               <elementSpec ident="fileDesc" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <alternate>
+                        <sequence>
+                           <elementRef key="titleStmt" minOccurs="0"/>
+                           <elementRef key="editionStmt" minOccurs="0"/>
+                           <elementRef key="publicationStmt" minOccurs="0"/>
+                           <elementRef key="seriesStmt" minOccurs="0"/>
+                           <elementRef key="notesStmt" minOccurs="0"/>
+                           <elementRef key="sourceDesc" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
+                     </alternate>
+                  </content>
                </elementSpec>
                
+               <elementSpec ident="titleStmt" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <!-- Obligation d'avoir un titre dans les TEI guidelines mais pas dans HAL Sword, est-ce qu'il y a des cas de transfert d'article sans titre ?-->
+                     <elementRef key="title" minOccurs="1" maxOccurs="unbounded"/>
+                     <elementRef key="author" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="editor" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="funder" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <!-- Reprise Exemple -->
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <titleStmt>
+                           <title xml:lang="fr">Titre du document</title>
+                           <title type="sub" xml:lang="en">Document subtitle</title>
+                           <author role="aut">
+                              <persName>
+                                 <forename type="first">Laurent</forename>
+                                 <forename type="middle">Middle</forename>
+                                 <surname>Romary</surname>
+                              </persName>
+                              <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                              <email type="domain">inria.fr</email>
+                              <idno type="idhal" notation="string">laurentromary</idno>
+                              <idno type="idhal" notation="numeric">307</idno>
+                              <idno type="halauthorid">49567</idno>
+                              <idno type="arXiv">https://arxiv.org/a/romary_l_1</idno>
+                              <idno type="ResearcherId">http://www.researcherid.com/rid/A-5114-2012</idno>
+                              <idno type="IdRef">https://www.idref.fr/060702494</idno>
+                              <idno type="ORCID">https://orcid.org/0000-0002-0756-0508</idno>
+                              <idno type="VIAF">https://viaf.org/viaf/VIAF282014122</idno>
+                              <idno type="ISNI">http://isni.org/isni/0000000388795444</idno>
+                              <orgName ref="#struct-300009"/>
+                              <affiliation ref="#struct-482775"/>
+                           </author>
+                           <editor></editor>
+                           <funder></funder>
+                        </titleStmt>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+              
+               
+               <elementSpec ident="title" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <!-- CF: Est-ce qu'il y a une typologie des type de au moment du chargement en base, est-ce que level sert ? Pour améliorer  l'exemple-->
+                  <attList>
+                     <attDef ident="type" mode="change" usage="opt"/>
+                     <attDef ident="level" mode="change" usage="opt"/>
+                     <attDef ident="xml:lang" mode="change" usage="opt"/>
+                  </attList>
+                 <exemplum>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                       <title xml:lang="fr">Titre du document</title>
+                       <title type="sub" xml:lang="en">Document subtitle</title>
+                    </egXML>
+                 </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="author" mode="change">
+                  <content>
+                     <elementRef key="persName" minOccurs="0"/>
+                     <elementRef key="email" minOccurs="0"/>
+                     <elementRef key="ptr"/>
+                     <elementRef key="idno"/>
+                     <elementRef key="orgName"/>
+                     <elementRef key="affiliation"/>
+                  </content>
+                  <attList>
+                     <!-- CF: liste des attributs requis ?? -->
+                     <attDef ident="role" mode="change" usage="req"></attDef>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <author role="aut">
+                           <persName>
+                              <forename type="first">Laurent</forename>
+                              <forename type="middle">Middle</forename>
+                              <surname>Romary</surname>
+                           </persName>
+                           <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                           <email type="domain">inria.fr</email>
+                           <idno type="idhal" notation="string">laurentromary</idno>
+                           <idno type="idhal" notation="numeric">307</idno>
+                           <idno type="halauthorid">49567</idno>
+                           <idno type="arXiv">https://arxiv.org/a/romary_l_1</idno>
+                           <idno type="ResearcherId">http://www.researcherid.com/rid/A-5114-2012</idno>
+                           <idno type="IdRef">https://www.idref.fr/060702494</idno>
+                           <idno type="ORCID">https://orcid.org/0000-0002-0756-0508</idno>
+                           <idno type="VIAF">https://viaf.org/viaf/VIAF282014122</idno>
+                           <idno type="ISNI">http://isni.org/isni/0000000388795444</idno>
+                           <orgName ref="#struct-300009"/>
+                           <affiliation ref="#struct-482775"/>
+                        </author>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="persName" mode="change">
+                  <content>
+                     <elementRef key="forename"/>
+                     <elementRef key="surname"/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <persName>
+                           <forename type="first">Laurent</forename>
+                           <forename type="middle">Middle</forename>
+                           <surname>Romary</surname>
+                        </persName>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="forename" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="first">
+                              <desc>caractérise le prénom</desc>
+                           </valItem>
+                           <valItem ident="middle">
+                              <desc>caractérise le nom intermédiaire</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <forename type="first">Laurent</forename>
+                        <forename type="middle">Middle</forename>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
                <elementSpec ident="idno" mode="change">
                   <classes mode="change">
                      <!-- De façon à disposer de @notation -->
@@ -466,11 +770,11 @@
                      </alternate>
                   </content>
                </elementSpec>
-               
+
                <!-- On relache les contraintes sur le modèle de seriesStmt (cf. ligne suivante) -->
                <!-- ( title+, ( editor | respStmt )*, ( idno | biblScope )* ) ) -->
                <!-- L'idée est principalement d'avoir des idno dans l'élément -->
-               
+
                <elementSpec ident="seriesStmt" mode="change">
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
