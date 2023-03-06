@@ -3,8 +3,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title xml:lang="fr">Spécification du schéma d'import-export TEI de l'archive ouverte
-               HAL</title>
+            <title xml:lang="fr">Spécification du schéma d'import-export TEI de l'archive ouverte HAL</title>
             <author>
                <persName>
                   <forename>Laurent</forename>
@@ -16,8 +15,7 @@
          <publicationStmt>
             <authority>CCSD</authority>
             <availability>
-               <licence target="http://creativecommons.org/licenses/by/3.0/deed.fr">Creative Commons
-                  Attribution 3.0 non transposé (CC BY 3.0)</licence>
+               <licence target="http://creativecommons.org/licenses/by/3.0/deed.fr">Creative Commons Attribution 3.0 non transposé (CC BY 3.0)</licence>
             </availability>
          </publicationStmt>
          <sourceDesc>
@@ -31,48 +29,33 @@
             <head>Description</head>
             <div>
                <head>Introduction</head>
-               <p>La présente spécification décrit un format d'échange de données bibliographiques
-                  reposant sur les directives de la TEI (<ref target="http://www.tei-c.org">Text
-                     Encoding Initiative</ref>). Ce format est destiné à couvrir les différentes
-                  situations où des données biblioghraphiques de référence, accompagnant
-                  éventuellement des liens vers les documents correspondants sont compilées,
-                  enrichies et échangées d'un service d'information scientifique à un autre. Les
-                  principaux scénarios d'utilisaitons prévus pour ce format sont les suivants:</p>
+               <p>La présente spécification décrit un format d'échange de données bibliographiques reposant sur les directives de la TEI (<ref target="http://www.tei-c.org">Text Encoding
+                  Initiative</ref>). Ce format est destiné à couvrir les différentes situations où des données biblioghraphiques de référence, accompagnant éventuellement des liens vers les
+                  documents correspondants sont compilées, enrichies et échangées d'un service d'information scientifique à un autre. Les principaux scénarios d'utilisaitons prévus pour ce format sont
+                  les suivants:</p>
                <list>
-                  <item>export de listes d'entrées depuis une archive de publication (typiquement
-                     HAL), soit pour directement obtenir les informations liées à une entrée
-                     particulière ou suite à une requête adressées à cette archive</item>
-                  <item>import individuel ou en batch de nouvelles entrées dans une archive de
-                     publication (typiquement HAL), notamment par le biais d'une interface
-                     SWORD</item>
-                  <item>compilation de données bibliographiques issues de bases hétérogènes comme
-                     c'est le cas dans le projet Conditor</item>
+                  <item>export de listes d'entrées depuis une archive de publication (typiquement HAL), soit pour directement obtenir les informations liées à une entrée particulière ou suite à une
+                     requête adressées à cette archive</item>
+                  <item>import individuel ou en batch de nouvelles entrées dans une archive de publication (typiquement HAL), notamment par le biais d'une interface SWORD</item>
+                  <item>compilation de données bibliographiques issues de bases hétérogènes comme c'est le cas dans le projet Conditor</item>
                </list>
             </div>
             <div>
                <head>Organisation des listes bibliographiques</head>
                <div>
                   <head>Le niveau de la transaction (<gi>TEI</gi>)</head>
-                  <p>Ce niveau décrit toutes les informations relatives à la transaction ayant
-                     conduit à la production de la liste des notices bibliographiques. L'entête TEI
-                        (<gi>teiHeader</gi>) rattachée à l'élément racine <gi>TEI</gi> va en
-                     particulier décrire l'origine de la transaction (requête et/ou bases de données
-                     sources), la date de celle-ci, ainsi que les responsabilités associées
-                     (insitution responsable des données, licence, etc.).</p>
+                  <p>Ce niveau décrit toutes les informations relatives à la transaction ayant conduit à la production de la liste des notices bibliographiques. L'entête TEI (<gi>teiHeader</gi>)
+                     rattachée à l'élément racine <gi>TEI</gi> va en particulier décrire l'origine de la transaction (requête et/ou bases de données sources), la date de celle-ci, ainsi que les
+                     responsabilités associées (insitution responsable des données, licence, etc.).</p>
                </div>
                <div>
                   <head>Le niveau de la notice bibliographique (<gi>biblFull</gi>)</head>
-                  <p>L'élément <gi>biblFull</gi> fournit les méta-données recueillies au niveau de
-                     l'entité qui a généré la transaction. En dehors des caractéristiques
-                     bibliographiques de l'objet concerné, ce nieau peut contenir tout un ensemble
-                     de champs liés à la gestions (curation) des notices correspondantes: ajout
-                     d'identifiants bibliographiques, désambigüisation des auteurs (e.g. ajouts
-                     d'identifiants VIAF, IdRef ou Orcid), fourniture de données d'affiliation,
-                     intégration dans des collections particulières (par exemple en lien avec une
-                     colleciton institutionnelle, de projets, etc.)) etc.. Elle peut aussi contenir
-                     un lien vers le fichier source (pdf, docx etc.) si l'information est pertinente
-                     pour la transaction courante.</p>
-                  <!-- CF: modification -->
+                  <p>L'élément <gi>biblFull</gi> fournit les méta-données recueillies au niveau de l'entité qui a généré la transaction. En dehors des caractéristiques bibliographiques de l'objet
+                     concerné, ce nieau peut contenir tout un ensemble de champs liés à la gestions (curation) des notices correspondantes: ajout d'identifiants bibliographiques, désambigüisation des
+                     auteurs (e.g. ajouts d'identifiants VIAF, IdRef ou Orcid), fourniture de données d'affiliation, intégration dans des collections particulières (par exemple en lien avec une
+                     colleciton institutionnelle, de projets, etc.)) etc.. Elle peut aussi contenir un lien vers le fichier source (pdf, docx etc.) si l'information est pertinente pour la transaction
+                     courante.</p>
+                  <!-- CF: modification de la documentation pour l'avenir
                   <p>Actuellement, nous utilisons une structure personnalisée. <specList>
                         <specDesc key="titleStmt"/>
                         <specDesc key="editionStmt"/>
@@ -81,24 +64,20 @@
                         <specDesc key="notesStmt"/>
                         <specDesc key="sourceDesc"/>
                         <specDesc key="profileDesc"/>
-                     </specList> Mais cette structure ne respecte pas les guidelines TEI donc nous
-                     souhaitons à l'avenir aller vers une structure ou les 6 premiers éléments de la
+                     </specList> Mais cette structure ne respecte pas les guidelines TEI donc nous souhaitons à l'avenir aller vers une structure ou les 6 premiers éléments de la
                      liste ci-dessus seront compris dans un élément <gi>fileDesc</gi> : <specList>
                         <specDesc key="fileDesc"/>
                         <specDesc key="profileDesc"/>
                      </specList>
                   </p>
+                  -->
                </div>
                <div>
                   <head>Description de la source (<gi>sourceDesc</gi> et <gi>biblStruct</gi>)</head>
-                  <p>Ce niveau décrit les différences sources d'information utilisées comme
-                     référence pour la notice courante. Dans le cas d'une notice HAL pour un article
-                     de journal par exemple, on pourra y trouver les méta-données éditeur (DOI,
-                     ISSN, lien vers la base de l'éditeur).</p>
-                  <note>La duplication d'informations entre les niveaux de la notice et de la source
-                     est tout à fait normale puisque la notice est le reflet consolidé de la ou des
-                     sources qui ont servi à la construire. Le niveau est cependant en général plus
-                     riche que celui de la source.</note>
+                  <p>Ce niveau décrit les différences sources d'information utilisées comme référence pour la notice courante. Dans le cas d'une notice HAL pour un article de journal par exemple, on
+                     pourra y trouver les méta-données éditeur (DOI, ISSN, lien vers la base de l'éditeur).</p>
+                  <note>La duplication d'informations entre les niveaux de la notice et de la source est tout à fait normale puisque la notice est le reflet consolidé de la ou des sources qui ont
+                     servi à la construire. Le niveau est cependant en général plus riche que celui de la source.</note>
                   <div>
                      <head>Intégration de sources externes d'information</head>
                      <p>...</p>
@@ -108,23 +87,17 @@
                            <ref type="yyyyyy" target="http://doi"/>
                         </bibl>
                      </egXML>
-                     <!-- CF: A voir et à améliorer -->
                      <note>Les valeurs de <att>type</att> ci-dessus restent à déterminer.</note>
                   </div>
                </div>
             </div>
             <div>
-               <head>Caractérisation de l'édition d'une entrée bibliographique avec
-                     <gi>editionStmt</gi></head>
-               <p>Deux blocs sont utilisés pour caractériser l'édition d'une entrée au sein de
-                     <gi>editionStmt</gi> :</p>
+               <head>Caractérisation de l'édition d'une entrée bibliographique avec <gi>editionStmt</gi></head>
+               <p>Deux blocs sont utilisés pour caractériser l'édition d'une entrée au sein de <gi>editionStmt</gi> :</p>
                <list>
-                  <item><gi>edition</gi> permet d'indiquer les différentes dates significatives
-                     associées à l'entrée (création, modification) ainsi que les documents
-                     extérieurs liés à la fiche courante. C'est là que sont indiqués les chemins
-                     vers le le document plein texte;</item>
-                  <item><gi>respStmt</gi> permet d'indiquer qui est intervenu sur l'entrée, tant du
-                     point de vue de sa création que de modificaitons ultérieures.</item>
+                  <item><gi>edition</gi> permet d'indiquer les différentes dates significatives associées à l'entrée (création, modification) ainsi que les documents extérieurs liés à la fiche
+                     courante. C'est là que sont indiqués les chemins vers le le document plein texte;</item>
+                  <item><gi>respStmt</gi> permet d'indiquer qui est intervenu sur l'entrée, tant du point de vue de sa création que de modificaitons ultérieures.</item>
                </list>
                <div>
                   <head>Usage de <gi>edition</gi></head>
@@ -132,38 +105,29 @@
                   <p>Deux attributs doivent être renseignés pour <gi>edition</gi>:</p>
                   <list>
                      <item><att>n</att>: indique le numéro de la version (V1, V2, etc.);</item>
-                     <item><att>status</att> indique le statut de la version courante dans
-                        l'ensemble des version. <code>status="current"</code> indique qu'il s'agit
-                        de la version courante du point de vue de HAL (par exemple)</item>
+                     <item><att>status</att> indique le statut de la version courante dans l'ensemble des version. <code>status="current"</code> indique qu'il s'agit de la version courante du point de
+                        vue de HAL (par exemple)</item>
                   </list>
-                  <note place="inline" rend="bold"><att>type</att> est encore utilisé par HAL en
-                     lieu de <att>status</att>, mais cet usage doit disparaitre à terme.</note>
+                  <note place="inline" rend="bold"><att>type</att> est encore utilisé par HAL en lieu de <att>status</att>, mais cet usage doit disparaitre à terme.</note>
                   <div>
                      <head>Documentation des archives externes (CINES)</head>
-                     <p>L'indication de l'archivage d'un ou plusieurs fichiers associés à une entrée
-                        se fait à l'aide de l'élement <gi>idno</gi> comme suit:</p>
+                     <p>L'indication de l'archivage d'un ou plusieurs fichiers associés à une entrée se fait à l'aide de l'élement <gi>idno</gi> comme suit:</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <idno type="ARK" from="2017-08-02">xyz</idno>
                      </egXML>
-                     <note>Il reste à déterminer si cette information est générale à la version
-                        (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi>
-                        correspondant)</note>
+                     <note>Il reste à déterminer si cette information est générale à la version (dans <gi>edition</gi>) ou propre à un fichier (dans le <gi>ref</gi> correspondant)</note>
                   </div>
                </div>
             </div>
             <div>
-               <head>Représentation des affiliations</head>
+               <head xml:id="DIV_AFFILIATION">Représentation des affiliations</head>
                <div>
                   <head>Deux modes de représentation: référencement et encapsulage</head>
-                  <p>L'indication de la ou des affiliation(s) d'un auteur s'effectue à l'aide de
-                     l'élément <gi>affiliation</gi> comme enfant direct de <gi>author</gi>.
-                     L'affiliation est elle même décrite de deux façons en fonction du cas d'usage: </p>
+                  <p>L'indication de la ou des affiliation(s) d'un auteur s'effectue à l'aide de l'élément <gi>affiliation</gi> comme enfant direct de <gi>author</gi>. L'affiliation est elle même
+                     décrite de deux façons en fonction du cas d'usage: </p>
                   <list>
-                     <item>par <emph>référencement</emph> (cas de l'export HAL) de structures
-                        factorisée dans l'élément <gi>back</gi> du document <gi>TEI</gi>
-                        englobant;</item>
-                     <item>par <emph>encapsulation</emph> des descriptions d'organisations, comme
-                        c'est le cas pour Conditor.</item>
+                     <item>par <emph>référencement</emph> (cas de l'export HAL) de structures factorisée dans l'élément <gi>back</gi> du document <gi>TEI</gi> englobant;</item>
+                     <item>par <emph>encapsulation</emph> des descriptions d'organisations, comme c'est le cas pour Conditor.</item>
                   </list>
                </div>
                <div>
@@ -175,79 +139,70 @@
                         <affiliation ref="#struct-418497"/>
                      </author>
                      <!-- Déclaration dans <back> -->
-                     <listOrg type="structures">
-                        <org type="researchteam" xml:id="struct-418497" status="VALID">
-                           <orgName>Laboratoire Nano-Magnétisme et Oxydes</orgName>
-                           <orgName type="acronym">LNO</orgName>
-                           <desc><address><country key="FR"/></address></desc>
-                           <listRelation>
-                              <relation active="#struct-1401" type="direct"/>
-                              <relation name="DRF/IRAMIS" active="#struct-300016" type="indirect"/>
-                              <relation active="#struct-419361" type="indirect"/>
-                              <relation name="UMR3680" active="#struct-441569" type="indirect"/>
-                              <relation active="#struct-53953" type="direct"/>
-                              <relation name="DSM/IRAMIS" active="#struct-300016" type="indirect"/>
-                           </listRelation>
-                        </org>
-                        <org type="laboratory" xml:id="struct-1401" status="VALID">
-                           <idno type="RNSR">201521685K</idno>
-                           <orgName>Service de physique de l'état condensé</orgName>
-                           <orgName type="acronym">SPEC - UMR3680</orgName>
-                           <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464),
-                                    CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE
-                                    CEDEX</addrLine><country key="FR"/></address></desc>
-                           <listRelation>
-                              <relation name="DRF/IRAMIS" active="#struct-300016" type="direct"/>
-                              <relation active="#struct-419361" type="direct"/>
-                              <relation name="UMR3680" active="#struct-441569" type="direct"/>
-                           </listRelation>
-                        </org>
-                        <org type="institution" xml:id="struct-300016" status="VALID">
-                           <orgName>Commissariat à l'énergie atomique et aux énergies
-                              alternatives</orgName>
-                           <orgName type="acronym">CEA</orgName>
-                           <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de
-                                    Cadaracheetc</addrLine><country key="FR"/></address></desc>
-                        </org>
-                        <org type="institution" xml:id="struct-419361" status="VALID">
-                           <orgName>Université Paris-Saclay</orgName>
-                           <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 -
-                                    2e ét., 91190 Saint-Aubin</addrLine><country key="FR"
-                                 /></address></desc>
-                        </org>
-                        <org type="institution" xml:id="struct-441569" status="VALID">
-                           <idno type="IdRef">02636817X</idno>
-                           <idno type="ISNI">0000000122597504</idno>
-                           <orgName>Centre National de la Recherche Scientifique</orgName>
-                           <orgName type="acronym">CNRS</orgName>
-                           <date type="start">1939-10-19</date>
-                           <desc><address><country key="FR"/></address></desc>
-                        </org>
-                        <org type="department" xml:id="struct-53953" status="VALID">
-                           <orgName>Institut Rayonnement Matière de Saclay</orgName>
-                           <orgName type="acronym">IRAMIS</orgName>
-                           <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country
-                                    key="FR"/></address></desc>
-                           <listRelation>
-                              <relation name="DSM/IRAMIS" active="#struct-300016" type="direct"/>
-                              <relation active="#struct-419361" type="direct"/>
-                           </listRelation>
-                        </org>
-                     </listOrg>
+                     <back>
+                        <listOrg type="structures">
+                           <org type="researchteam" xml:id="struct-418497" status="VALID">
+                              <orgName>Laboratoire Nano-Magnétisme et Oxydes</orgName>
+                              <orgName type="acronym">LNO</orgName>
+                              <desc><address><country key="FR"/></address></desc>
+                              <listRelation>
+                                 <relation active="#struct-1401" type="direct"/>
+                                 <relation name="DRF/IRAMIS" active="#struct-300016" type="indirect"/>
+                                 <relation active="#struct-419361" type="indirect"/>
+                                 <relation name="UMR3680" active="#struct-441569" type="indirect"/>
+                                 <relation active="#struct-53953" type="direct"/>
+                                 <relation name="DSM/IRAMIS" active="#struct-300016" type="indirect"/>
+                              </listRelation>
+                           </org>
+                           <org type="laboratory" xml:id="struct-1401" status="VALID">
+                              <idno type="RNSR">201521685K</idno>
+                              <orgName>Service de physique de l'état condensé</orgName>
+                              <orgName type="acronym">SPEC - UMR3680</orgName>
+                              <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464), CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE CEDEX</addrLine><country key="FR"/></address></desc>
+                              <listRelation>
+                                 <relation name="DRF/IRAMIS" active="#struct-300016" type="direct"/>
+                                 <relation active="#struct-419361" type="direct"/>
+                                 <relation name="UMR3680" active="#struct-441569" type="direct"/>
+                              </listRelation>
+                           </org>
+                           <org type="institution" xml:id="struct-300016" status="VALID">
+                              <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
+                              <orgName type="acronym">CEA</orgName>
+                              <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
+                           </org>
+                           <org type="institution" xml:id="struct-419361" status="VALID">
+                              <orgName>Université Paris-Saclay</orgName>
+                              <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
+                           </org>
+                           <org type="institution" xml:id="struct-441569" status="VALID">
+                              <idno type="IdRef">02636817X</idno>
+                              <idno type="ISNI">0000000122597504</idno>
+                              <orgName>Centre National de la Recherche Scientifique</orgName>
+                              <orgName type="acronym">CNRS</orgName>
+                              <date type="start">1939-10-19</date>
+                              <desc><address><country key="FR"/></address></desc>
+                           </org>
+                           <org type="department" xml:id="struct-53953" status="VALID">
+                              <orgName>Institut Rayonnement Matière de Saclay</orgName>
+                              <orgName type="acronym">IRAMIS</orgName>
+                              <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country key="FR"/></address></desc>
+                              <listRelation>
+                                 <relation name="DSM/IRAMIS" active="#struct-300016" type="direct"/>
+                                 <relation active="#struct-419361" type="direct"/>
+                              </listRelation>
+                           </org>
+                        </listOrg>
+                     </back>
                   </egXML>
                </div>
             </div>
             <div>
                <head>Représentation des affiliations par encapsulation</head>
-               <p>Lorsque les affiliatoins sont encapsulées, la représentation est directement
-                  intégrée à l'élément <gi>affiliation</gi> avec les caractéristiques suivantes:</p>
+               <p>Lorsque les affiliatoins sont encapsulées, la représentation est directement intégrée à l'élément <gi>affiliation</gi> avec les caractéristiques suivantes:</p>
                <list>
-                  <item>L'organisaton correspondant à l'affiliation référencée est directe
-                     positionnée comme fils de <gi>affiliation</gi>;</item>
-                  <item>L'identifiant de la structure est indiquée à l'aide de
-                     <att>key</att>;</item>
-                  <item>Les sous-structures <emph>directes</emph> (au sens de
-                        <code>relation/@type</code> sont recopiées récursivement.</item>
+                  <item>L'organisaton correspondant à l'affiliation référencée est directe positionnée comme fils de <gi>affiliation</gi>;</item>
+                  <item>L'identifiant de la structure est indiquée à l'aide de <att>key</att>;</item>
+                  <item>Les sous-structures <emph>directes</emph> (au sens de <code>relation/@type</code> sont recopiées récursivement.</item>
                </list>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <author>
@@ -260,16 +215,11 @@
                               <idno type="RNSR">201521685K</idno>
                               <orgName>Service de physique de l'état condensé</orgName>
                               <orgName type="acronym">SPEC - UMR3680</orgName>
-                              <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464),
-                                       CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE
-                                       CEDEX</addrLine><country key="FR"/></address></desc>
+                              <desc><address><addrLine>SPEC - UMR3680 CEA-CNRS(ex-URA 2464), CEA/Saclay, Orme des Merisiers, F-91191 GIF SUR YVETTE CEDEX</addrLine><country key="FR"/></address></desc>
                               <org type="institution" key="struct-300016" status="VALID">
-                                 <orgName>Commissariat à l'énergie atomique et aux énergies
-                                    alternatives</orgName>
+                                 <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
                                  <orgName type="acronym">CEA</orgName>
-                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre
-                                          de Cadaracheetc</addrLine><country key="FR"
-                                    /></address></desc>
+                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
                               </org>
                               <org type="institution" key="struct-441569" status="VALID">
                                  <idno type="IdRef">02636817X</idno>
@@ -281,29 +231,21 @@
                               </org>
                               <org type="institution" xml:id="struct-419361" status="VALID">
                                  <orgName>Université Paris-Saclay</orgName>
-                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD
-                                          128 - 2e ét., 91190 Saint-Aubin</addrLine><country
-                                          key="FR"/></address></desc>
+                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
                               </org>
                            </org>
                            <org type="department" key="struct-53953" status="VALID">
                               <orgName>Institut Rayonnement Matière de Saclay</orgName>
                               <orgName type="acronym">IRAMIS</orgName>
-                              <desc><address><addrLine>91191 Gif-sur-Yvette,
-                                       France</addrLine><country key="FR"/></address></desc>
+                              <desc><address><addrLine>91191 Gif-sur-Yvette, France</addrLine><country key="FR"/></address></desc>
                               <org type="institution" key="struct-300016" status="VALID">
-                                 <orgName>Commissariat à l'énergie atomique et aux énergies
-                                    alternatives</orgName>
+                                 <orgName>Commissariat à l'énergie atomique et aux énergies alternatives</orgName>
                                  <orgName type="acronym">CEA</orgName>
-                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre
-                                          de Cadaracheetc</addrLine><country key="FR"
-                                    /></address></desc>
+                                 <desc><address><addrLine>Centre de SaclayCentre de GrenobleCentre de Cadaracheetc</addrLine><country key="FR"/></address></desc>
                               </org>
                               <org type="institution" key="struct-419361" status="VALID">
                                  <orgName>Université Paris-Saclay</orgName>
-                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD
-                                          128 - 2e ét., 91190 Saint-Aubin</addrLine><country
-                                          key="FR"/></address></desc>
+                                 <desc><address><addrLine>Espace Technologique, Bat. Discovery - RD 128 - 2e ét., 91190 Saint-Aubin</addrLine><country key="FR"/></address></desc>
                               </org>
                            </org>
                         </org>
@@ -317,8 +259,7 @@
                   <item><term>softwareLicence</term>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <availability status="restricted">
-                           <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU
-                              General Public License v3.0 only</licence>
+                           <licence target="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GNU General Public License v3.0 only</licence>
                         </availability>
                      </egXML>
                      <note>Possibilité d'en avoir plusieurs</note></item>
@@ -328,16 +269,12 @@
                            <note type="programmingLanguage">Matlab</note>
                         </notesStmt>
                      </egXML></item>
-                  <item><term>codeRepository</term> Pour l'instant: <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples">
-                        <ref type="seeAlso"> https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git
-                        </ref>
+                  <item><term>codeRepository</term> Pour l'instant: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <ref type="seeAlso"> https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git </ref>
+                  </egXML>
+                     <note>Le lien doit passer dans <att>target</att> et on change le type pour obtenir: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <ref type="codeRepository" target="https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git"/>
                      </egXML>
-                     <note>Le lien doit passer dans <att>target</att> et on change le type pour
-                        obtenir: <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <ref type="codeRepository"
-                              target="https://gitlab.com/nicolas.gac/TomoGPI_for_Astra.git"/>
-                        </egXML>
                      </note>
                   </item>
                   <item>
@@ -356,32 +293,28 @@
                      <note><ref target="#example1">cf. example précédent</ref></note>
                   </item>
                   <item><term>developmentStatus</term>
-                     <note>Pas encore intégré à l'export, devrait être: <egXML
-                           xmlns="http://www.tei-c.org/ns/Examples">
-                           <notesStmt>
-                              <note type="developmentStatus">...</note>
-                           </notesStmt>
-                        </egXML>
+                     <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <notesStmt>
+                           <note type="developmentStatus">...</note>
+                        </notesStmt>
+                     </egXML>
                      </note></item>
                   <item><term>runtimePlatform</term>
-                     <note>Pas encore intégré à l'export, devrait être: <egXML
-                           xmlns="http://www.tei-c.org/ns/Examples">
-                           <notesStmt>
-                              <note type="runtimePlatform">...</note>
-                           </notesStmt>
-                        </egXML>
+                     <note>Pas encore intégré à l'export, devrait être: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <notesStmt>
+                           <note type="runtimePlatform">...</note>
+                        </notesStmt>
+                     </egXML>
                      </note>
                   </item>
                </list>
             </div>
             <div>
                <head>Evolutions à prévoir</head>
-               <p>Cette section contient les propositions de changement qui doivent être
-                  implémentées dans la spécification ainsi que les modifications à effectuer au sein
-                  des projets utilisants le présent schéma.</p>
+               <p>Cette section contient les propositions de changement qui doivent être implémentées dans la spécification ainsi que les modifications à effectuer au sein des projets utilisants le
+                  présent schéma.</p>
                <list>
-                  <item>HAL: Supprimer la génération de l'espace de nom superflu:
-                        <mentioned>xmlns:tei="http://www.tei-c.org/ns/1.0"</mentioned></item>
+                  <item>HAL: Supprimer la génération de l'espace de nom superflu: <mentioned>xmlns:tei="http://www.tei-c.org/ns/1.0"</mentioned></item>
                   <item>HAL: ne pas générer de contenu vide: <code>subtype=""</code></item>
                </list>
             </div>
@@ -402,6 +335,8 @@
                <moduleRef key="spoken" include="recordingStmt recording"/>
                <moduleRef key="corpus" include="particDesc"/>
                <moduleRef key="linking" include="corresp"/>
+               <moduleRef key="canonical" include="ref"/>
+               <moduleRef key="att.datable" except="from-iso to-iso"/>
                <!-- CF :Ajout de validUntil -->
                <moduleRef key="tagdocs" include="validUntil"/>
 
@@ -442,6 +377,11 @@
                                     <biblFull>Métadonnées d'une entrée dans HAL</biblFull>
                                  </listBibl>
                               </body>
+                              <back>
+                                 <listOrg type="structures">
+                                    Liste des organisations liés au document déposé
+                                 </listOrg>
+                              </back>
                            </text>
                         </TEI>
                      </egXML>
@@ -499,20 +439,18 @@
                   </classes>
                   <content>
                      <alternate>
-                        <!-- CF : sequence ancienne non conforme à la TEI -->
+                        <!-- CF : sequence ancienne qui correspond à notre XSD -->
                         <sequence>
-                           <sequence>
-                              <elementRef key="titleStmt" minOccurs="0"/>
-                              <elementRef key="editionStmt" minOccurs="0"/>
-                              <elementRef key="extent" minOccurs="0"/>
-                              <elementRef key="publicationStmt" minOccurs="0"/>
-                              <elementRef key="seriesStmt" minOccurs="0"/>
-                              <elementRef key="notesStmt" minOccurs="0"/>
-                           </sequence>
+                           <elementRef key="titleStmt" minOccurs="0"/>
+                           <elementRef key="editionStmt" minOccurs="0"/>
+                           <elementRef key="extent" minOccurs="0"/>
+                           <elementRef key="publicationStmt" minOccurs="0"/>
+                           <elementRef key="seriesStmt" minOccurs="0"/>
+                           <elementRef key="notesStmt" minOccurs="0"/>
                            <elementRef key="sourceDesc" minOccurs="0" maxOccurs="unbounded"/>
                            <elementRef key="profileDesc" minOccurs="0" maxOccurs="unbounded"/>
                         </sequence>
-                        <!-- CF : Sequence conforme qui à l'avenir doit être la seul à rester-->
+                        <!-- CF Révision : Sequence conforme à la TEI et qui nous permet de garder le profileDesc-->
                         <sequence>
                            <elementRef key="fileDesc"/>
                            <elementRef key="profileDesc"/>
@@ -537,11 +475,12 @@
                            </biblFull>
                      </egXML>
                   </exemplum>
+                  <!-- CF: évolution souhaité 
                   <remarks>
                      <p> Actuellement, nous acceptons les deux séquences mais à l'avenir seul la
                         deuxième séquence sera accepté par HAL. </p>
                   </remarks>
-                  
+                  -->
                </elementSpec>
 
                <elementSpec ident="fileDesc" mode="change">
@@ -567,8 +506,10 @@
                      <memberOf key="att.global" mode="delete"/>
                   </classes>
                   <content>
-                     <!-- Obligation d'avoir un titre dans les TEI guidelines mais pas dans HAL Sword, est-ce qu'il y a des cas de transfert d'article sans titre ?-->
+                     <!-- CF : Obligation d'avoir un titre dans les TEI guidelines mais pas dans HAL Sword, est-ce qu'il y a des cas de transfert d'article sans titre ?
                      <elementRef key="title" minOccurs="1" maxOccurs="unbounded"/>
+                     -->
+                     <elementRef key="title" minOccurs="0" maxOccurs="unbounded"/>
                      <elementRef key="author" minOccurs="0" maxOccurs="unbounded"/>
                      <elementRef key="editor" minOccurs="0" maxOccurs="unbounded"/>
                      <elementRef key="funder" minOccurs="0" maxOccurs="unbounded"/>
@@ -612,11 +553,29 @@
                      <memberOf key="att.datable" mode="delete"/>
                      <memberOf key="att.canonical" mode="delete"/>
                   </classes>
-                  <!-- CF: Est-ce qu'il y a une typologie des type de au moment du chargement en base, est-ce que level sert ? Pour améliorer  l'exemple-->
                   <attList>
                      <attDef ident="type" mode="change" usage="opt"/>
                      <attDef ident="level" mode="change" usage="opt"/>
                      <attDef ident="xml:lang" mode="change" usage="opt"/>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="n" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
                   </attList>
                  <exemplum>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -627,17 +586,27 @@
                </elementSpec>
                
                <elementSpec ident="author" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+
                   <content>
-                     <elementRef key="persName" minOccurs="0"/>
-                     <elementRef key="email" minOccurs="0"/>
-                     <elementRef key="ptr"/>
-                     <elementRef key="idno"/>
-                     <elementRef key="orgName"/>
-                     <elementRef key="affiliation"/>
+                     <elementRef key="persName" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="email" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="ptr" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="idno" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="orgName" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="affiliation" minOccurs="0" maxOccurs="unbounded"/>
                   </content>
                   <attList>
-                     <!-- CF: liste des attributs requis ?? -->
-                     <attDef ident="role" mode="change" usage="req"></attDef>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="role" mode="change" usage="req">
+                        <desc>La liste des valeurs possibles pour l'attribute est disponible à cette <ref target="http://api-preprod.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:relator&amp;fl=*&amp;wt=xml">addresse</ref>. Il s'agit des valeurs présentes dans l'élément qui a pour attribut name="metaValue_s"</desc>
+                     </attDef>
                   </attList>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -667,8 +636,10 @@
                
                <elementSpec ident="persName" mode="change">
                   <content>
-                     <elementRef key="forename"/>
-                     <elementRef key="surname"/>
+                     <sequence preserveOrder="false">
+                        <elementRef key="forename" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="surname"/>
+                     </sequence>
                   </content>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -701,26 +672,1693 @@
                      </egXML>
                   </exemplum>
                </elementSpec>
-
+               
                <elementSpec ident="idno" mode="change">
                   <classes mode="change">
-                     <!-- De façon à disposer de @notation -->
+                     <!-- De façon à disposer de @notation 
+                    Ce qui n'est pas permis normalement par la TEI-->
                      <memberOf key="att.notated" mode="add"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
                   </classes>
+                  <content>
+                     <textNode/>
+                     <elementRef key="i" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <attList>
+                     <attDef ident="n" mode="change" usage="opt"/>
+                     <attDef ident="corresp" mode="change" usage="opt"/>
+                     <attDef ident="p" mode="change" usage="opt"/>
+                     <attDef ident="status" mode="change" usage="opt"/>
+                     <attDef ident="type" mode="change" usage="opt"/>
+                     <attDef ident="notation" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="string">
+                              <desc>contient une chaine de caractère</desc>
+                           </valItem>
+                           <valItem ident="numeric">
+                              <desc>contient un nombre</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <idno type="idhal" notation="string">laurentromary</idno>
+                        <idno type="idhal" notation="numeric">307</idno>
+                        <idno type="halauthorid">49567</idno>
+                        <idno type="arXiv">https://arxiv.org/a/romary_l_1</idno>
+                        <idno type="ResearcherId">http://www.researcherid.com/rid/A-5114-2012</idno>
+                        <idno type="IdRef">https://www.idref.fr/060702494</idno>
+                        <idno type="ORCID">https://orcid.org/0000-0002-0756-0508</idno>
+                        <idno type="VIAF">https://viaf.org/viaf/VIAF282014122</idno>
+                        <idno type="ISNI">http://isni.org/isni/0000000388795444</idno>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
 
                <elementSpec ident="email" mode="change">
                   <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
                      <!-- De façon à disposer de @type -->
-                     <!-- A reprendre car ne correspond pas à la TEI-->
+                     <!-- A reprendre car ne correspond pas à la TEI
+                     CF: Proposition de changement 
+                     Actuellement on sépare, le domaine et le md5, car en base c'est séparé donc au moment de l'export on fait comme cela mais serait-il pas mieux de renvoyer l'entièreté de l'adresse mail concaténé-->
                      <memberOf key="att.typed" mode="add"/>
                   </classes>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="md5">
+                              <desc>caractérise le prénom</desc>
+                           </valItem>
+                           <valItem ident="domain">
+                              <desc>caractérise le nom intermédiaire</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                        <email type="domain">inria.fr</email>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="orgName" mode="change">
+                  <desc>orgName correspond à l'institution ou au regroupement d'institution qui paye l'auteur au moment de la publication du document. Il doit se situer sous la forme dans l'attribut ref #struct-%%ID ou #localStruct-%%ID.  </desc>
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.naming" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="ref" mode="change" usage="opt">
+                        <desc>Pour struct-%%ID, %%ID correspond à l'identifiant de l'institution, laboratoire ou encore équipe de recherche où l'auteur est affilié et qui est connu dans la base de Réferentiel <ref target="https://aurehal.archives-ouvertes.fr/structure/index">AuréHal</ref>.
+                           Pour localStruct-%%ID, %%ID correspond à la réfénce de l'institution, laboratoire ou encore équipe de recherche où l'auteur est affilié. Elle doit être répertorié dans l'élément <gi>back</gi> voir <ptr target="#DIV_AFFILIATION"/></desc>
+                     </attDef>
+                     <attDef ident="type" mode="change" usage="opt"/>
+                     <attDef ident="full" mode="delete"/>
+                     <attDef ident="sort" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <orgName ref="#struct-300009"/>
+                     </egXML>
+                  </exemplum>
+                  <remarks><p>La forme de la structure doit être #struct-XXXXX. XXXXX correspond au numéro de la structure.</p></remarks>
                </elementSpec>
 
                <elementSpec ident="affiliation" mode="change">
+                  <desc>L'affiliation de l'auteur correspond aux différentes équipes, laboratoires pour lequels travaillent l'auteur au moment de la publication du document. Il doit se situer sous la forme dans l'attribut ref #struct-%%ID ou #localStruct-%%ID. 
+                     </desc>
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="ref" mode="change" usage="req">
+                        <desc>Pour struct-%%ID, %%ID correspond à l'identifiant de l'institution, laboratoire ou encore équipe de recherche où l'auteur est affilié et qui est connu dans la base de Réferentiel <ref target="https://aurehal.archives-ouvertes.fr/structure/index">AuréHal</ref>.
+                           Pour localStruct-%%ID, %%ID correspond à la réfénce de l'institution, laboratoire ou encore équipe de recherche où l'auteur est affilié. Elle doit être répertorié dans l'élément <gi>back</gi> voir <ptr target="#DIV_AFFILIATION"/></desc>
+                     </attDef>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <orgName ref="#struct-300009"/>
+                     </egXML>
+                  </exemplum>
+                  <remarks><p>La forme de la structure doit être #struct-%%ID. %%ID correspond au numéro de la structure.</p></remarks>
+               </elementSpec>
+               
+               <elementSpec ident="editor" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
                   <content>
-                     <elementRef key="org" minOccurs="0" maxOccurs="unbounded"/>
+                     <sequence preserveOrder="false">
+                        <elementRef key="persName" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="email" minOccurs="0" maxOccurs="unbounded"/>
+                        <textNode/>
+                     </sequence>
                   </content>
+                  <attList>
+                     <attDef ident="nymRef" mode="delete"/>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="role" mode="change" usage="opt">
+                        <valList mode="change" type="closed">
+                           <valItem ident="depositor">
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="funder" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="ref" mode="change" usage="rec">
+                        <desc>
+                           Pour #projanr-%%ID, %%ID correspond à l'identifiant du projet de financement de l'ANR. Vous pouvez allez cherchez l'identifiant correspondant sur <ref target="https://aurehal.archives-ouvertes.fr/anrproject/index">AuréHal</ref>.
+                           Pour ##projeurop-%%ID, %%ID correspond à l'identifiant du projet de financement européen. Vous pouvez allez cherchez l'identifiant correspondant sur <ref target="https://aurehal.archives-ouvertes.fr/europeanproject/index">AuréHal</ref>.
+                           <!-- On discutait de la suppression de l'ajout des projets ANR qui ne sont pas référencés donc ça peut-être utile de ne pas la conserver-->
+                           Pour #localProjanr-%%ID, %%ID correspond à la réfénce de l'institution, laboratoire ou encore équipe de recherche où l'auteur est affilié. Elle doit être répertorié dans l'élément <gi>back</gi>.
+                           Pour #localProjeur-%%ID, %%ID correspond à la réfénce de l'institution, laboratoire ou encore équipe de recherche où l'auteur est affilié. Elle doit être répertorié dans l'élément <gi>back</gi>.
+                        </desc>
+                     </attDef>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <funder ref="#localProjanr-1"/>
+                        <funder ref="#projanr-1"/>
+                        <funder ref="#projeurop-1"/>
+                        <funder ref="#localProjeurop-1"/>
+                     </egXML>
+                  </exemplum>
+                  <remarks><p>La forme de la structure doit être #struct-XXXXX. XXXXX correspond au numéro de la structure.</p></remarks>
+               </elementSpec>
+               
+               <elementSpec ident="editionStmt" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <!-- CF : Obligation d'avoir un titre dans les TEI guidelines mais pas dans HAL Sword, est-ce qu'il y a des cas de transfert d'article sans titre ?
+                     <elementRef key="title" minOccurs="1" maxOccurs="unbounded"/>
+                     -->
+                     <elementRef key="edition" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="respStmt" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <!-- Reprise Exemple -->
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <editionStmt>
+                           <edition n="v1">
+                              <date type="whenSubmitted">2018-06-11 11:23:55</date>
+                           </edition>
+                           <edition n="v2" type="current">
+                              <date type="whenSubmitted">2020-11-21 06:29:43</date>
+                              <date type="whenModified">2020-11-24 10:38:05</date>
+                              <date type="whenReleased">2020-11-23 09:25:01</date>
+                              <date type="whenProduced">2020-11-19</date>
+                              <date type="whenEndEmbargoed">2020-11-21</date>
+                              <ref type="file" target="https://hal.inria.fr/hal-01812100v2/document">
+                                 <date notBefore="2020-11-21"/>
+                              </ref>
+                              <ref type="file" subtype="author" n="1" target="https://hal.inria.fr/hal-01812100v2/file/5_3.pdf">
+                                 <date notBefore="2020-11-21"/>
+                              </ref>
+                              <ref type="externalLink" target="https://www.jstage.jst.go.jp/article/jjadh/5/1/5_3/_pdf"/>
+                              <ref type="annex" subtype="presentation" target="https://hal.inria.fr/hal-01812100v2/file/5_3.jpg"  n="1">
+                                 <desc>description de l'annexe</desc>
+                              </ref>
+                           </edition>
+                           <respStmt>
+                              <resp>contributor</resp>
+                              <name key="105529">
+                                 <persName>
+                                    <forename>Laurent</forename>
+                                    <surname>Romary</surname>
+                                 </persName>
+                                 <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                                 <email type="domain">inria.fr</email>
+                              </name>
+                           </respStmt>
+                        </editionStmt>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               
+               <!-- @type est ajouté par soucie de compatibilité courante avec HAL, mais la spécification indique que cet usage est déprécié au profit de @status (aussi ajouté à la spec) -->
+               <!-- Question autour de release, type au lieu de status, question de version -->
+               <elementSpec ident="edition" mode="change">
+                  <desc>Contient chaque version du document déposé sur HAL, la version est noté dans l'attribut @n et la plus ancienne a pour valeur 1 et la version actuelle est précisé actuellement dans l'attribut @type et avec pour valeur current.</desc>
+                  <classes mode="change">
+                     <memberOf key="att.typed" mode="add"/>
+                     <memberOf key="att.docStatus" mode="add"/>
+                  </classes>
+                  <content>
+                     <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <desc>Cet élément sera conservé jusqu'au XXXX-XX-XX pour être remplacé par status</desc>
+                        <valList mode="change" type="closed">
+                           <valItem ident="current">
+                              <desc>Valeur utilisé pour spécifier la version utilisé actuellement</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="n" mode="change" usage="opt"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <edition n="v1">
+                           <date type="whenSubmitted">2018-06-11 11:23:55</date>
+                        </edition>
+                        <edition n="v2" type="current">
+                           <date type="whenSubmitted">2020-11-21 06:29:43</date>
+                           <date type="whenModified">2020-11-24 10:38:05</date>
+                           <date type="whenReleased">2020-11-23 09:25:01</date>
+                           <date type="whenProduced">2020-11-19</date>
+                           <date type="whenEndEmbargoed">2020-11-21</date>
+                           <ref type="file" target="https://hal.inria.fr/hal-01812100v2/document">
+                              <date notBefore="2020-11-21"/>
+                           </ref>
+                           <ref type="file" subtype="author" n="1" target="https://hal.inria.fr/hal-01812100v2/file/5_3.pdf">
+                              <date notBefore="2020-11-21"/>
+                           </ref>
+                           <ref type="externalLink" target="https://www.jstage.jst.go.jp/article/jjadh/5/1/5_3/_pdf"/>
+                           <ref type="annex" subtype="presentation" target="https://hal.inria.fr/hal-01812100v2/file/5_3.jpg"  n="1">
+                              <desc>description de l'annexe</desc>
+                           </ref>
+                        </edition>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="date" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.duration" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                     <memberOf key="att.ranging" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <desc>Cet élément sera conservé jusqu'au XXXX-XX-XX pour être remplacé par status</desc>
+                        <valList mode="change" type="closed">
+                           <valItem ident="whenWritten">
+                              <desc>Date d'écriture</desc>
+                           </valItem>
+                           <valItem ident="start">
+                           </valItem>
+                           <valItem ident="end">
+                           </valItem>
+                           <valItem ident="datePub">
+                           </valItem>
+                           <valItem ident="dateDefended">
+                           </valItem>
+                           <valItem ident="dateEpub">
+                           </valItem>
+                           <valItem ident="whenSubmitted">
+                              <desc>Date de dépot</desc>
+                           </valItem>
+                           <valItem ident="whenModified">
+                              <desc>Date de modification</desc>
+                           </valItem>
+                           <valItem ident="whenReleased">
+                              <desc>Date de publication</desc>
+                           </valItem>
+                           <valItem ident="whenProduced">
+                              <desc>Date de production</desc>
+                           </valItem>
+                           <valItem ident="whenEndEmbargoed">
+                              <desc>Date de fin d'embargo</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="notBefore" mode="change">
+                        <desc>Date d'embargo</desc>
+                     </attDef>
+                     <attDef ident="when" mode="change"/>
+                     <attDef ident="precision" mode="change"/>
+                     <attDef ident="subtype" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="inPress">
+                              <desc>Pour les versons à paraitre</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="n" mode="change" usage="opt"/>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="calendar" mode="delete"/>
+                     <attDef ident="period" mode="delete"/>
+                     <attDef ident="notAfter" mode="delete"/>
+                     <attDef ident="from" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                     <attDef ident="when-iso" mode="delete"/>
+                     <attDef ident="notBefore-iso" mode="delete"/>
+                     <attDef ident="notAfter-iso" mode="delete"/>
+                     <attDef ident="from-iso" mode="delete"/>
+                     <attDef ident="to-iso" mode="delete"/>
+                     <attDef ident="when-custom" mode="delete"/>
+                     <attDef ident="notBefore-custom" mode="delete"/>
+                     <attDef ident="notAfter-custom" mode="delete"/>
+                     <attDef ident="from-custom" mode="delete"/>
+                     <attDef ident="to-custom" mode="delete"/>
+                     <attDef ident="datingPoint" mode="delete"/>
+                     <attDef ident="datingMethod" mode="delete"/>
+                     <attDef ident="unit" mode="delete"/>
+                     <attDef ident="quantity" mode="delete"/>
+                     <attDef ident="extent" mode="delete"/>
+                     <attDef ident="scope" mode="delete"/>
+                     <attDef ident="atLeast" mode="delete"/>
+                     <attDef ident="atMost" mode="delete"/>
+                     <attDef ident="min" mode="delete"/>
+                     <attDef ident="max" mode="delete"/>
+                     <attDef ident="confidence" mode="delete"/>
+                  </attList>
+               </elementSpec> 
+               
+               <elementSpec ident="ref" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.cReferencing" mode="delete"/>
+                     <memberOf key="att.declaring" mode="delete"/>
+                     <memberOf key="att.internetMedia" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <textNode/>
+                        <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="desc" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <!-- CF: Reprendre la liste -->
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList mode="change" type="open">
+                           <valItem ident="file">
+                              <desc>Document donc fichier où l'on ne peut modifier le contenu comme un pdf ou encore un jpg</desc>
+                           </valItem>
+                           <valItem ident="src">
+                              <desc>Fichier source donc le plus souvent un document de travail donc un word ou encore un tex</desc>
+                           </valItem>
+                           <valItem ident="annex">
+                              <desc>Tout type de fichier en lien avec le document déposé comme un poster ou encore des données supplémentaires</desc>
+                           </valItem>
+                           <valItem ident="seeAlso"/>
+                           <valItem ident="esrFullText"/>
+                           <valItem ident="publisher"/>
+                           <valItem ident="url"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="n" mode="change" usage="opt"/>
+                     <attDef ident="subtype" mode="change" usage="opt">
+                        <desc>Spécifie plus précisement le fichier lié, sa valeur dépend si celle de <att>type</att> est égale à file ou annex.</desc>
+                        <valList mode="change" type="closed">
+                           <valItem ident="author">
+                              <desc>file : Les fichiers que je dépose sont des fichiers produits par l'(les) auteur(s)</desc>
+                           </valItem>
+                           <valItem ident="greenPublisher">
+                              <desc>file : J'ai vérifié que cet éditeur fait partie de ceux qui autorisent le dépôt des fichiers éditeurs sur une archive ouverte</desc>
+                           </valItem>
+                           <valItem ident="publisherAgreement">
+                              <desc>file : J'ai l'accord de l'éditeur pour le dépot du fichier éditeur dans une archive ouverte</desc>
+                           </valItem>
+                           <valItem ident="publisherPaid">
+                              <desc>file : L'institution a financé les frais de publication pour que cet article soit en libre accès</desc>
+                           </valItem>
+                           <valItem ident="figure">
+                              <desc>annex : Figure, Image</desc>
+                           </valItem>
+                           <valItem ident="poster">
+                              <desc>annex : Poster</desc>
+                           </valItem>
+                           <valItem ident="presentation">
+                              <desc>annex : Présentation</desc>
+                           </valItem>
+                           <valItem ident="audio">
+                              <desc>annex : Fichier audio</desc>
+                           </valItem>
+                           <valItem ident="video">
+                              <desc>annex : Fichier vidéo</desc>
+                           </valItem>
+                           <valItem ident="short">
+                              <desc>annex : Papier court</desc>
+                           </valItem>
+                           <valItem ident="tutorial">
+                              <desc>annex : Tutoriel</desc>
+                           </valItem>
+                           <valItem ident="digest">
+                              <desc>annex : Synthèse de conférence</desc>
+                           </valItem>
+                           <valItem ident="editorial">
+                              <desc>annex : Guest Editorial</desc>
+                           </valItem>
+                           <valItem ident="other">
+                              <desc>annex : Autre</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" mode="change" usage="opt">
+                        <desc>Nom du fichier concerné</desc>
+                     </attDef>
+                     <attDef ident="targetLang" mode="delete"/>
+                     <attDef ident="evaluate" mode="delete"/>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <edition>
+                           <ref type="file" subtype="author" target="file.pdf" n="1">
+                              <date notBefore="2015-02-14"/>
+                           </ref>
+                           <ref type="annex" target="pres.ppt" subtype="presentation" n="1">
+                              <desc>Présentation ppt présentée à cette conf</desc>
+                           </ref>
+                           <ref type="annex" target="poster.pdf" subtype="poster" n="0"/>
+                        </edition>
+                        <biblStruct>
+                           <ref type="seeAlso">http://www.inria1.fr</ref><!-- %%metadata seeAlso-->
+                           <ref type="seeAlso">http://www.inria2.fr</ref>
+                           <ref type="publisher">http://www.inria.fr</ref>
+                        </biblStruct>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>              
+             
+               <elementSpec ident="publicationStmt" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="distributor" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="idno" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="availability" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <publicationStmt>
+                           <distributor>CCSD</distributor>
+                           <idno type="halId">hal-01812100</idno>
+                           <idno type="halUri">https://hal.inria.fr/hal-01812100</idno>
+                           <idno type="halBibtex">foppiano:hal-01812100</idno>
+                           <idno type="halRefHtml"><i>Journal of the Japanese Association for Digital Humanities</i>, Japanase Association for Digital Humanities, 2020, 5 (1), pp.22-60. &#x27E8;10.17928/jjadh.5.1_22&#x27E9;</idno>
+                           <idno type="halRef">Journal of the Japanese Association for Digital Humanities, Japanase Association for Digital Humanities, 2020, 5 (1), pp.22-60. &#x27E8;10.17928/jjadh.5.1_22&#x27E9;</idno>
+                           <availability status="restricted">
+                              <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+                           </availability>
+                        </publicationStmt>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="distributor" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <distributor>CCSD</distributor>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="availability" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <elementRef key="licence" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <attList>
+                     <attDef ident="status" mode="change"/>
+                     <attDef ident="default" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <availability status="restricted">
+                           <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+                        </availability>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="licence" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="target" mode="change" usage="req">
+                        <desc>Spécificie le type de fichier déposé en lien avec le document</desc>
+                        <valList mode="change" type="closed">
+                           <valItem ident="http://creativecommons.org/licenses/by/">
+                              <desc>Attribution</desc>
+                           </valItem>
+                           <valItem ident="http://hal.archives-ouvertes.fr/licences/copyright/">
+                              <desc>Copyright (Tous droits réservés)</desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/licenses/by-nc-nd/">
+                              <desc>Attribution-NonCommercial-NoDerivatives</desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/licenses/by-nc-sa/">
+                              <desc>Attribution-NonCommercial-ShareAlike </desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/licenses/by-nc/">
+                              <desc>Attribution-NonCommercial</desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/licenses/by-nd/">
+                              <desc>Attribution-NoDerivatives</desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/publicdomain/zero/1.0/">
+                              <desc>Public Domain</desc>
+                           </valItem>
+                           <valItem ident="http://hal.archives-ouvertes.fr/licences/publicDomain/">
+                              <desc>Public Domain </desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/licenses/by-sa/">
+                              <desc>Attribution-ShareAlike</desc>
+                           </valItem>
+                           <valItem ident="http://hal.archives-ouvertes.fr/licences/etalab/">
+                              <desc>Licence Ouverte</desc>
+                           </valItem>
+                           <valItem ident="http://creativecommons.org/choose/mark/">
+                              <desc>Marque du Domaine Public</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="targetLang" mode="delete"/>
+                     <attDef ident="evaluate" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="notesStmt" mode="change">
+                  <content>
+                     <elementRef key="note" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="note" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.anchoring" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.pointing" mode="delete"/>
+                     <memberOf key="att.placement" mode="delete"/>
+                     <memberOf key="att.written" mode="delete"/>
+                  </classes>
+                  <!-- CF: La liste issu de l'API est assez difficile à comprendre -->
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <desc>Spécificie le type de fichier déposé en lien avec le document</desc>
+                        <valList mode="change" type="open">
+                           <valItem ident="commentary">
+                              <desc>Commentaire</desc>
+                           </valItem>
+                           <valItem ident="description">
+                              <desc>Description</desc>
+                           </valItem>
+                           <valItem ident="audience">
+                              <desc>Permet de préciser le type d'audience viser par le document. La valeur numérique de l'attribut <att>n</att> indique si le document est une vulgarisation ou non et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:audience&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="invited">
+                              <desc>Permet de préciser si la communication provient d'une personne invitié. La valeur numérique de l'attribut <att>n</att> indique si le document est une vulgarisation ou non et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:invitedCommunication&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="popular">
+                              <desc>Permet de préciser si le document est une vulgarisation du sujet dont il parle. La valeur numérique de l'attribut <att>n</att> indique si le document est une vulgarisation ou non et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:popularLevel&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="peer">
+                              <desc>Permet d'indiquer si le document est issue processus de comité de lecteur. La valeur numérique de l'attribut <att>n</att> indique si le document est une vulgarisation ou non et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:peerReviewing&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="proceedings">
+                              <desc>Permet d'indiquer si le document est issus d'un procedding/recueuil des communications. La valeur numérique de l'attribut <att>n</att> indique si le document a été publié dans un procedding/recueuil des communications ou non et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:proceedings&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="report">
+                              <desc>Permet d'indiquer le type de rapport. La valeur numérique de l'attribut <att>n</att> indique de quel type de rapport et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:reportType&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="other">
+                              <desc>Permet d'indiquer qu'il s'agit d'un autre type de publication. La valeur numérique de l'attribut <att>n</att> indique de quel autre type de publication et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:otherType&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="image">
+                              <desc>Permet d'indiquer le type d'image stocké. La valeur numérique de l'attribut <att>n</att> indique de quel autre type de publication et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:imageType&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="degree">
+                              <desc>Permet d'indiquer le type du document qui a permis l'obtention d'un diplôme. La valeur numérique de l'attribut <att>n</att> indique le type du document qui a permis l'obtention d'un diplôme et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:dumas_degreeType&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="pastel_thematique">
+                              <desc>Permet d'indiquer le sujet du document. La valeur numérique de l'attribut <att>n</att> indique le sujet du document et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:pastel_thematique&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="pastel_library">
+                              <desc>Permet d'indiquer que le document est stocké dans un fond. La valeur numérique de l'attribut <att>n</att> indique dans quel type de fonds est stocké le document et cette valeur peut être retrouvée gràce à l'<ref target="https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:pastel_library&amp;fl=*&amp;wt=xml">api</ref> et correspond à l'élément metaValue_s.</desc>
+                           </valItem>
+                           <valItem ident="programmingLanguage">
+                              <desc>Si le document est un logiciel, cette attribut permet d'indiquer le language de programmation.</desc>
+                           </valItem>
+                           <valItem ident="platform">
+                              <desc>Si le document est un logiciel, cette attribut permet d'indiquer la plateforme ou fonctionne le logiciel.</desc>
+                           </valItem>
+                           <valItem ident="developmentStatus">
+                              <desc>Si le document est un logiciel, cette attribut permet d'indiquer l'état du développement.</desc>
+                           </valItem>
+                           <valItem ident="runtimePlatform">
+                              <desc>Si le document est un logiciel, cette attribut permet d'indiquer l'outil de devéloppement.</desc>
+                           </valItem>
+                           <valItem ident="version">
+                              <desc>Si le document est un logiciel, cette attribut permet d'indiquer la version du logiciel.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="n" mode="change" usage="opt"/>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <notesStmt>
+                           <note type="commentary">Commentaire</note>
+                           <note type="description">Description</note>
+                           <note type="audience" n="2">International</note>
+                           <note type="popular" n="0">No</note>
+                           <note type="peer" n="1">Yes</note>
+                           <note type="invited" n="0">No</note>
+                           <note type="proceedings" n="1">Yes</note>
+                           <note type="degree" n="1">Master thesis 2</note>
+                           <note type="report" n="6">Research Report</note>
+                           <note type="other" n="2">Book Review</note>
+                           <note type="image" n="1">Photography</note>
+                           <note type="lecture" n="10">Engineering school</note>
+                           <note type="operatingSystem">centos</note>
+                           <note type="version">1.12.1</note>
+                           <note type="developmentStatus">dev</note>
+                           <note type="runtimePlatform">Spark</note>
+                           <note type="programmingLanguage">Java</note> 
+                        </notesStmt>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="sourceDesc" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <elementRef key="p" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="biblStruct" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="listPlace" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="recordingStmt" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sourceDesc>
+                           <biblStruct>
+                              <analytic>
+                                 <title xml:lang="fr">Titre du document</title>
+                                 <title type="sub" xml:lang="en">Document subtitle</title>
+                                 <author role="aut">
+                                    <persName>
+                                       <forename type="first">Laurent</forename>
+                                       <forename type="middle">Middle</forename>
+                                       <surname>Romary</surname>
+                                    </persName>
+                                    <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                                    <email type="domain">inria.fr</email>
+                                    <idno type="idhal" notation="string">laurentromary</idno>
+                                    <idno type="idhal" notation="numeric">307</idno>
+                                    <idno type="halauthorid">49567</idno>
+                                    <idno type="arXiv">https://arxiv.org/a/romary_l_1</idno>
+                                    <idno type="ResearcherId">http://www.researcherid.com/rid/A-5114-2012</idno>
+                                    <idno type="IdRef">https://www.idref.fr/060702494</idno>
+                                    <idno type="ORCID">https://orcid.org/0000-0002-0756-0508</idno>
+                                    <idno type="VIAF">https://viaf.org/viaf/VIAF282014122</idno>
+                                    <idno type="ISNI">http://isni.org/isni/0000000388795444</idno>
+                                    <orgName ref="#struct-300009"/>
+                                    <affiliation ref="#struct-482775"/>
+                                 </author>
+                              </analytic>
+                              <monogr>
+                                 <idno type="nnt">2005AIXI1002</idno>
+                                 <idno type="patentNumber"></idno>
+                                 <idno type="isbn">978-2-343-20916-6</idno>
+                                 <idno type="localRef">AZ2B32</idno>
+                                 <idno type="halJournalId" status="VALID">163788</idno>
+                                 <idno type="issn">2188-7276</idno>
+                                 <idno type="eissn">2188-7276</idno>
+                                 <title level="j">Journal of the Japanese Association for Digital Humanities</title>
+                                 <title level="m">Book title</title>
+                                 <meeting>
+                                    <title>Conference title</title>
+                                    <date type="start">2021-02-01</date>
+                                    <date type="end">2021-02-02</date>
+                                    <settlement>Paris</settlement>
+                                    <country key="fr"/>
+                                 </meeting>   
+                                 <respStmt>
+                                    <resp>conferenceOrganizer</resp>
+                                    <name>Organisateur</name>
+                                 </respStmt>
+                                 <settlement>Paris</settlement>
+                                 <country key="fr"/>
+                                 <editor>Editeur scientifique</editor>
+                                 <imprint>
+                                    <publisher>Editeur</publisher>
+                                    <pubPlace>Paris</pubPlace>
+                                    <biblScope unit="serie">Serie</biblScope>
+                                    <biblScope unit="volume">Volume 34</biblScope>
+                                    <biblScope unit="issue">12</biblScope>
+                                    <biblScope unit="pp">34-43</biblScope>
+                                    <date type="datePub">2021-03-03</date>
+                                    <date type="dateDefended">2021-03-03</date>
+                                    <date type="dateEpub">2021-03-03</date>
+                                 </imprint>
+                                 <authority type="institution">Université Grenoble</authority>
+                                 <authority type="school">Ecole Doctorale</authority>
+                                 <authority type="supervisor">Directeur de thèse</authority>
+                                 <authority type="supervisorEmail">mail@directeur</authority>
+                                 <authority type="jury">rapporteur</authority>
+                                 <authority type="jury">président</authority>
+                              </monogr>
+                              <series>
+                                 <editor>Nom éditeur</editor>
+                                 <title>Nom cours</title>
+                              </series>
+                              <idno type="doi">10.17928/jjadh.5.1_22</idno>
+                              <ref type="codeRepository" target="https://github.com/gramian/emgr" />
+                              <ref type="seeAlso" target=" http://cve.revues.org/2397" />
+                              <ref type="researchdata" target="10.1007/s11747-020-00723-5" />
+                              <ref type="publisher"> http://aof.revues.org/index6782.html</ref>
+                              <relatedItem type="illustrate" target="http://hal.archives-ouvertes.fr/hal-00000001">description</relatedItem>
+                           </biblStruct>
+                           <listPlace>
+                              <place>
+                                 <location>
+                                    <geo>9.970034 98.972015</geo>
+                                 </location>
+                              </place>
+                           </listPlace>
+                           <recordingStmt>
+                              <recording type="video" dur="9:50" />
+                           </recordingStmt>
+                        </sourceDesc>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="biblStruct" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.docStatus" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="analytic" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="monogr" minOccurs="0" maxOccurs="unbounded"/>
+                        <!-- CF: idno n'est pas prévu ici donc le garder ou le changer ? -->
+                        <elementRef key="idno" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="relatedItem" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="series" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+               </elementSpec>
+               
+               <elementSpec ident="analytic" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="title" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="author" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+               </elementSpec>
+               
+               <elementSpec ident="monogr" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="settlement" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="country" minOccurs="0" maxOccurs="unbounded"/>
+                        <!--  -->
+                        <elementRef key="idno" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="title" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="meeting" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="respStmt" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="editor" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="imprint" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="authority" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <monogr>
+                           <idno type="nnt">2005AIXI1002</idno>
+                           <idno type="patentNumber"></idno>
+                           <idno type="isbn">978-2-343-20916-6</idno>
+                           <idno type="localRef">AZ2B32</idno>
+                           <idno type="halJournalId" status="VALID">163788</idno>
+                           <idno type="issn">2188-7276</idno>
+                           <idno type="eissn">2188-7276</idno>
+                           <title level="j">Journal of the Japanese Association for Digital Humanities</title>
+                           <title level="m">Book title</title>
+                           <meeting>
+                              <title>Conference title</title>
+                              <date type="start">2021-02-01</date>
+                              <date type="end">2021-02-02</date>
+                              <settlement>Paris</settlement>
+                              <country key="fr"/>
+                           </meeting>   
+                           <respStmt>
+                              <resp>conferenceOrganizer</resp>
+                              <name>Organisateur</name>
+                           </respStmt>
+                           <settlement>Paris</settlement>
+                           <country key="fr"/>
+                           <editor>Editeur scientifique</editor>
+                           <imprint>
+                              <publisher>Editeur</publisher>
+                              <pubPlace>Paris</pubPlace>
+                              <biblScope unit="serie">Serie</biblScope>
+                              <biblScope unit="volume">Volume 34</biblScope>
+                              <biblScope unit="issue">12</biblScope>
+                              <biblScope unit="pp">34-43</biblScope>
+                              <date type="datePub">2021-03-03</date>
+                              <date type="dateDefended">2021-03-03</date>
+                              <date type="dateEpub">2021-03-03</date>
+                           </imprint>
+                           <authority type="institution">Université Grenoble</authority>
+                           <authority type="school">Ecole Doctorale</authority>
+                           <authority type="supervisor">Directeur de thèse</authority>
+                           <authority type="supervisorEmail">mail@directeur</authority>
+                           <authority type="jury">rapporteur</authority>
+                           <authority type="jury">président</authority>
+                        </monogr>
+                     </egXML>
+                 </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="meeting" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="settlement" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="country" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="title" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <meeting>
+                           <title>Conference title</title>
+                           <date type="start">2021-02-01</date>
+                           <date type="end">2021-02-02</date>
+                           <settlement>Paris</settlement>
+                           <country key="fr"/>
+                        </meeting>   
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="settlement" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.naming" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <settlement>Paris</settlement>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="country" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <attList>
+                     <attDef ident="key" mode="change" usage="req"/>
+                     <attDef ident="ref" mode="delete"/>
+                     <attDef ident="role" mode="delete"/>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <country key="fr"/>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+
+               <elementSpec ident="respStmt" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="resp" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <respStmt>
+                           <resp>conferenceOrganizer</resp>
+                           <name>Organisateur</name>
+                        </respStmt>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="imprint" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="publisher" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="pubPlace" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="biblScope" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <imprint>
+                           <publisher>Editeur</publisher>
+                           <pubPlace>Paris</pubPlace>
+                           <biblScope unit="serie">Serie</biblScope>
+                           <biblScope unit="volume">Volume 34</biblScope>
+                           <biblScope unit="issue">12</biblScope>
+                           <biblScope unit="pp">34-43</biblScope>
+                           <date type="datePub">2021-03-03</date>
+                           <date type="dateDefended">2021-03-03</date>
+                           <date type="dateEpub">2021-03-03</date>
+                        </imprint>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="publisher" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <imprint>
+                           <publisher>Editeur</publisher>
+                        </imprint>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="pubPlace" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <imprint>
+                           <pubPlace>Paris</pubPlace>
+                        </imprint>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="biblScope" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <attList>
+                     <attDef ident="unit" mode="replace" usage="req">
+                        <valList mode="change" type="closed">
+                           <valItem ident="serie">
+                              <desc>Nom de la série</desc>
+                           </valItem>
+                           <valItem ident="volume">
+                              <desc>Volume concerné</desc>
+                           </valItem>
+                           <valItem ident="issue">
+                              <desc>Numéro</desc>
+                           </valItem>
+                           <valItem ident="pp">
+                              <desc>Pagination</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="from" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <biblScope unit="serie">Serie</biblScope>
+                        <biblScope unit="volume">Volume 34</biblScope>
+                        <biblScope unit="issue">12</biblScope>
+                        <biblScope unit="pp">34-43</biblScope>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="authority" mode="change">
+                  <!-- CF: Actuellement toutes les informations sont portés sur le type alors qu'en réalité ça devrait être un élément qui contient des sous-éléments -->
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                     <!-- Ajout de Type pour correspondre à la DOC actuelle-->
+                     <memberOf key="att.typed" mode="add"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList  mode="change" type="closed">
+                           <valItem ident="institution"/>
+                           <valItem ident="school"/>
+                           <valItem ident="supervisor"/>
+                           <valItem ident="jury"/>
+                           <valItem ident="supervisorEmail"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="to" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <authority type="institution">Université Grenoble</authority><!-- orgName avec type -->
+                        <authority type="school">Ecole Doctorale</authority>
+                        <authority type="supervisor">Directeur de thèse</authority>
+                        <authority type="supervisorEmail">mail@directeur</authority>
+                        <authority type="jury">rapporteur</authority>
+                        <authority type="jury">président</authority>
+                        <!-- CF: autre proposition 
+                        <authority>
+                           <orgName type="institution">Université Grenoble</orgName>
+                           <orgName type="school">Ecole Doctorale</orgName>
+                           <persName type="supervisor">
+                              <email>mail@directeur</email>
+                              <name>Directeur de thèse</name>
+                           </persName>
+                           <persName type="jury">rapporteur</persName>
+                        </authority>
+                        
+                        -->
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="series" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="editor" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="title" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <series>
+                           <editor>Nom éditeur</editor>
+                           <title>Nom cours</title>
+                        </series>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="relatedItem" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: ne doit pas voir de texte dans l'élément-->
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList  mode="change" type="open">
+                           <valItem ident="illustrate">
+                           </valItem>
+                           <valItem ident="isIllustratedBy"/>
+                           <valItem ident="isRequiredBy"/>
+                           <valItem ident="requires"/>
+                           <valItem ident="isPartOf"/>
+                           <valItem ident="hasPart"/>
+                           <valItem ident="isReferencedBy"/>
+                           <valItem ident="references"/>
+                           <valItem ident="isFormatOf"/>
+                           <valItem ident="hasFormat"/>
+                           <valItem ident="conformsTo"/>
+                           <valItem ident="isVersionOf"/>
+                           <valItem ident="hasVersion"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" mode="change" usage="req"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <relatedItem type="illustrate" target="http://hal.archives-ouvertes.fr/hal-00000001">description</relatedItem>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="listPlace" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="place" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listPlace>
+                           <place>
+                              <location>
+                                 <geo>9.970034 98.972015</geo>
+                              </location>
+                           </place>
+                        </listPlace>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="place" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="location" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <place>
+                           <location>
+                              <geo>9.970034 98.972015</geo>
+                           </location>
+                        </place>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="location" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                     <memberOf key="att.datable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="geo" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <location>
+                           <geo>9.970034 98.972015</geo>
+                        </location>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="geo" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.declaring" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <geo>9.970034 98.972015</geo>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="recordingStmt" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="recording" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <recordingStmt>
+                           <recording type="video" dur="9:50" />
+                        </recordingStmt>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="recording" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList mode="change" type="closed">
+                           <valItem ident="video"/>
+                           <valItem ident="audio"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="dur" mode="change" usage="opt">
+                        <datatype>
+                           <dataRef name="string"/>
+                        </datatype>
+                     </attDef>
+                     <attDef ident="dur-iso" mode="delete"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <recording type="video" dur="9:50" />
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="profileDesc" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="langUsage" minOccurs="0"/>
+                        <elementRef key="textClass" minOccurs="0"/>
+                        <elementRef key="abstract" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="particDesc" minOccurs="0"/>
+                        <elementRef key="creation" minOccurs="0"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <profileDesc>
+                           <langUsage>
+                              <language ident="fr"/>
+                           </langUsage>
+                           <textClass>
+                              <keywords scheme="author">
+                                 <term xml:lang="fr">mot</term>
+                                 <term xml:lang="fr">clé</term>
+                              </keywords>
+                              <classCode scheme="classification">ББК 81.002я431</classCode>
+                              <classCode scheme="mesh">Zymosan</classCode>
+                              <classCode scheme="jel" n="Z.Z3.Z33">Z.Z3.Z33</classCode>
+                              <classCode scheme="acm" n="K.8.1.0">K.8.1.0</classCode>
+                              <classCode scheme="halDomain" n="info.info-tt">Computer Science [cs]/Document and Text Processing</classCode>
+                              <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
+                              <classCode scheme="vocinrae" n="mot indexé"/>
+                              <classCode scheme="halTypology" n="ART">Journal articles</classCode>
+                           </textClass>
+                           <abstract xml:lang="fr">résumé résumé</abstract>
+                           <particDesc>
+                              <org type="consortium">Collaboration</org>
+                           </particDesc>
+                        </profileDesc>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="langUsage" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="language" minOccurs="0"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <profileDesc>
+                           <langUsage>
+                              <language ident="fr"/>
+                           </langUsage>
+                        </profileDesc>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="language" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="ident" mode="change" usage="req"/>
+                     <attDef ident="usage" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <language ident="fr"/>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="textClass" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="keywords" minOccurs="0"/>
+                        <elementRef key="classCode" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <textClass>
+                           <keywords scheme="author">
+                              <term xml:lang="fr">mot</term>
+                              <term xml:lang="fr">clé</term>
+                           </keywords>
+                           <classCode scheme="classification">ББК 81.002я431</classCode>
+                           <classCode scheme="mesh">Zymosan</classCode>
+                           <classCode scheme="jel" n="Z.Z3.Z33">Z.Z3.Z33</classCode>
+                           <classCode scheme="acm" n="K.8.1.0">K.8.1.0</classCode>
+                           <classCode scheme="halDomain" n="info.info-tt">Computer Science [cs]/Document and Text Processing</classCode>
+                           <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
+                           <classCode scheme="vocinrae" n="mot indexé"/>
+                           <classCode scheme="halTypology" n="ART">Journal articles</classCode>
+                        </textClass>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="keywords" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <elementRef key="term" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="scheme" mode="change" usage="req">
+                        <valList mode="replace" type="closed">
+                           <valItem ident="author">
+                              <desc>Mot-clé ajouter par l'auteur</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <keywords scheme="author">
+                           <term xml:lang="fr">mot</term>
+                           <term xml:lang="fr">clé</term>
+                        </keywords>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="term" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.pointing " mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                     <memberOf key="att.declaring" mode="delete"/>
+                     <memberOf key="att.cReferencing" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.canonical" mode="delete"/>
+                     <memberOf key="att.sortable" mode="delete"/>
+                     <memberOf key="att.pointing" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="xml:lang" mode="change" usage="req"/>   
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="n" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <term xml:lang="fr">mot</term>
+                        <term xml:lang="fr">clé</term>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="classCode" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <!-- CF: non prévu par la doc TEI comme enfant de monogr, logiquement ils doivent être enfant de imprim -->
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="scheme" mode="change" usage="req">
+                        <valList mode="replace" type="closed">
+                           <valItem ident="classification">
+                              <desc></desc>
+                           </valItem>
+                           <valItem ident="acm2012">
+                              <desc>Classification ACM 2012</desc>
+                           </valItem>
+                           <valItem ident="acm">
+                              <desc>Classification ACM 1998</desc>
+                           </valItem>
+                           <valItem ident="mesh">
+                              <desc>Classification MESH</desc>
+                           </valItem>
+                           <valItem ident="jel">
+                              <desc>Classification JEL</desc>
+                           </valItem>
+                           <valItem ident="vocinrae">
+                              <desc>Thesaurus VOCINRAE</desc>
+                           </valItem>
+                           <valItem ident="halDomain">
+                              <desc>La liste des domain Hal est disponible sur l'<ref target="http://api.archives-ouvertes.fr/ref/domain/?wt=xml">api</ref></desc>
+                           </valItem>
+                           <valItem ident="halTypology">
+                              <desc>La liste des types Hal est disponible sur l'<ref target="https://api.archives-ouvertes.fr/ref/doctype/?wt=xml">api</ref></desc>
+                           </valItem>
+                           <valItem ident="halOldTypology"/>
+                           <valItem ident="halTreeTypology"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="n" mode="change" usage="req"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <classCode scheme="classification">ББК 81.002я431</classCode>
+                        <classCode scheme="mesh">Zymosan</classCode>
+                        <classCode scheme="jel" n="Z.Z3.Z33">Z.Z3.Z33</classCode>
+                        <classCode scheme="acm" n="K.8.1.0">K.8.1.0</classCode>
+                        <classCode scheme="halDomain" n="info.info-tt">Computer Science [cs]/Document and Text Processing</classCode>
+                        <classCode scheme="halDomain" n="info">Computer Science [cs]</classCode>
+                        <classCode scheme="vocinrae" n="mot indexé"/>
+                        <classCode scheme="halTypology" n="ART">Journal articles</classCode>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
 
                <!-- Indication of the validity of the organisation in AureHAL -->
@@ -739,23 +2377,69 @@
                      <memberOf key="model.orgPart" mode="add"/>
                   </classes>
                </elementSpec>
+               
+               <elementSpec ident="back" mode="change">
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <back>
+                           <listOrg type="structures">
+                              <!-- type de org : institution, department, laboratory or researchteam -->
+                              <org type="laboratory" xml:id="struct-%%ID STRUCTUTRE DE RECHERCHE"/>
+                              <org type="researchteam" xml:id="localStruct-%%ID LOCAL">
+                                 <orgName>NA50</orgName>
+                                 <desc>
+                                    <address>
+                                       <country key="FR"/>
+                                    </address>
+                                    <ref type="url">http://na50.cern.ch</ref>
+                                 </desc>
+                                 <listRelation>
+                                    <relation name="UMR7503" active="#struct-300000"/>
+                                    <relation active="#struct-1"/>
+                                    <relation active="#localStruct-2"/>
+                                 </listRelation>
+                              </org>
+                              <org type="institution" xml:id="struct-300000"/>
+                              <org type="laboratory" xml:id="struct-1"/>
+                              <org type="institution" xml:id="localStruct-2">
+                                 <orgName>Université de Lyon</orgName>
+                                 <orgName type="acronym">PRES de Lyon</orgName>
+                                 <desc>
+                                    <address>
+                                       <country key="FR"/>
+                                    </address>
+                                    <ref type="url">http://www.univ-lyon.fr</ref>
+                                 </desc>
+                              </org>
+                           </listOrg>
+                           <listOrg type="projects">
+                              <org type="anrProject" xml:id="projanr-1"/>
+                              <org type="europeanProject" xml:id="projeurop-1"/>
+                              <org type="anrProject" xml:id="localProjanr-1">
+                                 <idno type="anr">ANR-05-PADD-001</idno>
+                                 <orgName>VIN</orgName> <!-- Valeur obligatoire -->
+                                 <orgName type="program">Programme fédérateur Agriculture et Développement Durable</orgName>
+                                 <desc>Quelles interventions publiques et privées pour réduire l'utilisation des traitements phytosanitaires dans le secteur du vin ?</desc>
+                                 <date>2005</date>
+                              </org>
+                              <org type="europeanProject" xml:id="localProjeurop-1">
+                                 <idno type="program">REGPOT</idno>
+                                 <idno type="number">204727</idno>
+                                 <idno type="call">FP7-REGPOT-2007-1</idno>
+                                 <orgName>ESTSPACE</orgName> <!-- Valeur obligatoire -->
+                                 <desc>Expose capacity of the Estonian Space Research and Technology through High Quality Partnership in Europe</desc>
+                                 <date type="start">2008-03-01</date>
+                                 <date type="end">2011-02-28</date>
+                              </org>
+                           </listOrg>
+                        </back>
+                     </egXML>
+                  </exemplum>                                 
+               </elementSpec>
 
                <!-- Ajout de date dans <org> -->
                <!-- Le changement est moins idéal que pour listRelation, il faudrait envisager modifier le modèle de contenu de <org> -->
-               <elementSpec ident="date" mode="change">
-                  <classes mode="change">
-                     <memberOf key="model.orgPart" mode="add"/>
-                  </classes>
-               </elementSpec>
 
-               <!-- @type est ajouté par soucie de compatibilité courante avec HAL, mais la spécification indique que cet usage est déprécié au profit de @status (aussi ajouté à la spec) -->
-               <!-- Question autour de release, type au lieu de status, question de version -->
-               <elementSpec ident="edition" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.typed" mode="add"/>
-                     <memberOf key="att.docStatus" mode="add"/>
-                  </classes>
-               </elementSpec>
 
                <!-- Ajout du contenu textuel simple pour <abstract> pour être conforma à HAL -->
                <!-- Bien que le modèle de la TEI ne soit pas très ellaboré (pas de division etc.) -->
