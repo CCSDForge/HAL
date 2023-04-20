@@ -324,12 +324,12 @@
             <schemaSpec ident="HAL" start="TEI" docLang="en" xml:lang="en"
                ns="http://www.tei-c.org/ns/1.0">
                <moduleRef key="core"
-                  include="listBibl bibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
+                  include="listBibl editor respStmt resp name note p biblStruct analytic monogr meeting imprint biblScope publisher pubPlace series relatedItem term measure title author email ptr date ref desc address addrLine"/>
                <moduleRef key="tei"/>
                <moduleRef key="header"
                   include="teiHeader fileDesc profileDesc biblFull titleStmt funder editionStmt edition publicationStmt distributor availability licence seriesStmt notesStmt sourceDesc authority profileDesc langUsage language textClass keywords classCode abstract creation idno"/>
                <moduleRef key="textstructure" include="TEI text body back"/>
-               <moduleRef key="iso-fs" except="fsdDecl"/>
+               <moduleRef key="iso-fs" include="fs f"/>
                <moduleRef key="namesdates"
                   include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
                <moduleRef key="spoken" include="recordingStmt recording"/>
@@ -339,7 +339,7 @@
                <moduleRef key="att.datable" except="from-iso to-iso"/>
                <!-- CF :Ajout de validUntil -->
                <moduleRef key="tagdocs" include="validUntil"/>
-
+               
                <elementSpec ident="TEI" mode="change">
                   <!-- LR :Comment utiliser @validUntil? -->
                   <!-- Restriction de tous les autres attributs car ils ne nous servent pas -->
@@ -673,17 +673,33 @@
                   </exemplum>
                </elementSpec>
                
+               <!-- CF: actuellement utilisé pour les bibliographies et ajouter à la TEI pour pouvoir être conforme à l'état actuelle de HAL-->
+               <elementSpec ident="i" mode="add" ns="http://www.tei-c.org/ns/1.0">
+                  <desc>Balise italique issue du langage HTML utilisé pour la citation</desc>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <i>Journal of the Japanese Association for Digital Humanities</i>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
                <elementSpec ident="idno" mode="change">
                   <classes mode="change">
                      <!-- De façon à disposer de @notation 
                     Ce qui n'est pas permis normalement par la TEI-->
                      <memberOf key="att.notated" mode="add"/>
+                     <memberOf key="att.transcriptional" mode="add"/>
                      <memberOf key="att.sortable" mode="delete"/>
                      <memberOf key="att.datable" mode="delete"/>
                   </classes>
                   <content>
-                     <textNode/>
-                     <elementRef key="i" minOccurs="0" maxOccurs="unbounded"/>
+                     <sequence preserveOrder="false">
+                        <textNode/>
+                        <elementRef key="i" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
                   </content>
                   <attList>
                      <attDef ident="n" mode="change" usage="opt"/>
@@ -719,6 +735,11 @@
                      <attDef ident="resp" mode="delete"/>
                      <attDef ident="source" mode="delete"/>
                      <attDef ident="subtype" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="seq" mode="delete"/>
+                     <attDef ident="evidence" mode="delete"/>
+                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="hand" mode="delete"/>
                   </attList>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -998,6 +1019,26 @@
                   </exemplum>
                </elementSpec>
                
+
+               
+               <!-- CF: pas dans l'exemple est-il toujours utilisé -->
+               <elementSpec ident="fs" mode="change">
+                  <content>
+                     <elementRef key="f" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+               </elementSpec>
+               
+               <!-- CF: pas dans l'exemple est-il toujours utilisé -->
+               <elementSpec ident="f" mode="change">
+                  <content>
+                     <textNode/>
+                  </content>
+                  <attList>
+                     <attDef ident="name" usage="req" mode="change"/>
+                     <attDef ident="notation" usage="opt" mode="change"/>
+                  </attList>
+               </elementSpec>
+               
                <elementSpec ident="date" mode="change">
                   <classes mode="change">
                      <memberOf key="att.duration" mode="delete"/>
@@ -1104,6 +1145,9 @@
                      <memberOf key="att.cReferencing" mode="delete"/>
                      <memberOf key="att.declaring" mode="delete"/>
                      <memberOf key="att.internetMedia" mode="delete"/>
+                     <!-- Maj de ref pour donner le status
+                     <memberOf key="att.docStatus" mode="add"></memberOf>
+                      -->
                   </classes>
                   <content>
                      <sequence preserveOrder="false">
@@ -1113,6 +1157,22 @@
                      </sequence>
                   </content>
                   <attList>
+                     <!-- Ajout d'un attribut non TEI
+                     <attDef ident="status" mode="change" usage="opt">
+                        <desc>(status) donne un code caractérisant la disponibilité actuelle d’un texte.</desc>
+                        <valList>
+                           <valItem ident="free">
+                              <desc>(free) Le texte est libre de droits.</desc>
+                           </valItem>
+                           <valItem ident="unknown">
+                              <desc>(unknown) Le statut du texte est inconnu.</desc>
+                           </valItem>
+                           <valItem ident="restricted">
+                              <desc>restricted</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                      -->
                      <!-- CF: Reprendre la liste -->
                      <attDef ident="type" mode="change" usage="req">
                         <valList mode="change" type="open">
@@ -1129,6 +1189,7 @@
                            <valItem ident="esrFullText"/>
                            <valItem ident="publisher"/>
                            <valItem ident="url"/>
+                           <valItem ident="externalLink"/>
                         </valList>
                      </attDef>
                      <attDef ident="n" mode="change" usage="opt"/>
@@ -1621,6 +1682,7 @@
                         <elementRef key="respStmt" minOccurs="0" maxOccurs="unbounded"/>
                         <elementRef key="editor" minOccurs="0" maxOccurs="unbounded"/>
                         <elementRef key="imprint" minOccurs="0" maxOccurs="unbounded"/>
+                        <!-- Ajout de l'élément authority-->
                         <elementRef key="authority" minOccurs="0" maxOccurs="unbounded"/>
                      </sequence>
                   </content>
@@ -1753,11 +1815,34 @@
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <respStmt>
-                           <resp>conferenceOrganizer</resp>
-                           <name>Organisateur</name>
+                           <resp>contributor</resp>
+                           <name key="105529">
+                              <persName>
+                                 <forename>Laurent</forename>
+                                 <surname>Romary</surname>
+                              </persName>
+                              <email type="md5">16ede816252b162dcca0da9d3409b614</email>
+                              <email type="domain">inria.fr</email>
+                           </name>
                         </respStmt>
                      </egXML>
                   </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="name" mode="change">
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="persName" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="email" minOccurs="0" maxOccurs="unbounded"/>
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <!-- CF: qu'est ce key -->
+                     <attDef ident="key" usage="opt" mode="change">
+                        <desc></desc>
+                     </attDef>
+                  </attList>
                </elementSpec>
                
                <elementSpec ident="imprint" mode="change">
@@ -2305,7 +2390,6 @@
                
                <elementSpec ident="classCode" mode="change">
                   <classes mode="change">
-                     <memberOf key="att.global" mode="delete"/>
                      <memberOf key="att.declarable" mode="delete"/>
                   </classes>
                   <content>
@@ -2345,7 +2429,6 @@
                            <valItem ident="halTreeTypology"/>
                         </valList>
                      </attDef>
-                     <attDef ident="n" mode="change" usage="req"/>
                   </attList>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -2361,14 +2444,58 @@
                   </exemplum>
                </elementSpec>
 
+               <!-- Ajout de date dans <org> -->
+               <!-- Le changement est moins idéal que pour listRelation, il faudrait envisager modifier le modèle de contenu de <org> -->
                <!-- Indication of the validity of the organisation in AureHAL -->
                <elementSpec ident="org" mode="change">
                   <classes mode="change">
                      <!-- De façon à disposer de @status -->
                      <memberOf key="att.docStatus" mode="add"/>
-                     <!-- Pour disposer de @key -->
-                     <memberOf key="att.canonical" mode="add"/>
                   </classes>
+                  <content>
+                     <alternate>
+                        <sequence preserveOrder="false">
+                           <elementRef key="desc" minOccurs="0"/>
+                           <elementRef key="idno" minOccurs="0" maxOccurs="unbounded"/>
+                           <elementRef key="orgName" minOccurs="0" maxOccurs="unbounded"/>
+                           <elementRef key="date" minOccurs="0" maxOccurs="unbounded"/>
+                           <elementRef key="listRelation" minOccurs="0"/>
+                           <textNode/>
+                        </sequence>
+                        <sequence>
+                           <elementRef key="listRelation" minOccurs="0" maxOccurs="unbounded"/>
+                        </sequence>
+                     </alternate>
+                  </content>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                     </attDef>
+                     <attDef ident="xml:id" mode="change" usage="opt"/>
+                     <attDef ident="status" mode="change"></attDef>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <org type="anrProject" xml:id="projanr-33933" status="VALID">
+                           <idno type="anr">ANR-11-BSH1-0008</idno>
+                           <idno type="program">BLANC</idno>
+                           <orgName>STRIPAP</orgName>
+                           <desc>STress et RIsques Psychosociaux au travail : Acteurs et Pratiques. Le développement de dispositifs liés au " stress " dans les entreprises.</desc>
+                           <date type="start">2011</date>
+                        </org>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="particDesc" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.declarable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="org" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
                </elementSpec>
 
                <!-- Ajout des relations dans <org> -->
@@ -2376,9 +2503,119 @@
                   <classes mode="change">
                      <memberOf key="model.orgPart" mode="add"/>
                   </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="relation" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+               </elementSpec>
+               
+               <elementSpec ident="relation" mode="change">
+                  <attList>
+                     <attDef ident="type" usage="opt" mode="change"/>
+                     <attDef ident="active" usage="req" mode="change"/>
+                     <attDef ident="name" usage="opt" mode="change"/>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="creation" mode="change">
+                  <content>
+                     <elementRef key="measure" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="ptr" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
+               </elementSpec>
+               
+               <elementSpec ident="measure" mode="change">
+                  <attList>
+                     <attDef ident="quantity" mode="change" usage="opt"/>
+                     <attDef ident="unit" mode="change" usage="opt"/>
+                     <attDef ident="commodity" mode="change" usage="opt"/>
+                  </attList>
+               </elementSpec> 
+               
+               <elementSpec ident="addrLine" mode="change">
+                  <classes>
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <addrLine>2 rue Simone Iff -CS 42112 -75589 Paris Cedex 12</addrLine>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="desc" mode="change">
+                  <classes>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.typed" mode="delete"/>
+                     <memberOf key="att.translatable" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="ref" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="address"  minOccurs="0" maxOccurs="unbounded"/>
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <desc>
+                           <address>
+                              <addrLine>2 rue Simone Iff -CS 42112 -75589 Paris Cedex 12</addrLine>
+                              <country key="FR"/>
+                           </address>
+                           <ref type="url">http://www.inria.fr/centre/paris</ref>
+                        </desc>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <!-- CF: pas d'exemple  dans la documentation -->
+               <elementSpec ident="ptr" mode="change">
+                  <classes>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.cReferencing" mode="delete"/>
+                  </classes>
+                  <attList>
+                     <attDef ident="type" usage="req">
+                        <valList>
+                           <valItem ident="url"/>
+                           <valItem ident="query"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" usage="req"></attDef>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="address" mode="change">
+                  <classes>
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.cReferencing" mode="delete"/>
+                  </classes>
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="addrLine" minOccurs="0" maxOccurs="unbounded"/>
+                        <elementRef key="country"  minOccurs="0" maxOccurs="unbounded"/>
+                        <textNode/>
+                     </sequence>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <address>
+                           <addrLine>2 rue Simone Iff -CS 42112 -75589 Paris Cedex 12</addrLine>
+                           <country key="FR"/>
+                        </address>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
                
                <elementSpec ident="back" mode="change">
+                  <content>
+                     <elementRef key="listOrg" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <back>
@@ -2436,9 +2673,86 @@
                      </egXML>
                   </exemplum>                                 
                </elementSpec>
-
-               <!-- Ajout de date dans <org> -->
-               <!-- Le changement est moins idéal que pour listRelation, il faudrait envisager modifier le modèle de contenu de <org> -->
+               
+               <elementSpec ident="listOrg" mode="change">
+                  <content>
+                     <sequence preserveOrder="false">
+                        <elementRef key="org" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <attList>
+                     <attDef ident="type" usage="req" mode="change">
+                        <valList>
+                           <valItem ident="structures"/>
+                           <valItem ident="projects"/>
+                           <valItem ident="laboratories"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listOrg type="structures">
+                           <org type="researchteam" xml:id="struct-482775" status="VALID">
+                              <idno type="RNSR">201722248N</idno>
+                              <orgName>Automatic Language Modelling and ANAlysis Computational Humanities</orgName>
+                              <orgName type="acronym">ALMAnaCH</orgName>
+                              <date type="start">2017-01-01</date>
+                              <desc>
+                                 <address>
+                                    <country key="FR"/>
+                                 </address>
+                                 <ref type="url">https://www.inria.fr/equipes/almanach</ref>
+                              </desc>
+                              <listRelation>
+                                 <relation active="#struct-454310" type="direct"/>
+                                 <relation active="#struct-300009" type="indirect"/>
+                              </listRelation>
+                           </org>
+                           <org type="laboratory" xml:id="struct-454310" status="VALID">
+                              <orgName>Inria de Paris</orgName>
+                              <desc>
+                                 <address>
+                                    <addrLine>2 rue Simone Iff -CS 42112 -75589 Paris Cedex 12</addrLine>
+                                    <country key="FR"/>
+                                 </address>
+                                 <ref type="url">http://www.inria.fr/centre/paris</ref>
+                              </desc>
+                              <listRelation>
+                                 <relation active="#struct-300009" type="direct"/>
+                              </listRelation>
+                           </org>
+                           <org type="institution" xml:id="struct-300009" status="VALID">
+                              <orgName>Institut National de Recherche en Informatique et en Automatique</orgName>
+                              <orgName type="acronym">Inria</orgName>
+                              <desc>
+                                 <address>
+                                    <addrLine>Domaine de VoluceauRocquencourt - BP 10578153 Le Chesnay Cedex</addrLine>
+                                    <country key="FR"/>
+                                 </address>
+                                 <ref type="url">http://www.inria.fr/en/</ref>
+                              </desc>
+                           </org>
+                        </listOrg>
+                        <listOrg type="projects">
+                           <org type="anrProject" xml:id="projanr-33933" status="VALID">
+                              <idno type="anr">ANR-11-BSH1-0008</idno>
+                              <idno type="program">BLANC</idno>
+                              <orgName>STRIPAP</orgName>
+                              <desc>STress et RIsques Psychosociaux au travail : Acteurs et Pratiques. Le développement de dispositifs liés au " stress " dans les entreprises.</desc>
+                              <date type="start">2011</date>
+                           </org>
+                           <org type="europeanProject" xml:id="projeurop-712435" status="VALID">
+                              <idno type="number">731102</idno>
+                              <idno type="program">H2020-EU.1.4.1.3. - Development, deployment and operation of ICT-based e-infrastructures</idno>
+                              <orgName>HIRMEOS</orgName>
+                              <desc> High Integration of Research Monographs in the European Open Science infrastructure</desc>
+                              <date type="start">2017-01-01</date>
+                              <date type="end">2019-06-30</date>
+                           </org>
+                        </listOrg>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>         
 
 
                <!-- Ajout du contenu textuel simple pour <abstract> pour être conforma à HAL -->
@@ -2453,6 +2767,14 @@
                         <classRef key="model.listLike"/>
                      </alternate>
                   </content>
+                  <attList>
+                     <attDef ident="xml:lang" usage="req" mode="change"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <abstract xml:lang="fr">résumé résumé</abstract>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
 
                <!-- On relache les contraintes sur le modèle de seriesStmt (cf. ligne suivante) -->
