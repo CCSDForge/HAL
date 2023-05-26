@@ -51,7 +51,7 @@
                <div>
                   <head>Le niveau de la notice bibliographique (<gi>biblFull</gi>)</head>
                   <p>L'élément <gi>biblFull</gi> fournit les méta-données recueillies au niveau de l'entité qui a généré la transaction. En dehors des caractéristiques bibliographiques de l'objet
-                     concerné, ce nieau peut contenir tout un ensemble de champs liés à la gestions (curation) des notices correspondantes: ajout d'identifiants bibliographiques, désambigüisation des
+                     concerné, ce niveau peut contenir tout un ensemble de champs liés à la gestions (curation) des notices correspondantes: ajout d'identifiants bibliographiques, désambigüisation des
                      auteurs (e.g. ajouts d'identifiants VIAF, IdRef ou Orcid), fourniture de données d'affiliation, intégration dans des collections particulières (par exemple en lien avec une
                      colleciton institutionnelle, de projets, etc.)) etc.. Elle peut aussi contenir un lien vers le fichier source (pdf, docx etc.) si l'information est pertinente pour la transaction
                      courante.</p>
@@ -364,6 +364,7 @@
                            <p/>
                         </remarks>
                      </attDef>
+                     <attDef ident="schemaLocation" ns="http://www.w3.org/2001/XMLSchema-instance"></attDef>
                      <!-- CF : Ajout de validUntil possible pour quel raison ?  -->
                      <!-- <attDef ident="validUntil" mode="add"/> -->
                   </attList>
