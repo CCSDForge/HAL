@@ -329,7 +329,7 @@
                <moduleRef key="header"
                   include="teiHeader fileDesc profileDesc biblFull titleStmt funder editionStmt edition publicationStmt distributor availability licence seriesStmt notesStmt sourceDesc authority profileDesc langUsage language textClass keywords classCode abstract creation idno"/>
                <moduleRef key="textstructure" include="TEI text body back"/>
-               <moduleRef key="iso-fs" include="fs f"/>
+               <moduleRef key="iso-fs" include="fs f string numeric"/>
                <moduleRef key="namesdates"
                   include="listPlace place location geo listOrg persName forename surname affiliation settlement country org listRelation relation orgName"/>
                <moduleRef key="spoken" include="recordingStmt recording"/>
@@ -635,6 +635,29 @@
                   </exemplum>
                </elementSpec>
                
+               <!-- CF: mettre l'élément dans value comme dans les TEI guidelines plutôt que -->
+               <elementSpec ident="numeric" mode="change">
+                  <classes mode="change">
+                     <!-- De façon à disposer de @notation 
+                    Ce qui n'est pas permis normalement par la TEI-->
+                     <memberOf key="att.global" mode="delete"/>
+                     <memberOf key="att.datcat" mode="delete"/>
+                  </classes>
+                  <content>
+                     <textNode/>
+                  </content>
+                  <attList>
+                     <attDef ident="value" mode="delete"/>
+                     <attDef ident="max" mode="delete"/>
+                     <attDef ident="trunc" mode="delete"/>
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <numeric>0</numeric>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
                <elementSpec ident="persName" mode="change">
                   <content>
                      <sequence preserveOrder="false">
@@ -707,7 +730,12 @@
                      <attDef ident="corresp" mode="change" usage="opt"/>
                      <attDef ident="p" mode="change" usage="opt"/>
                      <attDef ident="status" mode="change" usage="opt"/>
-                     <attDef ident="type" mode="change" usage="opt"/>
+                     <attDef ident="type" mode="change" usage="opt">
+                        <datatype>
+                           <dataRef key="teidata.text"></dataRef>
+                        </datatype>
+                        <valList mode="delete"/>
+                     </attDef>
                      <attDef ident="notation" mode="change">
                         <valList mode="change" type="closed">
                            <valItem ident="string">
@@ -1027,17 +1055,58 @@
                   <content>
                      <elementRef key="f" minOccurs="0" maxOccurs="unbounded"/>
                   </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <fs>
+                           <f name="inra_etatDocument_local" notation="numeric">
+                              <numeric>0</numeric>
+                           </f>
+                           <f name="inra_etatDocument_local" notation="string">
+                              <string>inra_etatDocument_local_0</string>
+                           </f>
+                           <f name="inra_publicVise_local" notation="string">
+                              <string>inra_publicVise_local_SC</string>
+                           </f>
+                           <f name="inra_titreSpecial_local" notation="string">
+                              <string>Modern Imaging Techniques in Fracture and Damage Analyses</string>
+                           </f>
+                        </fs>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
                
                <!-- CF: pas dans l'exemple est-il toujours utilisé -->
                <elementSpec ident="f" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.duration" mode="delete"/>
+                     <memberOf key="att.editLike" mode="delete"/>
+                     <memberOf key="att.ranging" mode="delete"/>
+                     <memberOf key="att.notated" mode="add"/>
+                  </classes>
                   <content>
                      <textNode/>
+                     <elementRef key="string" minOccurs="0" maxOccurs="unbounded"/>
+                     <elementRef key="numeric" minOccurs="0" maxOccurs="unbounded"/>
                   </content>
                   <attList>
                      <attDef ident="name" usage="req" mode="change"/>
-                     <attDef ident="notation" usage="opt" mode="change"/>
+                     <attDef ident="notation" usage="opt" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="string"/>
+                           <valItem ident="numeric"/>
+                        </valList>
+                     </attDef>
                   </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <f name="inra_etatDocument_local" notation="numeric">
+                           <numeric>0</numeric>
+                        </f>
+                        <f name="inra_etatDocument_local" notation="string">
+                           <string>inra_etatDocument_local_0</string>
+                        </f>
+                     </egXML>
+                  </exemplum>
                </elementSpec>
                
                <elementSpec ident="date" mode="change">
@@ -1351,10 +1420,16 @@
                      <memberOf key="att.global" mode="delete"/>
                      <memberOf key="att.datable" mode="delete"/>
                   </classes>
+                  <content>
+                     <textNode/>
+                  </content>
                   <attList>
-                     <attDef ident="target" mode="change" usage="req">
-                        <desc>Spécificie le type de fichier déposé en lien avec le document</desc>
-                        <valList mode="change" type="closed">
+                     <attDef ident="target" mode="change" usage="rec">
+                        <desc>Spécificie la licence</desc>
+                        <valList mode="change" type="semi">
+                           <valItem ident="http://creativecommons.org/licenses/by/4.0/">
+                              <desc></desc>
+                           </valItem>
                            <valItem ident="http://creativecommons.org/licenses/by/">
                               <desc>Attribution</desc>
                            </valItem>
@@ -1406,7 +1481,9 @@
                   </content>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <licence target="http://creativecommons.org/licenses/by/">Attribution</licence>
+                        <notesStmt>
+                           <note type="commentary">Commentaire</note>
+                        </notesStmt>
                      </egXML>
                   </exemplum>
                </elementSpec>
@@ -1477,6 +1554,9 @@
                            </valItem>
                            <valItem ident="version">
                               <desc>Si le document est un logiciel, cette attribut permet d'indiquer la version du logiciel.</desc>
+                           </valItem>
+                           <valItem ident="operatingSystem">
+                              <desc>Si le document est un logiciel, cette attribut permet d'indiquer le système d'exploitation à utiliser pour .</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -2515,7 +2595,11 @@
                   <attList>
                      <attDef ident="type" usage="opt" mode="change"/>
                      <attDef ident="active" usage="req" mode="change"/>
-                     <attDef ident="name" usage="opt" mode="change"/>
+                     <attDef ident="name" usage="opt" mode="change">
+                        <datatype>
+                           <dataRef key="teidata.text"></dataRef>
+                        </datatype>
+                     </attDef>
                   </attList>
                </elementSpec>
                

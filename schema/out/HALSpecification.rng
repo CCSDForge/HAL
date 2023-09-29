@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-05-26T11:38:33Z. .
+Schema generated from ODD source 2023-09-26T10:08:17Z. .
 TEI Edition: Version 4.5.0. Last updated on
         25th October 2022, revision 3e98e619e
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
@@ -48,6 +48,14 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
             <ref name="model.inter"/>
             <ref name="model.divPart"/>
             <ref name="model.global"/>
+         </choice>
+      </zeroOrMore>
+   </define>
+   <define name="macro.xtext">
+      <zeroOrMore>
+         <choice>
+            <text/>
+            <ref name="model.gLike"/>
          </choice>
       </zeroOrMore>
    </define>
@@ -2395,7 +2403,7 @@ Sample values include: 1] file; 2] src; 3] annex; 4] seeAlso; 5] esrFullText; 6]
          </optional>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spécificie le type de fichier déposé en lien avec le document
-Sample values include: 1] commentary; 2] description; 3] audience; 4] invited; 5] popular; 6] peer; 7] proceedings; 8] report; 9] other; 10] image; 11] degree; 12] pastel_thematique; 13] pastel_library; 14] programmingLanguage; 15] platform; 16] developmentStatus; 17] runtimePlatform; 18] version</a:documentation>
+Sample values include: 1] commentary; 2] description; 3] audience; 4] invited; 5] popular; 6] peer; 7] proceedings; 8] report; 9] other; 10] image; 11] degree; 12] pastel_thematique; 13] pastel_library; 14] programmingLanguage; 15] platform; 16] developmentStatus; 17] runtimePlatform; 18] version; 19] operatingSystem</a:documentation>
             <data type="token">
                <param name="pattern">[^\p{C}\p{Z}]+</param>
             </data>
@@ -2954,30 +2962,8 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          </optional>
          <optional>
             <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the identifier, for example as an ISBN, Social Security number, etc.
-Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7] OCLC</a:documentation>
-               <choice>
-                  <value>ISBN</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://www.isbn-international.org"> International ISBN Agency.</a>
-                  </a:documentation>
-                  <value>ISSN</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">International Standard Serial Number: an eight-digit number to uniquely identify a serial publication.</a:documentation>
-                  <value>DOI</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Digital Object Identifier: a unique string of letters and numbers assigned to an electronic document.</a:documentation>
-                  <value>URI</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Uniform Resource Identifier: a string of characters to uniquely identify a resource, following the syntax of <a xmlns="http://www.w3.org/1999/xhtml"
-                        href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</a:documentation>
-                  <value>VIAF</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A data number in the Virtual Internet Authority File assigned to link different names in catalogs around the world for the same entity.</a:documentation>
-                  <value>ESTC</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">English Short-Title Catalogue number: an identifying number assigned to a document in English printed in the British Isles or North America before 1801.</a:documentation>
-                  <value>OCLC</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative.</a:documentation>
-                  <data type="token">
-                     <param name="pattern">[^\p{C}\p{Z}]+</param>
-                  </data>
-               </choice>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the identifier, for example as an ISBN, Social Security number, etc.</a:documentation>
+               <data type="string"/>
             </attribute>
          </optional>
          <empty/>
@@ -3008,38 +2994,46 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    <define name="licence">
       <element name="licence">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about a licence or other legal agreement applicable to the text. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
-         <ref name="macro.specialPara"/>
-         <attribute name="target">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spécificie le type de fichier déposé en lien avec le document</a:documentation>
-            <list>
-               <oneOrMore>
-                  <choice>
-                     <value>http://creativecommons.org/licenses/by/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution</a:documentation>
-                     <value>http://hal.archives-ouvertes.fr/licences/copyright/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Copyright (Tous droits réservés)</a:documentation>
-                     <value>http://creativecommons.org/licenses/by-nc-nd/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NonCommercial-NoDerivatives</a:documentation>
-                     <value>http://creativecommons.org/licenses/by-nc-sa/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NonCommercial-ShareAlike </a:documentation>
-                     <value>http://creativecommons.org/licenses/by-nc/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NonCommercial</a:documentation>
-                     <value>http://creativecommons.org/licenses/by-nd/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NoDerivatives</a:documentation>
-                     <value>http://creativecommons.org/publicdomain/zero/1.0/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Public Domain</a:documentation>
-                     <value>http://hal.archives-ouvertes.fr/licences/publicDomain/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Public Domain </a:documentation>
-                     <value>http://creativecommons.org/licenses/by-sa/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-ShareAlike</a:documentation>
-                     <value>http://hal.archives-ouvertes.fr/licences/etalab/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Licence Ouverte</a:documentation>
-                     <value>http://creativecommons.org/choose/mark/</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Marque du Domaine Public</a:documentation>
-                  </choice>
-               </oneOrMore>
-            </list>
-         </attribute>
+         <text/>
+         <optional>
+            <attribute name="target">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spécificie la licence
+Suggested values include: 1] http://creativecommons.org/licenses/by/4.0/; 2] http://creativecommons.org/licenses/by/; 3] http://hal.archives-ouvertes.fr/licences/copyright/; 4] http://creativecommons.org/licenses/by-nc-nd/; 5] http://creativecommons.org/licenses/by-nc-sa/; 6] http://creativecommons.org/licenses/by-nc/; 7] http://creativecommons.org/licenses/by-nd/; 8] http://creativecommons.org/publicdomain/zero/1.0/; 9] http://hal.archives-ouvertes.fr/licences/publicDomain/; 10] http://creativecommons.org/licenses/by-sa/; 11] http://hal.archives-ouvertes.fr/licences/etalab/; 12] http://creativecommons.org/choose/mark/</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <choice>
+                        <value>http://creativecommons.org/licenses/by/4.0/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                        <value>http://creativecommons.org/licenses/by/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution</a:documentation>
+                        <value>http://hal.archives-ouvertes.fr/licences/copyright/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Copyright (Tous droits réservés)</a:documentation>
+                        <value>http://creativecommons.org/licenses/by-nc-nd/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NonCommercial-NoDerivatives</a:documentation>
+                        <value>http://creativecommons.org/licenses/by-nc-sa/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NonCommercial-ShareAlike </a:documentation>
+                        <value>http://creativecommons.org/licenses/by-nc/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NonCommercial</a:documentation>
+                        <value>http://creativecommons.org/licenses/by-nd/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-NoDerivatives</a:documentation>
+                        <value>http://creativecommons.org/publicdomain/zero/1.0/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Public Domain</a:documentation>
+                        <value>http://hal.archives-ouvertes.fr/licences/publicDomain/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Public Domain </a:documentation>
+                        <value>http://creativecommons.org/licenses/by-sa/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Attribution-ShareAlike</a:documentation>
+                        <value>http://hal.archives-ouvertes.fr/licences/etalab/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Licence Ouverte</a:documentation>
+                        <value>http://creativecommons.org/choose/mark/</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Marque du Domaine Public</a:documentation>
+                        <data type="anyURI">
+                           <param name="pattern">\S+</param>
+                        </data>
+                     </choice>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -3421,8 +3415,25 @@ Feature Value]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(feature) represents a feature value specification, that is, the association of a name with a value of any of several different types. [18.2. Elementary Feature Structures and the Binary
 Feature Value]</a:documentation>
          <text/>
+         <zeroOrMore>
+            <ref name="string"/>
+         </zeroOrMore>
+         <zeroOrMore>
+            <ref name="numeric"/>
+         </zeroOrMore>
          <ref name="att.global.attributes"/>
          <ref name="att.datcat.attributes"/>
+         <optional>
+            <attribute name="notation">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">names the notation used for the content of the element.</a:documentation>
+               <choice>
+                  <value>string</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>numeric</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               </choice>
+            </attribute>
+         </optional>
          <attribute name="name">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a single word which follows the rules defining a legal XML name (see ), providing a name for the feature.</a:documentation>
             <data type="Name"/>
@@ -3435,6 +3446,21 @@ Feature Value]</a:documentation>
                </data>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="numeric">
+      <element name="numeric">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(numeric value) represents the value part of a feature-value specification which contains a numeric value or range. [18.3. Other Atomic Feature Values]</a:documentation>
+         <text/>
+      </element>
+   </define>
+   <define name="string">
+      <element name="string">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(string value) represents the value part of a feature-value specification which contains a string. [18.3. Other Atomic Feature Values]</a:documentation>
+         <ref name="macro.xtext"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.datcat.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4024,9 +4050,7 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
          <optional>
             <attribute name="name">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies a name for the kind of relationship of which this is an instance.</a:documentation>
-               <data type="token">
-                  <param name="pattern">[^\p{C}\p{Z}]+</param>
-               </data>
+               <data type="string"/>
             </attribute>
          </optional>
          <optional>
